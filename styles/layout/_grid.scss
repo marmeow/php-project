@@ -1,0 +1,97 @@
+@use '../abstracts' as *;
+
+
+
+
+@media (min-width: 1024px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "capçalera capçalera capçalera"
+            "banner banner titol"
+            "info1 info2 info3"
+            "presentation presentation formulari"
+            "peu peu peu";
+        gap: 10px;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .container {
+        padding: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "capçalera capçalera capçalera"
+            "banner banner banner"
+            "titol titol titol"
+            "info1 info2 info3"
+            "presentation presentation formulari"
+            "peu peu peu";
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "capçalera"
+            "banner"
+            "titol"
+            "info1"
+            "info2"
+            "info3"
+            "presentation"
+            "formulari"
+            "peu";
+        gap: 10px
+    }
+}
+
+
+
+header {
+    grid-area: capçalera;
+}
+
+footer {
+    grid-area: peu;
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.titol {
+    grid-area: titol;
+}
+
+.info1 {
+    grid-area: info1;
+}
+
+.info2 {
+    grid-area: info2;
+}
+
+.info3 {
+    grid-area: info3
+}
+
+.presentation {
+    grid-area: presentation;
+}
+
+.form {
+    grid-area: formulari;
+}

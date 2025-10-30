@@ -1,0 +1,43 @@
+button {
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgb(232, 232, 232) 0%, rgb(221, 221, 221) 60%, rgb(213, 212, 212) 100%);
+    border: 1px solid var(--grey1);
+    padding: 5px 20px;
+    font-size: 0.85em;
+    color: var(--grey3);
+    text-align: right;
+    cursor: pointer;
+
+    &.subbtn {
+        padding: 2px 20px;
+    }
+
+    &.burgerbtn {
+        display: none;
+        color: var(--grey3);
+        font-size: 28px;
+        padding: 2px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        background: none;
+
+        @media (max-width: 768px) {
+            display: block !important;
+        }
+    }
+
+    &.closebtn {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--grey3);
+        font-size: 28px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        background: none;
+    }
+
+}

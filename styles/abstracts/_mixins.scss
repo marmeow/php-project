@@ -1,0 +1,10 @@
+//https://www.kodetop.com/web-responsive-utilizando-mixins-en-sass/
+
+
+// _mixins.scss
+
+@mixin responsive {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
