@@ -1,0 +1,72 @@
+{
+    "productes": [
+        {
+            "nom": "Aigua",
+            "preu": 1.00
+        },
+        {
+            "nom": "Llimonada",
+            "preu": 2.00
+        },
+        {
+            "nom": "Cacaolat",
+            "preu": 2.00
+        },
+        {
+            "nom": "Fanta",
+            "preu": 1.50
+        },
+        {
+            "nom": "Coca-Cola",
+            "preu": 1.50
+        },
+        {
+            "nom": "Entrepà de llom",
+            "preu": 3.50
+        },
+        {
+            "nom": "Entrepà de tonyina",
+            "preu": 3.00
+        },
+        {
+            "nom": "Entrepà de truita",
+            "preu": 3.00
+        },
+        {
+            "nom": "Entrepà de vedella",
+            "preu": 4.50
+        },
+        {
+            "nom": "Entrepà de bacó",
+            "preu": 4.00
+        },
+        {
+            "nom": "Entrepà de pollastre",
+            "preu": 4.00
+        },
+        {
+            "nom": "Entrepà de pernil salat",
+            "preu": 4.00
+        },
+        {
+            "nom": "Entrepà d'hamburguesa",
+            "preu": 3.00
+        },
+        {
+            "nom": "Entrepà de calamars",
+            "preu": 4.00
+        },
+        {
+            "nom": "Croissant",
+            "preu": 0.75
+        },
+        {
+            "nom": "Croissant de xocolata",
+            "preu": 2.00
+        },
+        {
+            "nom": "Entrepà de pernil dolç",
+            "preu": 2.50
+        }
+    ]
+}
