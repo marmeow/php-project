@@ -5,7 +5,7 @@
     .header-top {
         background-color: var(--grey1);
         color: white;
-        padding: var(--space-md);
+        padding: var(--space-lg) var(--space-md);
 
         a {
             color: white;
@@ -14,6 +14,7 @@
 
     .header-bottom {
         background-color: #fff;
+        padding: var(--space-lg) var(--space-xxxxl);
 
     }
 

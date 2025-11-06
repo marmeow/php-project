@@ -153,13 +153,14 @@ footer #copyright {
 .main-header .header-top {
   background-color: var(--grey1);
   color: white;
-  padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
 }
 .main-header .header-top a {
   color: white;
 }
 .main-header .header-bottom {
   background-color: #fff;
+  padding: var(--space-lg) var(--space-xxxxl);
 }
 .main-header .header-top,
 .main-header .header-bottom {
