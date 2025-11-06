@@ -47,6 +47,9 @@ header nav ul li {
 header nav ul li a {
   display: inline-block;
 }
+header #carreto img {
+  height: 150px;
+}
 
 nav {
   display: -webkit-box;
@@ -59,12 +62,17 @@ nav {
 }
 nav ul {
   list-style: none;
-}
-nav li {
-  display: inline-block;
+  gap: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 nav a {
   text-decoration: none;
+  display: inline-block;
   color: black;
 }
 
