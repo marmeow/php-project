@@ -1,42 +1,25 @@
-@use "../abstracts/variables" as *;
+.main-header {
+    display: grid;
+    grid-template-rows: auto 1fr;
 
-header {
-    background-color: #ebf6d1;
-    color: #658523;
-    display: flex;
-    position: sticky;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-sizing: content-box;
+    .header-top {
+        background-color: var(--grey1);
+        color: white;
+        padding: var(--space-md);
 
-    #header-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        a,
-        h1 {
-            display: inline-block;
-            margin: 0;
+        a {
+            color: white;
         }
     }
 
-    nav ul {
-        display: flex;
-        list-style: none;
-        gap: 15px;
+    .header-bottom {
+        background-color: #fff;
 
-        li {
-            display: inline-block;
-
-            a {
-                display: inline-block;
-            }
-        }
     }
 
-    #carreto {
-        height: 40px;
+    .header-top,
+    .header-bottom {
+        justify-content: space-between;
     }
+
 }

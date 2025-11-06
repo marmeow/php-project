@@ -1,8 +1,8 @@
 @use "../abstracts/variables" as *;
 
 footer {
-    background-color: $green2;
-    color: $green1;
+    background-color: var(--green2);
+    color: var(--green1);
     display: flex;
     position: fixed;
     bottom: 0;
