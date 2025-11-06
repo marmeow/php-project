@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+
+footer {
+    background-color: $green2;
+    color: $green1;
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: content-box;
+
+    #header-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a,
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+
+        li {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+            }
+        }
+    }
+
+    #copyright {
+        text-decoration: none;
+    }
+}
