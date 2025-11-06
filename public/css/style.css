@@ -1,78 +1,126 @@
+:root {
+  --grey1: #545F66;
+  --grey2: #829399;
+  --green1: #658523;
+  --green2: #ebf6d1;
+  --blue1: #D0F4EA;
+  --font-titles: font-family: "Rubik", sans-serif;
+  --font-general: font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: --var(--font-general);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-titles);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
 * {
-  padding: 0;
   margin: 0;
 }
 
-footer {
-  background-color: #ebf6d1;
-  color: #658523;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
-footer #copyright {
-  text-decoration: none;
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
-header {
-  background-color: #ebf6d1;
-  color: #658523;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: sticky;
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.main-header {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.main-header .header-top {
+  background-color: var(--grey1);
+  color: white;
+  padding: 10px 5px;
+}
+.main-header .header-top a {
+  color: white;
+}
+.main-header .header-top,
+.main-header .header-bottom {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-header #header-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-}
-header #header-logo a,
-header #header-logo h1 {
-  display: inline-block;
-  margin: 0;
-}
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  gap: 15px;
-}
-header nav ul li {
-  display: inline-block;
-}
-header nav ul li a {
-  display: inline-block;
-}
-header #carreto {
-  height: 40px;
 }
 
 nav {
@@ -98,6 +146,10 @@ nav a {
   text-decoration: none;
   display: inline-block;
   color: black;
+}
+
+.logo img {
+  width: 15rem;
 }
 
 .titol {
