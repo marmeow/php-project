@@ -47,8 +47,8 @@ header nav ul li {
 header nav ul li a {
   display: inline-block;
 }
-header #carreto img {
-  height: 150px;
+header #carreto {
+  height: 40px;
 }
 
 nav {
