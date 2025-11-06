@@ -104,6 +104,30 @@ h6 {
   isolation: isolate;
 }
 
+footer {
+  background-color: var(--green2);
+  color: var(--green1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+footer #copyright {
+  text-decoration: none;
+}
+
 .main-header {
   display: grid;
   grid-template-rows: auto 1fr;
