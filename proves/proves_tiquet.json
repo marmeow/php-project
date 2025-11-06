@@ -2,20 +2,12 @@
     "productes": [
         {
             "nom": "aigua",
-<<<<<<< Updated upstream
-            "preu": "160",
-=======
             "preu": 160,
->>>>>>> Stashed changes
             "quantitat": 1
         },
         {
             "nom": "llimonada",
-<<<<<<< Updated upstream
             "preu": "10",
-=======
-            "preu": 10,
->>>>>>> Stashed changes
             "quantitat": 1
         }
     ]
