@@ -5,11 +5,16 @@
     .header-top {
         background-color: var(--grey1);
         color: white;
-        padding: 10px 5px;
+        padding: var(--space-md);
 
         a {
             color: white;
         }
+    }
+
+    .header-bottom {
+        background-color: #fff;
+
     }
 
     .header-top,

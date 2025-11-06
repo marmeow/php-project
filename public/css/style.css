@@ -6,6 +6,24 @@
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
   --font-general: "Montserrat", sans-serif;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-xxl: 2rem;
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+  --space-xxxl: 4rem;
+  --space-xxxxl: 5rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
 }
 
 body {
@@ -135,10 +153,13 @@ footer #copyright {
 .main-header .header-top {
   background-color: var(--grey1);
   color: white;
-  padding: 10px 5px;
+  padding: var(--space-md);
 }
 .main-header .header-top a {
   color: white;
+}
+.main-header .header-bottom {
+  background-color: #fff;
 }
 .main-header .header-top,
 .main-header .header-bottom {
