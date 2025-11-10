@@ -122,6 +122,11 @@ h6 {
   isolation: isolate;
 }
 
+#final {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 footer {
   background-color: var(--green2);
   color: var(--green1);
@@ -168,6 +173,66 @@ footer #copyright {
           justify-content: space-between;
 }
 
+#info-tiquet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-area: 1/2/2/3;
+  padding: var(--space-sm);
+}
+#info-tiquet * {
+  margin: var(--space-xxs);
+}
+#info-tiquet label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: var(--space-xs);
+  min-width: 80px;
+}
+#info-tiquet label input {
+  border-radius: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 6px;
+  -webkit-transition: background-color 0.3s, outline 0.3s;
+  transition: background-color 0.3s, outline 0.3s;
+}
+#info-tiquet label input:focus {
+  background-color: white;
+  border: 1px solid black;
+  outline: none;
+  padding: 5px;
+}
+#info-tiquet button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: var(--space-xs) var(--space-sm);
+  margin-top: var(--space-sm);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--grey2);
+  color: white;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+#info-tiquet button:hover {
+  background-color: var(--grey3);
+  color: #000000;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,6 +260,10 @@ nav a {
 
 .logo img {
   width: 15rem;
+}
+
+.min-60 {
+  min-width: 60px;
 }
 
 .titol {
