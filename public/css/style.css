@@ -1,11 +1,129 @@
+:root {
+  --grey1: #545F66;
+  --grey2: #829399;
+  --green1: #658523;
+  --green2: #ebf6d1;
+  --blue1: #D0F4EA;
+  --font-titles: "Rubik", sans-serif;
+  --font-general: "Montserrat", sans-serif;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-xxl: 2rem;
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+  --space-xxxl: 4rem;
+  --space-xxxxl: 5rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+}
+
+body {
+  font-family: var(--font-general);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-titles);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
 * {
-  padding: 0;
   margin: 0;
 }
 
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
 footer {
-  background-color: #ebf6d1;
-  color: #658523;
+  background-color: var(--grey1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,56 +141,34 @@ footer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+footer nav a {
+  color: white;
+}
 footer #copyright {
   text-decoration: none;
+  color: white;
 }
 
-header {
-  background-color: #ebf6d1;
-  color: #658523;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: sticky;
+.main-header {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.main-header .header-top {
+  background-color: var(--grey1);
+  color: white;
+  padding: var(--space-md);
+}
+.main-header .header-top a {
+  color: white;
+}
+.main-header .header-bottom {
+  background-color: #fff;
+}
+.main-header .header-top,
+.main-header .header-bottom {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 20px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-header #header-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-}
-header #header-logo a,
-header #header-logo h1 {
-  display: inline-block;
-  margin: 0;
-}
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  gap: 15px;
-}
-header nav ul li {
-  display: inline-block;
-}
-header nav ul li a {
-  display: inline-block;
-}
-header #carreto {
-  height: 40px;
 }
 
 nav {
@@ -98,6 +194,10 @@ nav a {
   text-decoration: none;
   display: inline-block;
   color: black;
+}
+
+.logo img {
+  width: 15rem;
 }
 
 .titol {

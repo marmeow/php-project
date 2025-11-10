@@ -1,4 +1,39 @@
-$grey1: #545f66;
-$grey2: #829399;
-$green1: #658523;
-$green2: #ebf6d1;
+:root {
+    --grey1: #545F66;
+    --grey2: #829399;
+    --green1: #658523;
+    --green2: #ebf6d1;
+    --blue1: #D0F4EA;
+
+
+    // Fonts
+    --font-titles: "Rubik", sans-serif;
+    --font-general: "Montserrat", sans-serif;
+
+
+    // Font sizes
+    --font-xs: 0.75rem; // 12px
+    --font-sm: 0.875rem; // 14px
+    --font-md: 1rem; // 16px
+    --font-lg: 1.25rem; // 20px
+    --font-xl: 1.5rem; // 24px
+    --font-xxl: 2rem; // 32px
+
+
+    // Tamaños base
+    --space-xxs: 0.25rem; // 4px
+    --space-xs: 0.5rem; // 8px
+    --space-sm: 0.75rem; // 12px
+    --space-md: 1rem; // 16px
+    --space-lg: 1.5rem; // 24px
+    --space-xl: 2rem; // 32px
+    --space-xxl: 3rem; // 48px
+    --space-xxxl: 4rem; // 64px
+    --space-xxxxl: 5rem; // 80px
+
+
+    // Border radius
+    --radius-sm: 0.25rem; // 4px
+    --radius-md: 0.5rem; // 8px
+    --radius-lg: 1rem; // 16px
+}
