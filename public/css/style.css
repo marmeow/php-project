@@ -123,8 +123,7 @@ h6 {
 }
 
 footer {
-  background-color: var(--green2);
-  color: var(--green1);
+  background-color: var(--grey1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,8 +141,12 @@ footer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+footer nav a {
+  color: white;
+}
 footer #copyright {
   text-decoration: none;
+  color: white;
 }
 
 .main-header {
