@@ -1,8 +1,7 @@
 @use "../abstracts/variables" as *;
 
 footer {
-    background-color: var(--green2);
-    color: var(--green1);
+    background-color: var(--grey1);
     display: flex;
     position: fixed;
     bottom: 0;
@@ -13,7 +12,12 @@ footer {
     padding: 20px;
     box-sizing: content-box;
 
+    nav a {
+        color: white
+    }
+
     #copyright {
         text-decoration: none;
+        color: white
     }
 }
