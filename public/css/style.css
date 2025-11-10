@@ -213,13 +213,10 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
 }
-nav ul li a {
+nav ul a {
   text-decoration: none;
   display: inline-block;
-}
-nav ul li.active-link a {
-  color: var(--green1);
-  font-weight: bold;
+  color: black;
 }
 
 #product-page #banner {
