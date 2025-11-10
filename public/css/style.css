@@ -1,7 +1,7 @@
 :root {
   --grey1: #545F66;
   --grey2: #829399;
-  --green1: #658523;
+  --green1: #B1CC74;
   --green2: #ebf6d1;
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
@@ -122,43 +122,10 @@ h6 {
   isolation: isolate;
 }
 
-/* @use "../abstracts/variables" as *; */
-.container {
-  padding: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-inline: auto;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.h1Copy {
-  color: var(--green1);
-  margin-bottom: var(--space-lg);
-}
-
-.copyright-content {
-  color: var(--grey2);
-  line-height: 1.6;
-}
-
-.h2Copy {
-  color: black;
-  font-size: var(--font-lg);
-  margin: var(--space-lg) 0 var(--space-md);
-}
-
-.pCopy {
-  margin-bottom: var(--space-md);
-  color: black;
-}
-
-.addressCopy {
-  font-style: normal;
-  color: var(--green1);
+#product-page h1 {
+  font-size: 4.125rem;
+  text-shadow: 2px 2px 2px var(--grey1);
+  padding: var(--space-lg);
 }
 
 footer {
@@ -188,23 +155,40 @@ footer #copyright {
   color: white;
 }
 
-.main-header {
+header {
   display: grid;
   grid-template-rows: auto 1fr;
 }
-.main-header .header-top {
+header .header-top {
   background-color: var(--grey1);
   color: white;
-  padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
 }
-.main-header .header-top a {
+header .header-top a {
   color: white;
 }
-.main-header .header-bottom {
+header .header-bottom {
   background-color: #fff;
+  padding: var(--space-lg) var(--space-xxxxl);
 }
-.main-header .header-top,
-.main-header .header-bottom {
+header .header-bottom ul li {
+  margin-right: var(--space-lg);
+}
+header .header-bottom ul li a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding-top: 25px;
+}
+header .header-bottom ul li.active-link a {
+  color: var(--green1);
+  font-weight: bold;
+  border-bottom: 2px solid var(--green1);
+}
+header .header-top,
+header .header-bottom {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -229,14 +213,22 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
 }
-nav a {
+nav ul a {
   text-decoration: none;
   display: inline-block;
   color: black;
 }
 
+#product-page #banner {
+  height: 60vh;
+  background-position: 50%;
+  background-image: url(../../public/resources/images/club-sandwich.webp);
+  color: white;
+  text-transform: uppercase;
+}
+
 .logo img {
-  width: 15rem;
+  width: 14rem;
 }
 
 .titol {

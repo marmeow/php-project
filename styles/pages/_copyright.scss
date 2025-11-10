@@ -1,38 +1,40 @@
 /* @use "../abstracts/variables" as *; */
+#copyright-page {
 
-.container {
-    // padding: var(--space-xl);
-    padding: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-inline: auto;
-    max-width: 1200px;
-    text-align: center;
-}
+    .container {
+        // padding: var(--space-xl);
+        padding: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: auto;
+        max-width: 1200px;
+        text-align: center;
+    }
 
-.h1Copy {
-    color: var(--green1);
-    margin-bottom: var(--space-lg);
-}
+    .h1Copy {
+        color: var(--green1);
+        margin-bottom: var(--space-lg);
+    }
 
-.copyright-content {
-    color: var(--grey2);
-    line-height: 1.6;
+    .copyright-content {
+        color: var(--grey2);
+        line-height: 1.6;
 
-}
+    }
 
-.h2Copy {
-    color: black;
-    font-size: var(--font-lg);
-    margin: var(--space-lg) 0 var(--space-md);
-}
+    .h2Copy {
+        color: black;
+        font-size: var(--font-lg);
+        margin: var(--space-lg) 0 var(--space-md);
+    }
 
-.pCopy {
-    margin-bottom: var(--space-md);
-    color: black
-}
+    .pCopy {
+        margin-bottom: var(--space-md);
+        color: black;
+    }
 
-.addressCopy {
-    font-style: normal;
-    color: var(--green1);
+    .addressCopy {
+        font-style: normal;
+        color: var(--green1);
+    }
 }
