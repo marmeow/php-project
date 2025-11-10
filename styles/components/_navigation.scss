@@ -7,11 +7,21 @@ nav {
         gap: 15px;
         display: flex;
         align-items: center;
+
+        li {
+            a {
+                text-decoration: none;
+                display: inline-block;
+                color: black;
+            }
+
+            &.active-link {
+                a {
+                    color: var(--green1);
+                    font-weight: bold;
+                }
+            }
+        }
     }
 
-    a {
-        text-decoration: none;
-        display: inline-block;
-        color: black;
-    }
 }

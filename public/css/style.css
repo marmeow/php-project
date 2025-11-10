@@ -1,7 +1,7 @@
 :root {
   --grey1: #545F66;
   --grey2: #829399;
-  --green1: #658523;
+  --green1: #B1CC74;
   --green2: #ebf6d1;
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
@@ -162,6 +162,22 @@ footer #copyright {
   background-color: #fff;
   padding: var(--space-lg) var(--space-xxxxl);
 }
+.main-header .header-bottom ul li {
+  margin-right: var(--space-lg);
+}
+.main-header .header-bottom ul li a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding-top: 25px;
+}
+.main-header .header-bottom ul li.active-link a {
+  color: var(--green1);
+  font-weight: bold;
+  border-bottom: 2px solid var(--green1);
+}
 .main-header .header-top,
 .main-header .header-bottom {
   -webkit-box-pack: justify;
@@ -188,14 +204,18 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
 }
-nav a {
+nav ul li a {
   text-decoration: none;
   display: inline-block;
   color: black;
 }
+nav ul li.active-link a {
+  color: var(--green1);
+  font-weight: bold;
+}
 
 .logo img {
-  width: 15rem;
+  width: 14rem;
 }
 
 .titol {

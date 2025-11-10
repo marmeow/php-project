@@ -16,6 +16,30 @@
         background-color: #fff;
         padding: var(--space-lg) var(--space-xxxxl);
 
+        ul {
+
+            li {
+                margin-right: var(--space-lg);
+
+                a {
+                    font-size: 1.125rem;
+                    text-decoration: none;
+                    display: inline-block;
+                    color: black;
+                    border-bottom: 2px solid transparent;
+                    padding-top: 25px;
+                }
+
+                &.active-link {
+                    a {
+                        color: var(--green1);
+                        font-weight: bold;
+                        border-bottom: 2px solid var(--green1);
+                    }
+                }
+            }
+        }
+
     }
 
     .header-top,
