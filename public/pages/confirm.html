@@ -17,30 +17,6 @@
 </head>
 
 <body>
-    <script>
-        document.getElementById('userForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch('/public/pages/ajax-confirm.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.res === 1) {
-                        if (data.redirect) {
-                            window.location.href = data.redirect;
-                        }
-                    } else {
-                        alert(data.msg);
-                    }
-                })
-                .catch(err => {
-                });
-        });
-    </script>
     <main id="final">
         <div class="tiquet-final"></div>
         <hr><!--TODO: edita el action per afegir el mètode de php per administrar el formulari-->
