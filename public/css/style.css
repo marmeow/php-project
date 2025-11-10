@@ -122,6 +122,12 @@ h6 {
   isolation: isolate;
 }
 
+#product-page h1 {
+  font-size: 4.125rem;
+  text-shadow: 2px 2px 2px var(--grey1);
+  padding: var(--space-lg);
+}
+
 footer {
   background-color: var(--grey1);
   display: -webkit-box;
@@ -149,26 +155,26 @@ footer #copyright {
   color: white;
 }
 
-.main-header {
+header {
   display: grid;
   grid-template-rows: auto 1fr;
 }
-.main-header .header-top {
+header .header-top {
   background-color: var(--grey1);
   color: white;
   padding: var(--space-lg) var(--space-md);
 }
-.main-header .header-top a {
+header .header-top a {
   color: white;
 }
-.main-header .header-bottom {
+header .header-bottom {
   background-color: #fff;
   padding: var(--space-lg) var(--space-xxxxl);
 }
-.main-header .header-bottom ul li {
+header .header-bottom ul li {
   margin-right: var(--space-lg);
 }
-.main-header .header-bottom ul li a {
+header .header-bottom ul li a {
   font-size: 1.125rem;
   text-decoration: none;
   display: inline-block;
@@ -176,13 +182,13 @@ footer #copyright {
   border-bottom: 2px solid transparent;
   padding-top: 25px;
 }
-.main-header .header-bottom ul li.active-link a {
+header .header-bottom ul li.active-link a {
   color: var(--green1);
   font-weight: bold;
   border-bottom: 2px solid var(--green1);
 }
-.main-header .header-top,
-.main-header .header-bottom {
+header .header-top,
+header .header-bottom {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -210,11 +216,18 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   display: inline-block;
-  color: black;
 }
 nav ul li.active-link a {
   color: var(--green1);
   font-weight: bold;
+}
+
+#product-page #banner {
+  height: 60vh;
+  background-position: 50%;
+  background-image: url(../../public/resources/images/club-sandwich.webp);
+  color: white;
+  text-transform: uppercase;
 }
 
 .logo img {

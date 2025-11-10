@@ -2,23 +2,27 @@
     "productes": [
         {
             "nom": "Aigua",
-            "preu": 1.00
+            "preu": 1.00,
+            "descripció": "Ampolla aigua de 250ml"
         },
         {
             "nom": "Llimonada",
-            "preu": 2.00
+            "preu": 2.00,
+            "descripció": "Llimonada natural recent exprimida"
         },
         {
             "nom": "Cacaolat",
-            "preu": 2.00
+            "preu": 2.50,
+            "descripció": "Ampolla cacacolat de 275ml"
         },
         {
             "nom": "Fanta",
-            "preu": 1.50
+            "descripció": "Refresc de cola original llauna 33 cl"
         },
         {
             "nom": "Coca-Cola",
-            "preu": 1.50
+            "preu": 1.50,
+            "descripció": "refresco de cola original lata 33 cl"
         },
         {
             "nom": "Entrepà de llom",
