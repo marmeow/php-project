@@ -1,0 +1,26 @@
+.product-cards {
+    flex-wrap: wrap;
+
+    .product-card {
+        border: 1px solid black;
+        padding: var(--space-md);
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: var(--space-lg) var(--space-md) 0 0;
+    
+
+        h5 {
+            font-size: var(--font-md);
+            margin-bottom: var(--space-md);
+        }
+
+        img {
+            width: 10rem;
+            border: 1px solid var(--grey2);
+            padding: var(--space-md);
+        }
+    }
+}

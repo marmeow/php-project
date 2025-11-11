@@ -1,0 +1,53 @@
+/* Style the tab */
+.tab {
+    float: left;
+    background-color: var(--green2);
+    width: 10%;
+    margin-bottom: var(--space-xxxxl);
+    margin-top: var(--space-xxl);
+
+    button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: var(--space-md);
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: var(--font-md);
+
+
+        &:hover {
+            background-color: #b2cc743f ;
+        }
+
+        &.active {
+            background-color: var(--green1);
+        }
+    }
+
+}
+
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    width: 90%;
+    border-left: none;
+    padding: 0 var(--space-xxl);
+    margin: var(--space-xxl) 0;
+
+    h4{
+        font-size: var(--font-xl);
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    &#calents {
+        display: none;
+    }
+}

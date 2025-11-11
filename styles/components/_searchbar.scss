@@ -1,0 +1,12 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+
+    .fa-magnifying-glass {
+        margin: 0 var(--space-sm);
+    }
+
+    #cercar {
+        width: 30rem;
+    }
+}
