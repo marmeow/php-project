@@ -153,10 +153,12 @@ nav ul a {
   background-image: url(../../public/resources/images/club-sandwich.webp);
   color: white;
   text-transform: uppercase;
+  line-height: 4rem;
+  padding: var(--space-xxxxl);
 }
 
 .logo img {
-  width: 12rem;
+  width: 11rem;
 }
 
 .titol {
@@ -207,7 +209,7 @@ footer #copyright {
 #header-top {
   background-color: var(--grey1);
   color: white;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
 }
 #header-top a {
   color: white;
@@ -217,7 +219,7 @@ footer #copyright {
   position: sticky;
   top: 0;
   background-color: #fff;
-  padding: var(--space-lg) var(--space-xxxxl);
+  padding: var(--space-sm) var(--space-xxxxl);
 }
 #header-bottom ul li {
   margin-right: var(--space-lg);
@@ -250,4 +252,4 @@ footer #copyright {
   text-shadow: 2px 2px 2px var(--grey1);
   padding: var(--space-lg);
   text-align: right;
-}/*# sourceMappingURL=style.css.map */
+}
