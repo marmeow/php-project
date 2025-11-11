@@ -1,7 +1,7 @@
 :root {
   --grey1: #545F66;
   --grey2: #829399;
-  --green1: #658523;
+  --green1: #B1CC74;
   --green2: #ebf6d1;
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
@@ -122,14 +122,19 @@ h6 {
   isolation: isolate;
 }
 
+#product-page h1 {
+  font-size: 4.125rem;
+  text-shadow: 2px 2px 2px var(--grey1);
+  padding: var(--space-lg);
+}
+
 #final {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
 footer {
-  background-color: var(--green2);
-  color: var(--green1);
+  background-color: var(--grey1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,27 +152,48 @@ footer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+footer nav a {
+  color: white;
+}
 footer #copyright {
   text-decoration: none;
+  color: white;
 }
 
-.main-header {
+header {
   display: grid;
   grid-template-rows: auto 1fr;
 }
-.main-header .header-top {
+header .header-top {
   background-color: var(--grey1);
   color: white;
-  padding: var(--space-md);
+  padding: var(--space-lg) var(--space-md);
 }
-.main-header .header-top a {
+header .header-top a {
   color: white;
 }
-.main-header .header-bottom {
+header .header-bottom {
   background-color: #fff;
+  padding: var(--space-lg) var(--space-xxxxl);
 }
-.main-header .header-top,
-.main-header .header-bottom {
+header .header-bottom ul li {
+  margin-right: var(--space-lg);
+}
+header .header-bottom ul li a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  border-bottom: 2px solid transparent;
+  padding-top: 25px;
+}
+header .header-bottom ul li.active-link a {
+  color: var(--green1);
+  font-weight: bold;
+  border-bottom: 2px solid var(--green1);
+}
+header .header-top,
+header .header-bottom {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -252,10 +278,18 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
 }
-nav a {
+nav ul a {
   text-decoration: none;
   display: inline-block;
   color: black;
+}
+
+#product-page #banner {
+  height: 60vh;
+  background-position: 50%;
+  background-image: url(../../public/resources/images/club-sandwich.webp);
+  color: white;
+  text-transform: uppercase;
 }
 
 .logo img {
