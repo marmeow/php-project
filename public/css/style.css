@@ -122,10 +122,68 @@ h6 {
   isolation: isolate;
 }
 
-#product-page h1 {
-  font-size: 4.125rem;
-  text-shadow: 2px 2px 2px var(--grey1);
-  padding: var(--space-lg);
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav ul {
+  list-style: none;
+  gap: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav ul a {
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+
+#product-page #banner {
+  height: 60vh;
+  background-position: 50%;
+  background-image: url(../../public/resources/images/club-sandwich.webp);
+  color: white;
+  text-transform: uppercase;
+}
+#product-page #banner h1 {
+  text-align: right;
+}
+
+.logo img {
+  width: 14rem;
+}
+
+.titol {
+  background-color: var(--white);
+  padding: 10px;
+}
+.titol h1 {
+  font-size: 28px;
+  font-weight: normal;
+  text-wrap: wrap;
+}
+.titol p {
+  font-size: 13px;
+}
+.titol .title-p-grey {
+  color: var(--grey1);
+  font-size: 15px;
+  margin: 10px 0px;
+  border: 1px solid var(--grey);
+  border-width: 1px 0;
+  padding: 10px 0;
+}
+.titol .boton {
+  text-align: right;
 }
 
 footer {
@@ -194,63 +252,8 @@ header .header-bottom {
           justify-content: space-between;
 }
 
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-nav ul {
-  list-style: none;
-  gap: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-nav ul a {
-  text-decoration: none;
-  display: inline-block;
-  color: black;
-}
-
-#product-page #banner {
-  height: 60vh;
-  background-position: 50%;
-  background-image: url(../../public/resources/images/club-sandwich.webp);
-  color: white;
-  text-transform: uppercase;
-}
-
-.logo img {
-  width: 14rem;
-}
-
-.titol {
-  background-color: var(--white);
-  padding: 10px;
-}
-.titol h1 {
-  font-size: 28px;
-  font-weight: normal;
-  text-wrap: wrap;
-}
-.titol p {
-  font-size: 13px;
-}
-.titol .title-p-grey {
-  color: var(--grey1);
-  font-size: 15px;
-  margin: 10px 0px;
-  border: 1px solid var(--grey);
-  border-width: 1px 0;
-  padding: 10px 0;
-}
-.titol .boton {
-  text-align: right;
+#product-page h1 {
+  font-size: 4.125rem;
+  text-shadow: 2px 2px 2px var(--grey1);
+  padding: var(--space-lg);
 }/*# sourceMappingURL=style.css.map */
