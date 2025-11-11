@@ -18,22 +18,24 @@
 
 <body>
     <main id="final">
-        <div class="tiquet-final"></div>
-        <hr><!--TODO: edita el action per afegir el mètode de php per administrar el formulari-->
         <fieldset id="info-tiquet">
-            <form action="#" method="post">
-                <label for="nom">
-                    <span class="min-60">Nom:</span>
-                    <input type="text" name="nom" id="username" required>
-                </label>
-                <label for="email">
-                    <span class="min-60">Email:</span>
-                    <input type="email" name="email" id="usermail">
-                </label>
-                <label for="telefon">
-                    <span class="min-60">Telèfon:</span>
-                    <input type="tel" name="telefon" id="usertel" pattern="[0-9]{9}">
-                </label>
+            <form action="#" method="post" id="entra-carret">
+                <div class="tiquet-final"> </div>
+                <hr>
+                <div id="user-info">
+                    <label for="nom">
+                        <span class="min-60">Nom:</span>
+                        <input type="text" name="nom" id="username" required>
+                    </label>
+                    <label for="email">
+                        <span class="min-60">Email:</span>
+                        <input type="email" name="email" id="usermail">
+                    </label>
+                    <label for="telefon">
+                        <span class="min-60">Telèfon:</span>
+                        <input type="tel" name="telefon" id="usertel" pattern="[0-9]{9}">
+                    </label>
+                </div>
                 <button type="reset">Esborra</button>
                 <button type="submit">Envia</button>
             </form>
