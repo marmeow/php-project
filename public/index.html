@@ -14,14 +14,10 @@
         rel="stylesheet">
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
-
-
-
 </head>
 
 <body id="main-page">
     <div class="container">
-
         <header id="header-top" class="flex">
             <p>Purr-fect food for a purr-fect time. </p>
             <nav>
@@ -45,17 +41,23 @@
                     <li><a href="pages/administrar.html">Administració</a></li>
                     <li><a href="pages/contacte.html">Contacte</a></li>
                     <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-
                     <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
                 </ul>
             </nav>
-
         </header>
 
-
-        <section class="carousel"><!--Seguir aqui-->
-            <h1>Benvinguts al "Gato Rumano"</h1>
-
+        <section id="carousel"><!--Seguir aqui-->
+            <div class="carousel">
+                <button class="botonFlecha retroceder"><img src="resources/icons/left-arrow.png"
+                        alt="previous pic"></button>
+                <div id="imagen"></div>
+                <button class="botonFlecha avanzar"><img src="resources/icons/right-arrow(1).png"
+                        alt="next pic"></button>
+            </div>
+            <div class="controles">
+                <button id="play">Play</button>
+                <button id="stop" disabled>Stop</button>
+            </div>
         </section>
 
         <footer>
