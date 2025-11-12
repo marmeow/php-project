@@ -3,20 +3,15 @@
 footer {
     background-color: var(--grey1);
     display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-sizing: content-box;
 
     nav a {
         color: white;
     }
 
-    #copyright {
+    #copyright a {
         text-decoration: none;
         color: white;
     }

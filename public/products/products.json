@@ -3,74 +3,219 @@
         {
             "nom": "Aigua",
             "preu": 1.00,
-            "descripció": "Ampolla aigua de 250ml"
-        },
-        {
-            "nom": "Llimonada",
-            "preu": 2.00,
-            "descripció": "Llimonada natural recent exprimida"
+            "descripció": "Ampolla aigua de 250ml",
+            "categoria": "begudes",
+            "oferta": false
         },
         {
             "nom": "Cacaolat",
             "preu": 2.50,
-            "descripció": "Ampolla cacacolat de 275ml"
+            "descripció": "Ampolla cacacolat de 275ml",
+            "categoria": "begudes",
+            "oferta": true
         },
         {
             "nom": "Fanta",
-            "descripció": "Refresc de cola original llauna 33 cl"
+            "preu": 1.50,
+            "descripció": "Refresc de cola original llauna 33 cl",
+            "categoria": "begudes",
+            "oferta": true
         },
         {
             "nom": "Coca-Cola",
             "preu": 1.50,
-            "descripció": "refresco de cola original lata 33 cl"
+            "descripció": "Refresc de cola original llauna 33 cl",
+            "categoria": "begudes",
+            "oferta": true
+        },
+        {
+            "nom": "Cafè",
+            "preu": 0.70,
+            "descripció": "Cafè expresso acabat de fer",
+            "categoria": "begudes",
+            "oferta": false
+        },
+        {
+            "nom": "Tallat",
+            "preu": 0.85,
+            "descripció": "Cafè descafeïnat acabat de fer",
+            "categoria": "begudes",
+            "oferta": false
+        },
+        {
+            "nom": "Cafè amb llet",
+            "preu": 1.00,
+            "descripció": "Cafè amb llet acabat de fer",
+            "categoria": "begudes",
+            "oferta": true
         },
         {
             "nom": "Entrepà de llom",
-            "preu": 3.50
-        },
-        {
-            "nom": "Entrepà de tonyina",
-            "preu": 3.00
+            "preu": 3.50,
+            "descripció": "Entrepà calent de llom amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": true
         },
         {
             "nom": "Entrepà de truita",
-            "preu": 3.00
-        },
-        {
-            "nom": "Entrepà de vedella",
-            "preu": 4.50
+            "preu": 3.00,
+            "descripció": "Entrepà calent de truita amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false
         },
         {
             "nom": "Entrepà de bacó",
-            "preu": 4.00
-        },
-        {
-            "nom": "Entrepà de pollastre",
-            "preu": 4.00
+            "preu": 4.00,
+            "descripció": "Entrepà calent de bacó amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": true
         },
         {
             "nom": "Entrepà de pernil salat",
-            "preu": 4.00
-        },
-        {
-            "nom": "Entrepà d'hamburguesa",
-            "preu": 3.00
-        },
-        {
-            "nom": "Entrepà de calamars",
-            "preu": 4.00
-        },
-        {
-            "nom": "Croissant",
-            "preu": 0.75
-        },
-        {
-            "nom": "Croissant de xocolata",
-            "preu": 2.00
+            "preu": 4.00,
+            "descripció": "Entrepà fred de pernil salat amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": true
         },
         {
             "nom": "Entrepà de pernil dolç",
-            "preu": 2.50
+            "preu": 2.50,
+            "descripció": "Entrepà fred de pernil dolç amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false
+        },
+        {
+            "nom": "Entrapà de fuet",
+            "preu": 3.00,
+            "descripció": "Entrepà fred de fuet amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false
+        },
+        {
+            "nom": "Croissant",
+            "preu": 0.75,
+            "descripció": "Croissant tradicional de mantega",
+            "categoria": "brioixeria",
+            "oferta": false
+        },
+        {
+            "nom": "Croissant de xocolata",
+            "preu": 1.50,
+            "descripció": "Croissant farcit de xocolata",
+            "categoria": "brioixeria",
+            "oferta": true
+        },
+        {
+            "nom": "Magdalena",
+            "preu": 0.85,
+            "descripció": "Magdalena casolana",
+            "categoria": "brioixeria",
+            "oferta": false
+        },
+        {
+            "nom": "Magdalena de xocolata",
+            "preu": 1.40,
+            "descripció": "Magdalena casolana amb trossets de xocolata",
+            "categoria": "brioixeria",
+            "oferta": true
+        },
+        {
+            "nom": "Napolitana de crema",
+            "preu": 1.10,
+            "descripció": "Napolitana farcida de crema",
+            "categoria": "brioixeria",
+            "oferta": false
+        },
+        {
+            "nom": "Napolitana de xocolata",
+            "preu": 1.10,
+            "descripció": "Napolitana farcida de xocolata",
+            "categoria": "brioixeria",
+            "oferta": true
+        },
+        {
+            "nom": "Kinder Bueno",
+            "preu": 1.00,
+            "descripció": "Barretes de xocolata Kinder",
+            "categoria": "snacks",
+            "oferta": true
+        },
+        {
+            "nom": "Kit Kat",
+            "preu": 1.00,
+            "descripció": "Barretes de xocolata Kit Kat",
+            "categoria": "snacks",
+            "oferta": true
+        },
+        {
+            "nom": "Twix",
+            "preu": 1.00,
+            "descripció": "Barretes de xocolata Twix",
+            "categoria": "snacks",
+            "oferta": true
+        },
+        {
+            "nom": "Lays al punt de sal",
+            "preu": 0.95,
+            "descripció": "Bossa de patates fregides Lays al punt de sal 150g",
+            "categoria": "snacks",
+            "oferta": false
+        },
+        {
+            "nom": "Ruffles",
+            "preu": 0.95,
+            "descripció": "Bossa de patates fregides Ruffles 150g",
+            "categoria": "snacks",
+            "oferta": false
+        },
+        {
+            "nom": "Doritos",
+            "preu": 0.95,
+            "descripció": "Bossa de nachos Doritos 150g",
+            "categoria": "snacks",
+            "oferta": false
+        },
+        {
+            "nom": "Poma",
+            "preu": 0.60,
+            "descripció": "Poma fresca de temporada",
+            "categoria": "fruita",
+            "oferta": false
+        },
+        {
+            "nom": "Pera",
+            "preu": 0.60,
+            "descripció": "Pera fresca de temporada",
+            "categoria": "fruita",
+            "oferta": false
+        },
+        {
+            "nom": "Plàtan",
+            "preu": 0.60,
+            "descripció": "Plàtan fresc de temporada",
+            "categoria": "fruita",
+            "oferta": false
+        },
+        {
+            "nom": "Taronja",
+            "preu": 0.70,
+            "descripció": "Taronja fresca de temporada",
+            "categoria": "fruita",
+            "oferta": true
+        },
+        {
+            "nom": "Mandarina",
+            "preu": 0.70,
+            "descripció": "Mandarina fresca de temporada",
+            "categoria": "fruita",
+            "oferta": true
+        },
+        {
+            "nom": "Caqui",
+            "preu": 0.80,
+            "descripció": "Caqui fresc de temporada",
+            "categoria": "fruita",
+            "oferta": true
         }
     ]
 }
