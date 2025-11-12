@@ -3,9 +3,11 @@
         {
             "nom": "Aigua",
             "preu": 1.00,
-            "descripcio": "Ampolla aigua de 250ml",
+            "descripció": "Ampolla aigua de 250ml",
             "categoria": "begudes",
-            "oferta": false
+            "oferta": false,
+            "imatge":"entrepa-pernil"
+
         },
         {
             "nom": "Cacaolat",

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --grey1: #545F66;
   --grey2: #829399;
@@ -255,6 +256,9 @@ nav ul a {
 .product-cards {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 .product-cards .product-card {
   border: 1px solid black;
@@ -277,17 +281,41 @@ nav ul a {
           flex-direction: column;
   margin: var(--space-lg) var(--space-md) 0 0;
   width: 20%;
+  height: 100%;
+  /* AFEGEIX AQUEST CONTENIDOR */
+  /* AFEGEIX AQUEST BADGE */
+  /* AFEGEIX AQUEST BLOC */
 }
 .product-cards .product-card .descripcio {
   font-size: var(--font-md);
   margin-bottom: var(--space-md);
   text-align: justify;
 }
+.product-cards .product-card .preu-oferta-container {
+  width: 100%;
+  min-height: 50px; /* Alçada mínima fixa */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: var(--space-md);
+}
 .product-cards .product-card .preu-iva {
   color: #6d8041;
   font-weight: 800;
   width: 100%;
   text-align: right;
+  margin: 0;
+}
+.product-cards .product-card .oferta-badge {
+  min-height: 25px; /* Espai reservat sempre */
+  color: #6d8041;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 .product-cards .product-card .iva {
   font-size: 0.825rem;
@@ -303,6 +331,10 @@ nav ul a {
   padding: var(--space-sm);
   background-color: rgba(190, 194, 196, 0.1725490196);
   margin-bottom: var(--space-lg);
+}
+.product-cards .product-card .cont {
+  margin-top: auto;
+  width: 100%;
 }
 
 .cont {
@@ -470,4 +502,4 @@ footer #copyright {
 }
 #product-page #productes h2 {
   font-size: 2.75rem;
-}/*# sourceMappingURL=style.css.map */
+}
