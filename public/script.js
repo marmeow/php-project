@@ -2,14 +2,12 @@ function recuperarDadesTiquet() { }
 
 function enviaJSONAServer() { }
 
-function passaProducteCarret(){
-
-}
+function passaProducteCarret() { }
 
 window.addEventListener("DOMContentLoaded", function () {
     const botons = document.querySelectorAll(".afegeix-carret");
     botons.forEach(function (boton) {
-            boton.addEventListener("click", function (e) {
+        boton.addEventListener("click", function (e) {
             passaProducteCarret(boton);
         });
     });
@@ -27,7 +25,7 @@ function passaProducteCarret(boton) {
 function passaProductesLocal(element) {
     const carretActual = JSON.parse(localStorage.getItem("productes"))
     let productes = carretActual["productes"]
-    const producte = 
-    productes.push()
+    const producte =
+        productes.push()
     localStorage.setItem("productes", JSON.stringify(productes))
 }
