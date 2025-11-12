@@ -256,4 +256,38 @@ header .header-bottom {
   font-size: 4.125rem;
   text-shadow: 2px 2px 2px var(--grey1);
   padding: var(--space-lg);
+}
+
+/* @use "../abstracts/variables" as *; */
+#copyright-page .container {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-inline: auto;
+  max-width: 1200px;
+  text-align: center;
+}
+#copyright-page .h1Copy {
+  color: var(--green1);
+  margin-bottom: var(--space-lg);
+}
+#copyright-page .copyright-content {
+  color: var(--grey2);
+  line-height: 1.6;
+}
+#copyright-page .h2Copy {
+  color: black;
+  font-size: var(--font-lg);
+  margin: var(--space-lg) 0 var(--space-md);
+}
+#copyright-page .pCopy {
+  margin-bottom: var(--space-md);
+  color: black;
+}
+#copyright-page .addressCopy {
+  font-style: normal;
+  color: var(--green1);
 }/*# sourceMappingURL=style.css.map */
