@@ -386,7 +386,7 @@ footer #copyright a {
   margin: var(--space-xl) 0;
 }
 #main-page #carousel .carousel {
-  max-width: 900px;
+  max-width: 98%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -397,15 +397,14 @@ footer #copyright a {
   width: 100%;
   height: 600px;
   background-size: cover;
+  background-position: center;
 }
 #main-page #carousel .botonFlecha {
-  background-color: var(--green1);
+  background-color: rgba(177, 204, 116, 0.6);
   width: auto;
-  height: 100px;
+  height: 100%;
   position: absolute;
-  top: calc(50% - 50px);
-  border: 1px solid black;
-  border-radius: 8px;
+  border: none;
 }
 #main-page #carousel .botonFlecha.avanzar {
   right: 0;
