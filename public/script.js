@@ -66,5 +66,22 @@ document.addEventListener('click', function (e) {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('products/products.json')
+    .then(response => response.json())
+    .then(datos => {
+      document.getElementById("nombre").textContent = datos.nom;
+      document.querySelector(".preu").textContent = datos.preu;
+      document.querySelector(".desc").textContent = datos.ciudad;
 
+      const lista = document.getElementById("hobbies");
+      datos.hobbies.forEach(hobby => {
+        const li = document.createElement("li");
+        li.textContent = hobby;
+        lista.appendChild(li);
+      });
+    })
+    .catch(error => console.error("Error al cargar el JSON:", error));
+
+});
 

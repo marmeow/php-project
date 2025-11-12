@@ -3,7 +3,7 @@
         {
             "nom": "Aigua",
             "preu": 1.00,
-            "descripció": "Ampolla aigua de 250ml",
+            "descripcio": "Ampolla aigua de 250ml",
             "categoria": "begudes",
             "oferta": false
         },
