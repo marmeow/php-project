@@ -9,8 +9,12 @@ window.addEventListener("DOMContentLoaded", function () {
             email: document.body.querySelector("#usermail").value,
             telefon: document.body.querySelector("#usertel").value
         });
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:5500/php/confirm.php", true);
-        xhr.send(JSON.stringify(productes));
+        enviaJSONAServer();
     });
 })
+
+function enviaJSONAServer(productes) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:5500/php/confirm.php", true);
+    xhr.send(JSON.stringify(productes));
+}
