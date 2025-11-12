@@ -6,21 +6,41 @@
         padding: var(--space-md);
         width: fit-content;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex-direction: column;
         margin: var(--space-lg) var(--space-md) 0 0;
-    
+        width: 20%;
+
+        .descripcio {
+            font-size: var(--font-md);
+            margin-bottom: var(--space-md);
+            text-align: justify;
+        }
+
+        .preu-iva {
+            color: #6d8041;
+            font-weight: 800;
+            width: 100%;
+            text-align: right;
+        }
+
+        .iva {
+            font-size: 0.825rem;
+            color: black;
+            font-weight: normal;
+        }
 
         h5 {
-            font-size: var(--font-md);
+            font-size: 1.125rem;
             margin-bottom: var(--space-md);
         }
 
         img {
-            width: 10rem;
-            border: 1px solid var(--grey2);
-            padding: var(--space-md);
+            width: 100%;
+            padding: var(--space-sm);
+            background-color: #bec2c42c;
+            margin-bottom: var(--space-lg);
         }
     }
 }

@@ -14,5 +14,53 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+
+// https://codepen.io/webstuff/pen/JKgwZY// 
+
+// Add to cart 
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-cart') || e.target.closest('.btn-cart')) {
+    const button = e.target.closest('.btn-cart') || e.target;
+    button.classList.toggle('cart_clk');
+    const qty = button.parentElement.querySelector('.qty');
+    if (qty) {
+      qty.classList.toggle('active');
+    }
+  }
+});
+
+// Add num 
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('fa-plus-square') || e.target.closest('.inc')) {
+    const inc = e.target.closest('.inc');
+    const numSpan = inc.parentElement.querySelector('.num');
+    let prnum = parseInt(numSpan.textContent, 10);
+    prnum++;
+    numSpan.textContent = prnum;
+
+    const cartIcon = inc.closest('.crtdiv').querySelector('.fa-shopping-cart');
+    if (cartIcon) {
+      cartIcon.setAttribute('data-before', prnum);
+    }
+  }
+});
+
+// Reduce num
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('fa-minus-square') || e.target.closest('.dec')) {
+    const dec = e.target.closest('.dec');
+    const numSpan = dec.parentElement.querySelector('.num');
+    let prnum = parseInt(numSpan.textContent, 10);
+
+    if (prnum > 0) {
+      prnum--;
+      numSpan.textContent = prnum;
+
+      const cartIcon = dec.closest('.crtdiv').querySelector('.fa-shopping-cart');
+      if (cartIcon) {
+        cartIcon.setAttribute('data-before', prnum);
+      }
+    }
+
+  }
+});
