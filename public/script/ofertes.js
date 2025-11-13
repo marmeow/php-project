@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('1. DOM carregat ✓');
 
-    fetch('products/products.json')
+    fetch('../products/products.json')
         .then(response => {
             console.log('2. Fetch resposta:', response.status);
             response.text()
