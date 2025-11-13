@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(producte.imatge)
         let content = `
       <article class="product-card ${ofertaClass}" data-producte="${producte.nom}">
+
+      
         <img src="../resources/images/products/${imatgeUrl}" alt="${producte.nom}">
         <h5>${producte.nom}</h5>
         <p class="descripcio">${producte.descripció || producte.descripcio}</p>
@@ -186,15 +188,15 @@ document.addEventListener("DOMContentLoaded", () => {
 //https://www.w3schools.com/howto/howto_js_vertical_tabs.asp
 
 function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
