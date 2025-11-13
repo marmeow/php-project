@@ -91,31 +91,39 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(producte.imatge)
         let content = `
       <article class="product-card ${ofertaClass}" data-producte="${producte.nom}">
+        <div class="inner">
+
         <img src="../resources/images/products/${imatgeUrl}" alt="${producte.nom}">
-        <h5>${producte.nom}</h5>
-        <p class="descripcio">${producte.descripció || producte.descripcio}</p>
-        <div class="preu-oferta-container">
-          <p class="preu-iva"><span class="preu">${producte.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
-          <div class="oferta-badge">
-            ${producte.oferta ? 'Oferta!' : ''}
+          <h5>${producte.nom}</h5>
+          <p class="descripcio">${producte.descripció || producte.descripcio}</p>
+          <div class="preu-oferta-container">
+            <p class="preu-iva"><span class="preu">${producte.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
+            <div class="oferta-badge">
+              ${producte.oferta ? 'Oferta!' : ''}
+            </div>
           </div>
-        </div>
-        <div class="cont">
-          <div class="crtdiv">
-            <button type="button" class="cart btn-cart">
-              Afegir a la cistella
-            </button>
-            <span class="qty">
-              <span class="dec">
-                <i class="fa fa-minus" aria-hidden="true"></i>
+          <div class="cont">
+            <div class="crtdiv">
+              <button type="button" class="cart btn-cart">
+                Afegir a la cistella
+              </button>
+              <span class="qty">
+                <span class="dec">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </span>
+                <span class="num">1</span>
+                <span class="inc">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
               </span>
-              <span class="num">1</span>
-              <span class="inc">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </span>
-            </span>
+            </div>
           </div>
+
         </div>
+
+
+        
+
       </article>
     `;
 
@@ -186,15 +194,15 @@ document.addEventListener("DOMContentLoaded", () => {
 //https://www.w3schools.com/howto/howto_js_vertical_tabs.asp
 
 function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }

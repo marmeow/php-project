@@ -1,17 +1,22 @@
 .product-cards {
     flex-wrap: wrap;
-    align-items: stretch;
+    justify-content: stretch;
+
 
     .product-card {
-        border: 1px solid black;
-        padding: var(--space-md);
         width: fit-content;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        margin: var(--space-lg) var(--space-md) 0 0;
         width: 20%;
+
+        .inner {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: var(--space-md);
+
+            height: 100%;
+        }
 
         .descripcio {
             font-size: var(--font-md);
