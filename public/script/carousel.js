@@ -1,11 +1,11 @@
 window.onload = function () {
     // Variables
     const imagenes = [
-        'resources/images/principal/cafeteria-pequena.jpg',
+        'resources/images/principal/cafeteBenvinguts.jpg',
         'resources/images/principal/coffee.jpg',
-        'resources/images/principal/muffin.jpg',
-        'resources/images/principal/1943.jpg',
-        'resources/images/principal/coffeeWith.jpg'
+        'resources/images/principal/muffinOfertes.jpg',
+        'resources/images/principal/entrepans.jpg',
+        'resources/images/principal/coffeeU.jpg'
     ];
 
     const titulos = [
