@@ -2,16 +2,19 @@ window.onload = function () {
     // Variables
     const imagenes = [
         'resources/images/principal/cafeteria-pequena.jpg',
-        'resources/images/principal/bolleria_bod.jpg',
-        'resources/images/principal/cafetera-bar.jpg',
-        'resources/images/principal/desayunos.jpg'
+        'resources/images/principal/coffee.jpg',
+        'resources/images/principal/muffin.jpg',
+        'resources/images/principal/1943.jpg',
+        'resources/images/principal/coffeeWith.jpg'
     ];
 
     const titulos = [
         'Benvinguts al Gato Rumano',
-        'Bollería artesanal',
-        'Ofertes de la setmana',
-        'Desayunos deliciosos'
+        '',
+        'Gaudeix de les ofertes de la setmana',
+        '',
+        'La pausa perfecta amb un sabor autèntic',
+
     ];
 
     const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
@@ -36,6 +39,7 @@ window.onload = function () {
             posicionActual++;
         }
         renderizarImagen();
+        renderizarTitulo();
     }
 
     /**
@@ -48,6 +52,7 @@ window.onload = function () {
             posicionActual--;
         }
         renderizarImagen();
+        renderizarTitulo();
     }
 
     /**
@@ -67,33 +72,33 @@ window.onload = function () {
     /**
      * Activa el autoplay de la imagen
      */
-    function playIntervalo() {
+    /* function playIntervalo() {
         intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
         // Desactivamos los botones de control
         $botonAvanzar.setAttribute('disabled', true);
         $botonRetroceder.setAttribute('disabled', true);
         $botonPlay.setAttribute('disabled', true);
         $botonStop.removeAttribute('disabled');
-
-    }
+    } */
 
     /**
      * Para el autoplay de la imagen
      */
-    function stopIntervalo() {
+    /* function stopIntervalo() {
         clearInterval(intervalo);
         // Activamos los botones de control
         $botonAvanzar.removeAttribute('disabled');
         $botonRetroceder.removeAttribute('disabled');
         $botonPlay.removeAttribute('disabled');
         $botonStop.setAttribute('disabled', true);
-    }
+    } */
 
     // Eventos
     $botonAvanzar.addEventListener('click', pasarFoto);
     $botonRetroceder.addEventListener('click', retrocederFoto);
-    $botonPlay.addEventListener('click', playIntervalo);
-    $botonStop.addEventListener('click', stopIntervalo);
+    // $botonPlay.addEventListener('click', playIntervalo);
+    // $botonStop.addEventListener('click', stopIntervalo);
     // Iniciar
     renderizarImagen();
+    renderizarTitulo()
 }
