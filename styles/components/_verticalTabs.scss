@@ -4,7 +4,7 @@
     background-color: var(--green2);
     width: 10%;
     margin-bottom: var(--space-xxxxl);
-    margin-top: var(--space-xxl);
+    margin-top: var(--space-lg);
 
     button {
         display: block;
@@ -21,7 +21,7 @@
 
 
         &:hover {
-            background-color: #b2cc743f ;
+            background-color: #b2cc743f;
         }
 
         &.active {
@@ -37,15 +37,22 @@
     width: 90%;
     border-left: none;
     padding: 0 var(--space-xxl);
-    margin: var(--space-xxl) 0;
+    margin: var(--space-lg) 0;
 
-    h4{
+    h4 {
         font-size: var(--font-xl);
     }
 
     p {
         font-size: 1.125rem;
+
+        .tipus-entrepa {
+            font-style: italic;
+            font-weight: 600;
+        }
     }
+
+
 
     &#calents {
         display: none;
