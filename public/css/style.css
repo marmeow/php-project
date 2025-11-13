@@ -122,15 +122,44 @@ h6 {
   isolation: isolate;
 }
 
+/* @use "../abstracts/variables" as *; */
+#copyright-page .container {
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-inline: auto;
+  max-width: 1200px;
+  text-align: center;
+}
+#copyright-page .h1Copy {
+  color: var(--green1);
+  margin-bottom: var(--space-lg);
+}
+#copyright-page .copyright-content {
+  color: var(--grey2);
+  line-height: 1.6;
+}
+#copyright-page .h2Copy {
+  color: black;
+  font-size: var(--font-lg);
+  margin: var(--space-lg) 0 var(--space-md);
+}
+#copyright-page .pCopy {
+  margin-bottom: var(--space-md);
+  color: black;
+}
+#copyright-page .addressCopy {
+  font-style: normal;
+  color: var(--green1);
+}
+
 #product-page h1 {
   font-size: 4.125rem;
   text-shadow: 2px 2px 2px var(--grey1);
   padding: var(--space-lg);
-}
-
-#final {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 footer {
@@ -200,22 +229,24 @@ header .header-bottom {
 }
 
 #info-tiquet {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  grid-area: 1/2/2/3;
+  display: grid;
   padding: var(--space-sm);
 }
 #info-tiquet * {
   margin: var(--space-xxs);
 }
-#info-tiquet label {
+#info-tiquet #entra-carret {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-area: 1/2/2/3;
+  max-width: 600px;
+}
+#info-tiquet #entra-carret label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,7 +256,7 @@ header .header-bottom {
   gap: var(--space-xs);
   min-width: 80px;
 }
-#info-tiquet label input {
+#info-tiquet #entra-carret label input {
   border-radius: 10px;
   border: none;
   background-color: #f0f0f0;
@@ -234,18 +265,20 @@ header .header-bottom {
   -webkit-transition: background-color 0.3s, outline 0.3s;
   transition: background-color 0.3s, outline 0.3s;
 }
-#info-tiquet label input:focus {
+#info-tiquet #entra-carret label input:focus {
   background-color: white;
   border: 1px solid black;
   outline: none;
   padding: 5px;
 }
-#info-tiquet button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: var(--space-xs) var(--space-sm);
-  margin-top: var(--space-sm);
+#info-tiquet #entra-carret .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-xs);
+}
+#info-tiquet #entra-carret button {
+  padding: var(--space-xs);
   border: none;
   border-radius: 5px;
   background-color: var(--grey2);
@@ -254,7 +287,7 @@ header .header-bottom {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-#info-tiquet button:hover {
+#info-tiquet #entra-carret button:hover {
   background-color: var(--grey3);
   color: #000000;
 }
@@ -290,10 +323,11 @@ nav ul a {
   background-image: url(../../public/resources/images/club-sandwich.webp);
   color: white;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .logo img {
-  width: 15rem;
+  width: 14rem;
 }
 
 .min-60 {
