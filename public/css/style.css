@@ -281,7 +281,6 @@ nav ul a {
           flex-direction: column;
   margin: var(--space-lg) var(--space-md) 0 0;
   width: 20%;
-  height: 100%;
   /* AFEGEIX AQUEST CONTENIDOR */
   /* AFEGEIX AQUEST BADGE */
   /* AFEGEIX AQUEST BLOC */
@@ -293,7 +292,8 @@ nav ul a {
 }
 .product-cards .product-card .preu-oferta-container {
   width: 100%;
-  min-height: 50px; /* Alçada mínima fixa */
+  min-height: 50px;
+  /* Alçada mínima fixa */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,7 +311,8 @@ nav ul a {
   margin: 0;
 }
 .product-cards .product-card .oferta-badge {
-  min-height: 25px; /* Espai reservat sempre */
+  min-height: 25px;
+  /* Espai reservat sempre */
   color: #6d8041;
   font-weight: 600;
   font-size: 0.9rem;
@@ -502,4 +503,4 @@ footer #copyright {
 }
 #product-page #productes h2 {
   font-size: 2.75rem;
-}
+}/*# sourceMappingURL=style.css.map */

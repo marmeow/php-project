@@ -1,3 +1,4 @@
+
 // https://codepen.io/webstuff/pen/JKgwZY// 
 
 // Add to cart 
@@ -49,6 +50,9 @@ document.addEventListener('click', function (e) {
 });
 
 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   fetch('../products/products.json')
     .then(response => response.json())
@@ -83,11 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       function crearTarjetaProducte(producte) {
         const ofertaClass = producte.oferta ? 'oferta' : '';
-        const imatgeUrl = producte.imatge || 'placeholder.png';
-
-        return `
+        const imatgeUrl = producte.imatge || "placeholder.png";
+        console.log(producte.imatge)
+        let content = `
       <article class="product-card ${ofertaClass}" data-producte="${producte.nom}">
-        <img src="../resources/images/${imatgeUrl}" alt="${producte.nom}">
+        <img src="../resources/images/products/${imatgeUrl}" alt="${producte.nom}">
         <h5>${producte.nom}</h5>
         <p class="descripcio">${producte.descripció || producte.descripcio}</p>
         <div class="preu-oferta-container">
@@ -114,10 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </article>
     `;
+
+
+        return content;
       }
 
-      
-      
+
+
       // GENERAR!!!!!!!!!!!!!!! TODO ESTO LO METERÉ EN UNA FUNCION EN LUGAR DE DEJARLO SUELTO!!!!!!!!!!!!!!!!!! AÑADIRE TASCA AL JIRA MAÑANA!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
