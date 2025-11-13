@@ -26,10 +26,6 @@ while (file_exists($nomArxiu)) {
     $nomArxiu = "../tiquets/tiquet-" . $nom . "(" . $aux . ").txt";
 }
 
-if (!file_exists("../tiquets")) {
-    mkdir("../tiquets", 0777, true);
-}
-
 echo "Comprovant si el fitxer existeix: " . $nomArxiu . "\n";
 
 if (!file_exists($nomArxiu)) {
