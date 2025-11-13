@@ -39,7 +39,7 @@
             text-align: right;
             line-height: 8rem;
             margin-top: 10rem;
-            margin-right: 65px;
+            margin-right: var(--space-xxxl);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
@@ -75,10 +75,22 @@
                 }
             }
         }
+
+        #ofertes {
+            margin: var(--space-xl);
+            max-width: 98%;
+
+            h2 {
+                border-bottom: 5px solid var(--green1);
+            }
+
+        }
+
+
     }
 
     footer {
-        position: fixed;
+        //position: fixed;
         width: 100%;
         bottom: 0;
     }
