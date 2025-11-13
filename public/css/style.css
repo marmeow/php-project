@@ -305,14 +305,16 @@ footer nav ul li {
 }
 footer nav ul li a {
   display: inline-block;
-  color: white;
+  color: var(--green2);
 }
 footer #adreca-footer,
 footer #equip {
   font-size: var(--font-xs);
 }
-footer #copyright {
+footer #copyright,
+footer a {
   text-decoration: none;
+  color: var(--green2);
 }
 
 #header-top {
