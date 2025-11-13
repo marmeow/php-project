@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Renderitzar les cartes de productes amb oferta
-            const ofertContainer = document.querySelector('#ofertes');
-            if (ofertaContainer && productesCategories['ofert'].length > 0) {
+            const ofertContainer = document.querySelector('ofertes');
+            if (ofertContainer && productesCategories['ofert'].length > 0) {
                 ofertContainer.innerHTML = productesCategories['ofert']
                     .map(p => crearTarjetaProducte(p))
                     .join('');
