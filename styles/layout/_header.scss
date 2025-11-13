@@ -1,42 +1,59 @@
-@use "../abstracts/variables" as *;
+#header-top {
+    background-color: var(--grey1);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
 
-header {
-    background-color: #ebf6d1;
-    color: #658523;
-    display: flex;
-    position: sticky;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-sizing: content-box;
-
-    #header-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        a,
-        h1 {
-            display: inline-block;
-            margin: 0;
-        }
+    a {
+        color: white;
     }
+}
 
-    nav ul {
-        display: flex;
-        list-style: none;
-        gap: 15px;
+#header-bottom {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: var(--space-sm) var(--space-xxxxl);
+    box-shadow: 0px -1px 8px 0px var(--grey1);
+
+    ul {
 
         li {
-            display: inline-block;
+            margin-right: var(--space-lg);
 
             a {
+                font-size: 1.125rem;
+                text-decoration: none;
                 display: inline-block;
+                color: black;
+                border-bottom: 2px solid transparent;
+                transition: 0.2s ease all;
+
+                .fa-solid.fa-user.fa-lg {
+                    margin-left: 50px;
+                }
+
+                &:hover {
+                    color: var(--green1);
+                    font-weight: 700;
+                }
+            }
+
+
+
+            &.active-link {
+                a {
+                    color: var(--green1);
+                    font-weight: 800;
+                    border-bottom: 2px solid var(--green1);
+                }
             }
         }
     }
 
-    #carreto {
-        height: 40px;
-    }
+}
+
+#header-top,
+#header-bottom {
+    justify-content: space-between;
 }

@@ -7,11 +7,12 @@ nav {
         gap: 15px;
         display: flex;
         align-items: center;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+        }
     }
 
-    a {
-        text-decoration: none;
-        display: inline-block;
-        color: black;
-    }
 }

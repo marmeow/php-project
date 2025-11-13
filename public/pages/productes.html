@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato Rumano</title>
+    <link rel="shortcut icon" href="../resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="../script.js" defer></script>
+    <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body id="product-page">
+    <div class="container">
+
+
+        <header id="header-top" class="flex">
+            <p>Purr-fect food for a purr-fect time. </p>
+            <nav>
+                <ul>
+                    <li><a href="contacte.html">Ubicació i contacte</a></li>
+                    <li><a href="#">Fes-te soci!</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        <header id="header-bottom" class="flex">
+            <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                <input type="text" name="cercar" id="cercar">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active-link"><a href="#">Productes</a></li>
+                    <li><a href="administrar.html">Administració</a></li>
+                    <li><a href="contacte.html">Contacte</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+
+                    <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main>
+            <section id="banner">
+                <h1>La taula sempre<br>llesta per a <span>tu</span></h1>
+            </section>
+            <section id="productes">
+                <h2>Els nostres productes</h2>
+                <section id="entrepans">
+                    <h3>Entrepans</h3>
+                    <div class="tab">
+                        <button class="tablinks btnfreds active" onclick="openCity(event, 'freds')">Freds</button>
+                        <button class="tablinks btncalents" onclick="openCity(event, 'calents')">Calents</button>
+                    </div>
+
+                    <div id="freds" class="tabcontent">
+                        <h4>Freds</h4>
+                        <p>Els nostres entrepans <span class="tipus-entrepa">freds!</span></p>
+
+                        <div class="product-cards flex">
+
+                        </div>
+
+
+                    </div>
+                    <div id="calents" class="tabcontent">
+                        <h4>Calents</h4>
+                        <p>Els nostres entrepans <span class="tipus-entrepa">calents!</span></p>
+                    </div>
+                </section>
+
+                <section id="brioixeria">
+                    <h3>Brioixeria</h3>
+                    <div class="product-cards flex">
+
+
+                    </div>
+                </section>
+
+                <section id="snacks">
+                    <h3>Snacks</h3>
+                    <div class="product-cards flex">
+
+                    </div>
+                </section>
+
+
+                <section id="begudes">
+                    <h3>Begudes</h3>
+                    <div class="product-cards flex">
+
+
+                    </div>
+                </section>
+
+
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="pages/productes.html">Productes</a></li>
+                    <li><a href="pages/administrar.html">Administració</a></li>
+                    <li><a href="pages/contacte.html">Contacte</a></li>
+                </ul>
+            </nav>
+            <div id="copyright">
+                <a href="./copyright.html">&copy; Copyright. All Rights Reserved</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

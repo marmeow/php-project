@@ -1,0 +1,8 @@
+{
+    "nom_client": "",
+    "email_client": "",
+    "telefon_client": "",
+    "productes": [
+        { "nom": "aigua", "preu": 160, "quantitat": 1 }
+    ]
+}
