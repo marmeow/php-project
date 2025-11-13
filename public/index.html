@@ -13,46 +13,54 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <script src="script.js" defer></script>
+    <script src="carousel.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
-
-
-
 </head>
 
 <body id="main-page">
     <div class="container">
+        <header id="header-top" class="flex">
+            <p>Purr-fect food for a purr-fect time. </p>
+            <nav>
+                <ul>
+                    <li><a href="contacte.html">Ubicació i contacte</a></li>
+                    <li><a href="#">Fes-te soci!</a></li>
 
-
-        <header class="main-header">
-            <div class="header-top flex">
-                <p>Purr-fect food for a purr-fect time. </p>
-                <nav>
-                    <ul>
-                        <li><a href="pages/contacte.html">Ubicació i contacte</a></li>
-                        <li><a href="#">Fes-te soci!</a></li>
-                        <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
-                    </ul>
-                </nav>
+                </ul>
+            </nav>
+        </header>
+        <header id="header-bottom" class="flex">
+            <a class="logo" href="#"><img src="resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                <input type="text" name="cercar" id="cercar">
             </div>
-            <div class="header-bottom flex">
-                <a class="logo" href="#"><img src="resources/images/logo.png" alt="Logo El Gato Rumano"></a>
-                <nav>
-                    <ul>
-                        <li class="active-link"><a href="#">Home</a></li>
-                        <li><a href="pages/productes.html">Productes</a></li>
-                        <li><a href="pages/administrar.html">Administració</a></li>
-                        <li><a href="pages/contacte.html">Contacte</a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
-                            <input type="text" name="cercar" id="cercar">
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+                <ul>
+                    <li class="active-link"><a href="#">Home</a></li>
+                    <li><a href="pages/productes.html">Productes</a></li>
+                    <li><a href="pages/administrar.html">Administració</a></li>
+                    <li><a href="pages/contacte.html">Contacte</a></li>
+                    <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                </ul>
+            </nav>
         </header>
 
-        <section><!--Seguir aqui-->
+        <section id="carousel"><!--Seguir aqui-->
+            <div class="carousel">
+                <button class="botonFlecha retroceder"><img src="resources/icons/left-arrow.png"
+                        alt="previous pic"></button>
+                <div id="imagen"></div>
+                <div id="imageCover"></div>
+                <h1 id="titulos"></h1>
 
+                <button class="botonFlecha avanzar"><img src="resources/icons/right-arrow.png" alt="next pic"></button>
+            </div>
+            <!-- <div class="controles">
+                <button id="play">Play</button>
+                <button id="stop" disabled>Stop</button>
+            </div> -->
         </section>
 
         <footer>
