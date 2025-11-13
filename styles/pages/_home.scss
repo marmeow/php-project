@@ -88,8 +88,9 @@
     }
 
     footer {
-        //position: fixed;
-        width: 98%;
+        position: sticky;
+        width: auto;
+
         bottom: 0;
     }
 

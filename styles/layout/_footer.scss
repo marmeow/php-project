@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 footer {
-    background-color: var(--grey2);
+    background-color: var(--grey1);
     color: var(--green2);
     display: flex;
     position: sticky;
@@ -32,11 +32,18 @@ footer {
 
             a {
                 display: inline-block;
+                color: white
             }
         }
     }
 
+    #adreca-footer,
+    #equip {
+        font-size: var(--font-xs);
+    }
+
     #copyright {
         text-decoration: none;
+        color: var(--green2);
     }
 }
