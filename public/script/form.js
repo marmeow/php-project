@@ -3,9 +3,17 @@
 */
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#envia-form");
+    console.log("Arriba el event listener del form");
+    this.localStorage.setItem("productes", JSON.stringify({
+        "productes": [
+            { "nom": "aigua", "preu": 160, "quantitat": 1 }
+        ]
+    }));
     carret.addEventListener("submit", function (e) {
+        console.log("Arriba el submit del form");
         e.preventDefault();
-        const productes = JSON.parse(localStorage.getItem("productes"))
+        const productes = JSON.parse(localStorage.getItem("productes"));
+        console.log(productes);
         productes.push({
             nom: document.body.querySelector("#username").value,
             email: document.body.querySelector("#usermail").value,
