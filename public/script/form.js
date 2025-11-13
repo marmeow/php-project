@@ -3,23 +3,13 @@
 */
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
-    console.log("Arriba el event listener del form");
-    this.localStorage.setItem("productes", JSON.stringify({
-        "productes": [
-            { "nom": "aigua", "preu": 160, "quantitat": 1 }
-        ]
-    }));
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
     carret.addEventListener("submit", function (e) {
-        debugger;
-        console.log("Arriba el submit del form");
         e.preventDefault();
-        console.log(carretData);
         alert("Enviant dades al servidor...");
         carretData.nom = document.getElementById("username").value;
         carretData.adreca = document.getElementById("usermail").value;
         carretData.telefon = document.getElementById("usertel").value;
-        alert(JSON.stringify(carretData));
         enviaJSONAServer(carretData);
     });
 })
@@ -51,5 +41,4 @@ function enviaJSONAServer(tiquet) {
     xhr.open("POST", "/php-project/php/confirm.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(tiquet));
-    console.log("Enviant:", JSON.stringify(tiquet));
 }

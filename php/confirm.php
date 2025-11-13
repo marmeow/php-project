@@ -1,11 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-echo "Iniciant confirmació...\n";
 $json = file_get_contents('php://input');
-error_log("JSON rebut: " . $json);
-echo "JSON rebut: " . $json . "\n";
-
 $data = json_decode($json, true);
 
 if (!$data) {
@@ -30,8 +26,6 @@ while (file_exists($nomArxiu)) {
     $nomArxiu = "../tiquets/tiquet-" . $nom . "(" . $aux . ").txt";
 }
 
-echo "Nom d'arxiu final: " . $nomArxiu . "\n";
-
 if (!file_exists("../tiquets")) {
     mkdir("../tiquets", 0777, true);
 }
@@ -39,8 +33,6 @@ if (!file_exists("../tiquets")) {
 echo "Comprovant si el fitxer existeix: " . $nomArxiu . "\n";
 
 if (!file_exists($nomArxiu)) {
-    echo "Creant fitxer: " . $nomArxiu . "\n";
-
     // Intentar crear el archivo
     $arxiu = fopen($nomArxiu, "w");
 
@@ -54,7 +46,6 @@ if (!file_exists($nomArxiu)) {
         exit;
     }
 
-    echo "Escrivint dades a l'arxiu...\n";
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     $bytes = fwrite($arxiu, $jsonData);
 
@@ -64,9 +55,7 @@ if (!file_exists($nomArxiu)) {
         exit;
     }
 
-    echo "Escrits " . $bytes . " bytes.\n";
     fclose($arxiu);
-    echo "Fitxer creat amb èxit: " . $nomArxiu . "\n";
     echo json_encode(["success" => true, "file" => $nomArxiu, "bytes" => $bytes]);
 } else {
     echo json_encode(["error" => "El fitxer ja existeix"]);
