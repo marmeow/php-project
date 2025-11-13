@@ -1,29 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('1. DOM carregat ✓');
 
-    fetch('../products/products.json')
+    fetch('./products/products.json')
         .then(response => {
-            console.log('2. Fetch resposta:', response.status);
-            response.text()
+            console.log('2. Resposta rebuda:', response.status);
+            return response.json();
         })
         .then(datos => {
-            console.log('3. Dades rebudes:', datos);
-            console.log('DADES COMPLETES:', datos);
-            console.log('Tipus de dades:', typeof datos);
-            console.log('És array?', Array.isArray(datos));
+            console.log('3. Estructura de datos:', datos);
+            console.log('3b. Tipus de datos:', typeof datos, Array.isArray(datos));
 
-            //agupar productes categories
+            // Si datos és un objecte amb una propietat "products":
+            const productes = datos.products || datos.productes || datos;
+
             const productesCategories = {
                 'ofert': []
             };
 
-            //Omplir arrays categories amb productes que tinguin ofertes
-            datos.forEach(producte => {
+            productes.forEach(producte => {
                 if (producte.oferta === true) {
                     productesCategories['ofert'].push(producte);
                 }
             });
 
+            console.log('4. Productes amb oferta:', productesCategories['ofert']);
 
             function crearTarjetaProducte(producte) {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
