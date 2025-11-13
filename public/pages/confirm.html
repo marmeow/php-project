@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato Rumano</title>
+    <link rel="shortcut icon" href="../resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="../script/form.js" defer></script>
+    <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-top flex">
+            <p>Purr-fect food for a purr-fect time. </p>
+            <nav>
+                <ul>
+                    <li><a href="contacte.html">Ubicació i contacte</a></li>
+                    <li><a href="#">Fes-te soci!</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-bottom flex">
+            <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active-link"><a href="productes.html">Productes</a></li>
+                    <li><a href="administrar.html">Administració</a></li>
+                    <li><a href="contacte.html">Contacte</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
+                        <input type="text" name="cercar" id="cercar">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="final">
+        <fieldset id="info-tiquet">
+            <div class="tiquet-final">
+                <p>Hola</p>
+            </div>
+            <form action="#" method="post" id="entra-carret">
+                <div id="user-info">
+                    <label for="nom">
+                        <span class="min-60">Nom:</span>
+                        <input type="text" name="nom" id="username" required>
+                    </label>
+                    <label for="email">
+                        <span class="min-60">Email:</span>
+                        <input type="email" name="email" id="usermail">
+                    </label>
+                    <label for="telefon">
+                        <span class="min-60">Telèfon:</span>
+                        <input type="tel" name="telefon" id="usertel" pattern="[0-9]{9}">
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="reset">Esborra</button>
+                    <button type="submit">Envia</button>
+                </div>
+            </form>
+        </fieldset>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./product.html">Products</a></li>
+            </ul>
+        </nav>
+        <div id="copyright">
+            <a href="./copyright.html">&copy; Copyright. All Rights Reserved</a>
+        </div>
+    </footer>
+</body>
+
+</html>

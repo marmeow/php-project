@@ -1,14 +1,8 @@
 {
+    "nom_client": "",
+    "email_client": "",
+    "telefon_client": "",
     "productes": [
-        {
-            "nom": "aigua",
-            "preu": 160,
-            "quantitat": 1
-        },
-        {
-            "nom": "llimonada",
-            "preu": "10",
-            "quantitat": 1
-        }
+        { "nom": "aigua", "preu": 160, "quantitat": 1 }
     ]
 }
