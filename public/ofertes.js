@@ -1,19 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('1. DOM carregat ✓');
 
-    fetch('../products/products.json')
+    fetch('products/products.json')
         .then(response => {
             console.log('2. Fetch resposta:', response.status);
-            response.json()
+            response.text()
         })
         .then(datos => {
+            console.log('3. Dades rebudes:', datos);
+            console.log('DADES COMPLETES:', datos);
+            console.log('Tipus de dades:', typeof datos);
+            console.log('És array?', Array.isArray(datos));
+
             //agupar productes categories
             const productesCategories = {
                 'ofert': []
             };
 
             //Omplir arrays categories amb productes que tinguin ofertes
-            datos.productes.forEach(producte => {
+            datos.forEach(producte => {
                 if (producte.oferta === true) {
                     productesCategories['ofert'].push(producte);
                 }
