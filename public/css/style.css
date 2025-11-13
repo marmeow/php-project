@@ -275,7 +275,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  padding: var(--space-xs);
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
@@ -313,7 +313,6 @@ footer #equip {
 }
 footer #copyright {
   text-decoration: none;
-  color: var(--green2);
 }
 
 #header-top {

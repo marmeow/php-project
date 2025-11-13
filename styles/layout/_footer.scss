@@ -7,7 +7,7 @@ footer {
     position: sticky;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: var(--space-xs);
     box-sizing: content-box;
 
     #header-logo {
@@ -44,6 +44,5 @@ footer {
 
     #copyright {
         text-decoration: none;
-        color: var(--green2);
     }
 }
