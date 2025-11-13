@@ -7,7 +7,7 @@ footer {
     position: sticky;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: var(--space-xs);
     box-sizing: content-box;
 
     #header-logo {
@@ -32,11 +32,19 @@ footer {
 
             a {
                 display: inline-block;
+                color: var(--green2);
             }
         }
     }
 
-    #copyright {
+    #adreca-footer,
+    #equip {
+        font-size: var(--font-xs);
+    }
+
+    #copyright,
+    a {
         text-decoration: none;
+        color: var(--green2);
     }
 }
