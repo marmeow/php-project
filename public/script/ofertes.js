@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const h3Section = document.createElement('h3');
                 h3Section.id = 'h3' + categoria;
-                h3Section.textContent = categoria;
+                h3Section.textContent = categoria[0].toUpperCase() + categoria.substring(1);
 
                 //Afegir tots els elements
                 sectionCategoria.appendChild(h3Section);
