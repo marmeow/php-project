@@ -242,6 +242,18 @@ h6 {
 #main-page #carousel #ofertes #begudes #h3begudes {
   border-bottom: 3px solid var(--grey1);
 }
+#main-page #carousel #ofertes #h3entrepans {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3brioixeria {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3snacks {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3fruita {
+  border-bottom: 3px solid var(--grey1);
+}
 #main-page #carousel #ofertes .ofertProduct {
   display: inline-block;
   border: 1px solid var(--grey1);
