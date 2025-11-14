@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const productesCategories = {
                 'ofert': [],
-                'ofertCategoria': []
+                'ofertCategoria': {}
             };
 
             productes.forEach(producte => {
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.classList.add('ofertProduct');
 
                 //Crear cada element dins de l'article
-                const h3 = document.createElement('h3');
-                h3.id = 'nomProducte';
-                h3.textContent = producte.nom;
+                const h4 = document.createElement('h4');
+                h4.id = 'nomProducte';
+                h4.textContent = producte.nom;
 
                 const pDescripcio = document.createElement('p');
                 pDescripcio.id = 'descripcioProducte';
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 pDesc.textContent = "Gaudeix del 20% de descompte";
 
                 //Afegir tots els elements a l'article
-                articleOfertes.appendChild(h3);
+                articleOfertes.appendChild(h4);
                 articleOfertes.appendChild(pDescripcio);
                 articleOfertes.appendChild(pPreuAbans);
                 articleOfertes.appendChild(pPreuDescompte);
@@ -72,18 +72,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //Crear el section
                 const sectionCategoria = document.createElement('section');
-                sectionCategoria.id();
+                sectionCategoria.id = categoria;
 
+                const h3Section = document.createElement('h3');
+                h3Section.id = 'h3Categoria';
+                h3Section.textContent = categoria;
 
+                //Afegir tots els elements
+                sectionCategoria.appendChild(h3Section);
+                ofert.appendChild(sectionCategoria);
             }
 
-            console.log(productesCategories['ofertCategoria'].length);
-
-            const categories = productesCategories['ofertCategoria'].keys();
-            for (let categoria of categories) {
+            for (const [categoria, value] of Object.entries(productesCategories['ofertCategoria'])) {
                 crearSectionCategoria(categoria);
             }
-            console.log("fgesdtwertwer");
+
             // Renderitzar les cartes de productes amb oferta
             const ofertContainer = document.querySelector('#ofertes');
             if (ofertContainer && productesCategories['ofert'].length > 0) {
