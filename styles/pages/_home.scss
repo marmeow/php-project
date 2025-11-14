@@ -101,6 +101,7 @@
                     padding-bottom: var(--space-xs);
                 }
 
+
                 #descripcioProducte {
                     padding: var(--space-lg) 0;
                 }
@@ -108,6 +109,11 @@
                 #preuDescompte {
                     color: var(--green1);
                     font-weight: bold;
+                }
+
+                #percent {
+                    padding-top: var(--space-xl);
+                    font-size: var(--font-xl);
                 }
             }
 

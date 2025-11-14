@@ -253,6 +253,10 @@ h6 {
   color: var(--green1);
   font-weight: bold;
 }
+#main-page #carousel #ofertes .ofertProduct #percent {
+  padding-top: var(--space-xl);
+  font-size: var(--font-xl);
+}
 
 #product-page h1 {
   font-size: 4.125rem;

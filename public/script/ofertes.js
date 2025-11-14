@@ -44,11 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 pPreuDescompte.id = 'preuDescompte';
                 pPreuDescompte.textContent = `Ara: ${(producte.preu * 0.8).toFixed(2)} €`;
 
+                const pDesc = document.createElement('p');
+                pDesc.id = 'percent';
+                pDesc.textContent = "Gaudeix d'un 20% menys";
+
                 //Afegir tots els elements a l'article
                 articleOfertes.appendChild(h3);
                 articleOfertes.appendChild(pDescripcio);
                 articleOfertes.appendChild(pPreuAbans);
                 articleOfertes.appendChild(pPreuDescompte);
+                articleOfertes.appendChild(pDesc);
                 ofert.appendChild(articleOfertes);
             }
 
