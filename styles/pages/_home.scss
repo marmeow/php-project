@@ -81,7 +81,8 @@
             max-width: 98%;
             display: block;
 
-            h2 {
+            #titolOfertes {
+                font-size: var(--font-xxl);
                 border-bottom: 5px solid var(--green1);
 
             }
@@ -91,7 +92,7 @@
                 border: 1px solid var(--grey1);
                 padding: var(--space-md);
                 width: 25rem;
-                height: 30rem;
+                height: 100%;
                 margin: var(--space-lg) var(--space-xl);
                 text-align: center;
 
@@ -109,6 +110,7 @@
 
                 #descripcioProducte {
                     padding: var(--space-lg) 0;
+                    height: 108px;
                 }
 
                 #preuDescompte {

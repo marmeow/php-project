@@ -8,11 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const productes = datos.products || datos.productes || datos;
 
             const productesCategories = {
-                'ofert': []
+                'ofert': [],
+                'ofertCategoria': []
             };
 
             productes.forEach(producte => {
                 if (producte.oferta === true) {
+                    let categoria = producte.categoria;
+                    if (!categoria in productesCategories['ofertCategoria']) {
+
+                    }
                     productesCategories['ofert'].push(producte);
                 }
             });
