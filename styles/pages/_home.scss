@@ -80,7 +80,6 @@
             margin: var(--space-xl);
             max-width: 98%;
             display: block;
-            flex-wrap: wrap;
 
             h2 {
                 border-bottom: 5px solid var(--green1);
@@ -88,6 +87,12 @@
 
             .ofertProduct {
                 display: inline-block;
+                border: 1px solid var(--grey1);
+                padding: var(--space-md);
+                width: 25rem;
+                height: 30rem;
+                margin: var(--space-lg) var(--space-xl);
+                text-align: center;
                 /* border: 2px solid var(--green1);
             border-radius: 10px;
             padding: var(--space-md);
