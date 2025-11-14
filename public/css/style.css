@@ -3,7 +3,7 @@
   --grey1: #545F66;
   --grey2: #829399;
   --green1: #B1CC74;
-  --green2: #ebf6d1;
+  --green2: #E8FCC2;
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
   --font-general: "Montserrat", sans-serif;
@@ -159,7 +159,7 @@ h6 {
 }
 #copyright-page footer {
   position: fixed;
-  width: 100%;
+  width: 99.3%;
   bottom: 0;
 }
 
@@ -227,13 +227,72 @@ h6 {
 #main-page #carousel #ofertes {
   margin: var(--space-xl);
   max-width: 98%;
+  display: block;
 }
-#main-page #carousel #ofertes h2 {
+#main-page #carousel #ofertes #titolOfertes {
+  font-size: var(--font-xxl);
   border-bottom: 5px solid var(--green1);
 }
-#main-page footer {
-  width: 98%;
-  bottom: 0;
+#main-page #carousel #ofertes .seccioCategoria {
+  font-size: var(--font-xl);
+}
+#main-page #carousel #ofertes #begudes {
+  padding-top: 20px;
+}
+#main-page #carousel #ofertes #begudes #h3begudes {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3entrepans {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3brioixeria {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3snacks {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3fruita {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct {
+  display: inline-block;
+  border: 1px solid var(--grey1);
+  padding: var(--space-md);
+  width: 25rem;
+  height: 100%;
+  margin: var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+#main-page #carousel #ofertes .ofertProduct #nomProducte {
+  font-size: var(--font-xxl);
+  border-bottom: 2px solid var(--green1);
+  padding-bottom: var(--space-xs);
+}
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte,
+#main-page #carousel #ofertes .ofertProduct #preuAbans,
+#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+  font-size: var(--font-lg);
+}
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte {
+  padding: var(--space-lg) 0;
+  height: 108px;
+}
+#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+  color: var(--green1);
+  font-weight: bold;
+}
+#main-page #carousel #ofertes .ofertProduct #preuDescompte:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
+#main-page #carousel #ofertes .ofertProduct #percent {
+  padding-top: var(--space-xxxl);
+  font-size: var(--font-xxl);
+  color: var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct #percent:hover {
+  color: var(--green1);
+  font-weight: bold;
 }
 
 #product-page h1 {
@@ -262,7 +321,7 @@ h6 {
 }
 
 footer {
-  background-color: var(--grey2);
+  background-color: var(--grey1);
   color: var(--green2);
   display: -webkit-box;
   display: -ms-flexbox;
