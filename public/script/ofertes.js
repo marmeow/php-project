@@ -15,12 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
             productes.forEach(producte => {
                 if (producte.oferta === true) {
                     let categoria = producte.categoria;
-                    if (!categoria in productesCategories['ofertCategoria']) {
-
+                    if (!(categoria in productesCategories['ofertCategoria'])) {
+                        productesCategories['ofertCategoria'][categoria] = [];
                     }
+
                     productesCategories['ofert'].push(producte);
+                    productesCategories['ofertCategoria'][categoria].push(producte);
                 }
             });
+
+            console.log(productesCategories);
 
             function crearTarjetaProducte(producte) {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
@@ -61,6 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.appendChild(pDesc);
                 ofert.appendChild(articleOfertes);
             }
+
+            function crearSectionCategoria(categoria) {
+
+            }
+
+            productesCategories['ofertCategoria'].map(_, c => crearSectionCategoria(c)).join('');
 
             // Renderitzar les cartes de productes amb oferta
             const ofertContainer = document.querySelector('#ofertes');
