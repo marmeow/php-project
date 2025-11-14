@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 return `
                     <article class="ofertProduct"> 
+                        <h2> Ofertes de la setmana! </h2>
                         <h3> ${producte.nom} </h3>
                         <p> ${producte.descripció || producte.descripcio} </p>
                         <p class="preu-antiga"> Preu Antic: ${(producte.preu).toFixed(2)} € </p>
