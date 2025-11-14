@@ -87,6 +87,19 @@
 
             }
 
+            .seccioCategoria {
+                font-size: var(--font-xl);
+            }
+
+            #begudes {
+                padding-top: 20px;
+
+                #h3begudes {
+                    border-bottom: 3px solid var(--grey1);
+
+                }
+            }
+
             .ofertProduct {
                 display: inline-block;
                 border: 1px solid var(--grey1);

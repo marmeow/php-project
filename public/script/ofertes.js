@@ -73,9 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 //Crear el section
                 const sectionCategoria = document.createElement('section');
                 sectionCategoria.id = categoria;
+                sectionCategoria.className = "seccioCategoria";
 
                 const h3Section = document.createElement('h3');
-                h3Section.id = 'h3Categoria';
+                h3Section.id = 'h3' + categoria;
                 h3Section.textContent = categoria;
 
                 //Afegir tots els elements
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Renderitzar les cartes de productes amb oferta
             const ofertContainer = document.querySelector('#ofertes');
             if (ofertContainer && productesCategories['ofert'].length > 0) {
-                productesCategories['ofert'].map(producte => crearTarjetaProducte(producte, 'ofertes'));
+                productesCategories['ofert'].map(producte => crearTarjetaProducte(producte, producte.categoria));
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
