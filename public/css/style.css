@@ -256,6 +256,17 @@ h6 {
       color: var(--grey2);
   } */
 }
+#main-page #carousel #ofertes .ofertProduct #nomProducte {
+  font-size: var(--font-xxl);
+  border-bottom: 2px solid var(--green1);
+  padding-bottom: var(--space-xs);
+}
+#main-page #carousel #ofertes .ofertProduct p {
+  color: var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte {
+  padding: var(--space-lg) 0;
+}
 
 #product-page h1 {
   font-size: 4.125rem;
