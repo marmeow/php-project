@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log(productesCategories);
 
-            function crearTarjetaProducte(producte) {
+            function crearTarjetaProducte(producte, idDesti) {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
                 const imatgeUrl = producte.imatge || 'placeholder.png';
 
-                const ofert = document.querySelector('#ofertes');
+                const ofertContenidor = document.querySelector('#' + idDesti);
 
                 //Crear element article per cada producte amb oferta
                 const articleOfertes = document.createElement('article');
@@ -63,21 +63,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.appendChild(pPreuAbans);
                 articleOfertes.appendChild(pPreuDescompte);
                 articleOfertes.appendChild(pDesc);
-                ofert.appendChild(articleOfertes);
+                ofertContenidor.appendChild(articleOfertes);
             }
 
             function crearSectionCategoria(categoria) {
+                console.log(categoria);
+                const ofert = document.querySelector('#ofertes');
+
+                //Crear el section
+                const sectionCategoria = document.createElement('section');
+                sectionCategoria.id();
+
 
             }
 
-            productesCategories['ofertCategoria'].map(_, c => crearSectionCategoria(c)).join('');
+            console.log(productesCategories['ofertCategoria'].length);
 
+            const categories = productesCategories['ofertCategoria'].keys();
+            for (let categoria of categories) {
+                crearSectionCategoria(categoria);
+            }
+            console.log("fgesdtwertwer");
             // Renderitzar les cartes de productes amb oferta
             const ofertContainer = document.querySelector('#ofertes');
             if (ofertContainer && productesCategories['ofert'].length > 0) {
-                ofertContainer.append(productesCategories['ofert']
-                    .map(p => crearTarjetaProducte(p))
-                    .join(''));
+                productesCategories['ofert'].map(producte => crearTarjetaProducte(producte, 'ofertes'));
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
