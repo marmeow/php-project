@@ -21,6 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
                 const imatgeUrl = producte.imatge || 'placeholder.png';
 
+                const ofert = document.querySelector('#ofertes');
+
+                //Crear element article per cada producte amb oferta
+                const articleOfertes = document.createElement('article');
+                articleOfertes.classList.add('ofertProduct');
+
+                //Crear cada element dins de l'article
+                const h3 = document.createElement('h3');
+                h3.id = 'nomProducte';
+                h3.textContent = producte.nom;
+
+                const pDescripcio = document.createElement('p');
+                pDescripcio.id = 'descripcioProducte';
+                pDescripcio.textContent = producte.descripció || producte.descripcio;
+
+                const pPreuAbans = document.createElement('p');
+                pPreuAbans.id = 'preuAbans';
+                pPreuAbans.textContent = `Abans: ${(producte.preu).toFixed(2)} €`;
+
+                const pPreuDescompte = document.createElement('p');
+                pPreuDescompte.id = 'preuDescompte';
+                pPreuDescompte.textContent = `Ara: ${(producte.preu * 0.8).toFixed(2)} €`;
+
+                //Afegir tots els elements a l'article
+                articleOfertes.appendChild(h3);
+                articleOfertes.appendChild(pDescripcio);
+                articleOfertes.appendChild(pPreuAbans);
+                articleOfertes.appendChild(pPreuDescompte);
+                ofert.appendChild(articleOfertes);
                 return `
                     <article class="ofertProduct"> 
                         <h3> ${producte.nom} </h3>
@@ -33,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Renderitzar les cartes de productes amb oferta
             const ofertContainer = document.querySelector('#ofertes');
             if (ofertContainer && productesCategories['ofert'].length > 0) {
-                ofertContainer.appendChild(productesCategories['ofert']
+                ofertContainer.append(productesCategories['ofert']
                     .map(p => crearTarjetaProducte(p))
                     .join(''));
                 /* ofertContainer.innerHTML = productesCategories['ofert']
