@@ -101,6 +101,11 @@
                     padding-bottom: var(--space-xs);
                 }
 
+                #descripcioProducte,
+                #preuAbans,
+                #preuDescompte {
+                    font-size: var(--font-lg);
+                }
 
                 #descripcioProducte {
                     padding: var(--space-lg) 0;
@@ -109,11 +114,22 @@
                 #preuDescompte {
                     color: var(--green1);
                     font-weight: bold;
+
+                    &:hover {
+                        text-decoration: underline;
+                        font-weight: 900;
+                    }
                 }
 
                 #percent {
-                    padding-top: var(--space-xl);
-                    font-size: var(--font-xl);
+                    padding-top: var(--space-xxxl);
+                    font-size: var(--font-xxl);
+                    color: var(--grey1);
+
+                    &:hover {
+                        color: var(--green1);
+                        font-weight: bold;
+                    }
                 }
             }
 

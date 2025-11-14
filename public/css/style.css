@@ -246,6 +246,11 @@ h6 {
   border-bottom: 2px solid var(--green1);
   padding-bottom: var(--space-xs);
 }
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte,
+#main-page #carousel #ofertes .ofertProduct #preuAbans,
+#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+  font-size: var(--font-lg);
+}
 #main-page #carousel #ofertes .ofertProduct #descripcioProducte {
   padding: var(--space-lg) 0;
 }
@@ -253,9 +258,18 @@ h6 {
   color: var(--green1);
   font-weight: bold;
 }
+#main-page #carousel #ofertes .ofertProduct #preuDescompte:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
 #main-page #carousel #ofertes .ofertProduct #percent {
-  padding-top: var(--space-xl);
-  font-size: var(--font-xl);
+  padding-top: var(--space-xxxl);
+  font-size: var(--font-xxl);
+  color: var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct #percent:hover {
+  color: var(--green1);
+  font-weight: bold;
 }
 
 #product-page h1 {

@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const pDesc = document.createElement('p');
                 pDesc.id = 'percent';
-                pDesc.textContent = "Gaudeix d'un 20% menys";
+                pDesc.textContent = "Gaudeix del 20% de descompte";
 
                 //Afegir tots els elements a l'article
                 articleOfertes.appendChild(h3);
