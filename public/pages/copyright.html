@@ -12,30 +12,33 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <header class="main-header">
-        <div class="header-top flex">
-            <p>Purr-fect food for a purr-fect time. </p>
-            <nav>
-                <ul>
-                    <li><a href="pages/contacte.html">Ubicació i contacte</a></li>
-                    <li><a href="#">Fes-te soci!</a></li>
-                    <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
-                </ul>
-            </nav>
+<body id="copyright-page">
+    <header id="header-top" class="flex">
+        <p>Purr-fect food for a purr-fect time. </p>
+        <nav>
+            <ul>
+                <li><a href="contacte.html">Ubicació i contacte</a></li>
+                <li><a href="#">Fes-te soci!</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <header id="header-bottom" class="flex">
+        <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            <input type="text" name="cercar" id="cercar">
         </div>
-        <div class="header-bottom flex">
-            <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="pages/productes.html">Productes</a></li>
-                    <li><a href="pages/administrar.html">Administració</a></li>
-                    <li><a href="pages/contacte.html">Contacte</a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li class="active-link"><a href="#">Home</a></li>
+                <li><a href="pages/productes.html">Productes</a></li>
+                <li><a href="pages/administrar.html">Administració</a></li>
+                <li><a href="pages/contacte.html">Contacte</a></li>
+                <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container">
@@ -78,8 +81,19 @@
                 <li><a href="pages/contacte.html">Contacte</a></li>
             </ul>
         </nav>
+        <div id="adreca-footer">
+            <p>El Gato Rumano</p>
+            <p>Riera de Cirera, 57</p>
+            <p>08304 Mataró, Barcelona</p>
+        </div>
+        <div id="equip">
+            <p>Equip El Gato Rumano</p>
+            <p>Mar Fernandez Vidal</p>
+            <p>Alex Potlog Potlog</p>
+            <p>Marta Llabrés Roldós</p>
+        </div>
         <div id="copyright">
-            <a href="./copyright.html">&copy; Copyright. All Rights Reserved</a>
+            <a href="pages/copyright.html">&copy; Copyright. All Rights Reserved</a>
         </div>
     </footer>
 </body>
