@@ -1,3 +1,5 @@
+//document.addEventListener("DOMContentLoaded", () => {}
+
 window.onload = function () {
     // Variables
     const imagenes = [
@@ -17,14 +19,14 @@ window.onload = function () {
 
     ];
 
-    const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+    //const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
     let posicionActual = 0;
     let $botonRetroceder = document.querySelector('.retroceder');
     let $botonAvanzar = document.querySelector('.avanzar');
     let $imagen = document.querySelector('#imagen');
     let $titulo = document.querySelector('#titulos');
-    let $botonPlay = document.querySelector('#play');
-    let $botonStop = document.querySelector('#stop');
+    /* let $botonPlay = document.querySelector('#play');
+    let $botonStop = document.querySelector('#stop');*/
     let intervalo;
 
     // Funciones
@@ -70,6 +72,21 @@ window.onload = function () {
     }
 
     /**
+     * Funció que permet iniciar el carrousel de forma automàtica
+     */
+    function iniciarAutomatic() {
+        intervalo = setInterval(pasarFoto, 3000); // 3000 minisegons = 3 segons
+    }
+
+    /**
+     *  Funció que permet parar el carrousel quan faig click a les fletxes,
+     *  per tant, aquesta funció s'haurà de cridar als eventListener dels botons.
+     */
+    function pararAutomatic() {
+        clearInterval(intervalo);
+    }
+
+    /**
      * Activa el autoplay de la imagen
      */
     /* function playIntervalo() {
@@ -94,11 +111,20 @@ window.onload = function () {
     } */
 
     // Eventos
-    $botonAvanzar.addEventListener('click', pasarFoto);
-    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonAvanzar.addEventListener('click', () => {
+        pasarFoto();
+        pararAutomatic();
+    });
+
+    $botonRetroceder.addEventListener('click', () => {
+        retrocederFoto();
+        pararAutomatic();
+    });
     // $botonPlay.addEventListener('click', playIntervalo);
     // $botonStop.addEventListener('click', stopIntervalo);
+
     // Iniciar
     renderizarImagen();
-    renderizarTitulo()
+    renderizarTitulo();
+    iniciarAutomatic();
 }
