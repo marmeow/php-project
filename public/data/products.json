@@ -199,54 +199,6 @@
             "categoria": "snacks",
             "oferta": false,
             "imatge": "doritos.png"
-        },
-        {
-            "nom": "Poma",
-            "preu": 0.60,
-            "descripció": "Poma fresca de temporada",
-            "categoria": "fruita",
-            "oferta": false,
-            "imatge": "entrpa-pernil.png"
-        },
-        {
-            "nom": "Pera",
-            "preu": 0.60,
-            "descripció": "Pera fresca de temporada",
-            "categoria": "fruita",
-            "oferta": false,
-            "imatge": "entrpa-pernil.png"
-        },
-        {
-            "nom": "Plàtan",
-            "preu": 0.60,
-            "descripció": "Plàtan fresc de temporada",
-            "categoria": "fruita",
-            "oferta": false,
-            "imatge": "entrpa-pernil.png"
-        },
-        {
-            "nom": "Taronja",
-            "preu": 0.70,
-            "descripció": "Taronja fresca de temporada",
-            "categoria": "fruita",
-            "oferta": true,
-            "imatge": "entrpa-pernil.png"
-        },
-        {
-            "nom": "Mandarina",
-            "preu": 0.70,
-            "descripció": "Mandarina fresca de temporada",
-            "categoria": "fruita",
-            "oferta": true,
-            "imatge": "entrpa-pernil.png"
-        },
-        {
-            "nom": "Caqui",
-            "preu": 0.80,
-            "descripció": "Caqui fresc de temporada",
-            "categoria": "fruita",
-            "oferta": true,
-            "imatge": "entrpa-pernil.png"
         }
     ]
 }

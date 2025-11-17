@@ -2,13 +2,13 @@
 
 #main-page {
     #carousel {
-        margin: var(--space-xl) 0;
 
         .carousel {
-            max-width: 98%;
             margin: 0 auto;
             display: flex;
             position: relative;
+            justify-content: center;
+            align-items: center;
         }
 
         #imagen,
@@ -31,16 +31,14 @@
 
         #titulos {
             position: absolute;
-            top: 0;
-            right: 0;
-            color: var(--green2);
+            color: #ffffffef;
             font-family: var(--font-titles);
             font-size: 9em;
-            text-align: right;
+            text-align: center;
             line-height: 8rem;
-            margin-top: 10rem;
-            margin-right: var(--space-xxxl);
+            margin: var(--space-xxl);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-transform: uppercase;
         }
 
         .botonFlecha {
@@ -49,7 +47,7 @@
             //background-color: rgba(0, 0, 0, 0.2);
             //background-color: var(--green1);
             //background-color: RGBA(0, 255, 0, 0.5);
-            background-color: #B1CC7499;
+            background-color: transparent;
             width: auto;
             height: 100%;
             position: absolute;
@@ -60,19 +58,16 @@
             &.avanzar {
                 right: 0;
 
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
             }
 
             &.retroceder {
                 left: 0;
+            }
 
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
+            .fa {
+                font-size: 5rem;
+                color: rgba(255, 255, 255, 0.774);
+                cursor: pointer;
             }
         }
 

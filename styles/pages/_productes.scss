@@ -10,7 +10,11 @@
         margin: var(--space-xxxxl);
 
         section {
-            margin-top: var(--space-lg);
+            margin-top: var(--space-xxxxl);
+
+            &#entrepans {
+                margin-top: var(--space-xl);
+            }
 
             h3 {
                 font-size: var(--font-xxl);
