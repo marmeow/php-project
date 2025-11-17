@@ -375,6 +375,37 @@ footer a {
   color: var(--green2);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .gridFoot {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+
+      grid-template-areas:
+          "navFooter navFooter"
+          "adreca adreca"
+          "equip equip"
+          "copyright copyright"
+      ;
+  } */
+}
+#nav-footer {
+  grid-area: navFooter;
+}
+
+#adreca-footer {
+  grid-area: adreca;
+}
+
+#equip {
+  grid-area: equip;
+}
+
+#copyright {
+  grid-area: copyright;
+}
+
 #header-top {
   background-color: var(--grey1);
   color: white;
