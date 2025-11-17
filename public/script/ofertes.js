@@ -95,6 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
-
-
 });
