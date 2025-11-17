@@ -162,16 +162,18 @@ h6 {
   bottom: 0;
 }
 
-#main-page #carousel {
-  margin: var(--space-xl) 0;
-}
 #main-page #carousel .carousel {
-  max-width: 98%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #main-page #carousel #imagen,
 #main-page #carousel #imageCover {
@@ -190,19 +192,17 @@ h6 {
 }
 #main-page #carousel #titulos {
   position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--green2);
+  color: rgba(255, 255, 255, 0.937254902);
   font-family: var(--font-titles);
   font-size: 9em;
-  text-align: right;
+  text-align: center;
   line-height: 8rem;
-  margin-top: 10rem;
-  margin-right: var(--space-xxxl);
+  margin: var(--space-xxl);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
 }
 #main-page #carousel .botonFlecha {
-  background-color: rgba(177, 204, 116, 0.6);
+  background-color: transparent;
   width: auto;
   height: 100%;
   position: absolute;
@@ -212,16 +212,13 @@ h6 {
 #main-page #carousel .botonFlecha.avanzar {
   right: 0;
 }
-#main-page #carousel .botonFlecha.avanzar img {
-  width: 50px;
-  height: 50px;
-}
 #main-page #carousel .botonFlecha.retroceder {
   left: 0;
 }
-#main-page #carousel .botonFlecha.retroceder img {
-  width: 50px;
-  height: 50px;
+#main-page #carousel .botonFlecha .fa {
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.774);
+  cursor: pointer;
 }
 #main-page #carousel #ofertes {
   margin: var(--space-xl);
@@ -304,7 +301,10 @@ h6 {
   margin: var(--space-xxxxl);
 }
 #product-page #productes section {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xxxxl);
+}
+#product-page #productes section#entrepans {
+  margin-top: var(--space-xl);
 }
 #product-page #productes section h3 {
   font-size: var(--font-xxl);
@@ -636,13 +636,14 @@ nav ul a {
   width: 90%;
   border-left: none;
   padding: 0 var(--space-xxl);
-  margin: var(--space-lg) 0;
+  margin: var(--space-lg) 0 var(--space-xxxxl) 0;
 }
 .tabcontent h4 {
   font-size: var(--font-xl);
 }
 .tabcontent p {
   font-size: 1.125rem;
+  margin-bottom: var(--space-md);
 }
 .tabcontent p .tipus-entrepa {
   font-style: italic;
@@ -665,10 +666,10 @@ nav ul a {
 }
 
 #entrepans .product-card {
-  width: calc(30% - var(--space-md));
+  width: calc(25% - var(--space-md));
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(30% - var(--space-md));
-          flex: 0 0 calc(30% - var(--space-md));
+      -ms-flex: 0 0 calc(25% - var(--space-md));
+          flex: 0 0 calc(25% - var(--space-md));
 }
 
 .product-card {
@@ -687,10 +688,10 @@ nav ul a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: calc(25% - var(--space-md));
+  width: calc(20% - var(--space-md));
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(25% - var(--space-md));
-          flex: 0 0 calc(25% - var(--space-md));
+      -ms-flex: 0 0 calc(20% - var(--space-md));
+          flex: 0 0 calc(20% - var(--space-md));
   margin: 0;
 }
 .product-card .descripcio {
