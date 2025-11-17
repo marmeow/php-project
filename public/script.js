@@ -54,7 +54,7 @@ document.addEventListener('click', function (e) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('../products/products.json')
+  fetch('../data/products.json')
     .then(response => response.json())
     .then(datos => {
       // para agrupar els productes en categpories
