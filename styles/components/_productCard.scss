@@ -1,79 +1,78 @@
 .product-cards {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
+    align-items: stretch;
+    gap: var(--space-md);
+}
+
+#entrepans .product-card {
+    width: calc(30% - var(--space-md));
+    flex: 0 0 calc(30% - var(--space-md));
+}
+
+.product-card {
+    border: 1px solid black;
+    padding: var(--space-md);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    width: calc(25% - var(--space-md));
+    flex: 0 0 calc(25% - var(--space-md));
+    margin: 0;
 
 
-    .product-card {
-        width: fit-content;
-        width: 20%;
+    .descripcio {
+        font-size: var(--font-md);
+        margin-bottom: var(--space-md);
+        text-align: justify;
+    }
 
-        .inner {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-            border: 1px solid black;
-            padding: var(--space-md);
+    .preu-oferta-container {
+        width: 100%;
+        min-height: 50px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--space-md);
+    }
 
-            height: 100%;
-        }
+    .preu-iva {
+        color: #6d8041;
+        font-weight: 800;
+        width: 100%;
+        text-align: right;
+        margin: 0;
+    }
 
-        .descripcio {
-            font-size: var(--font-md);
-            margin-bottom: var(--space-md);
-            text-align: justify;
-        }
+    .oferta-badge {
+        min-height: 25px;
+        color: #6d8041;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
 
-        /* AFEGEIX AQUEST CONTENIDOR */
-        .preu-oferta-container {
-            width: 100%;
-            min-height: 50px;
-            /* Alçada mínima fixa */
-            display: flex;
-            flex-direction: column;
-            margin-bottom: var(--space-md);
-        }
+    .iva {
+        font-size: 0.825rem;
+        color: black;
+        font-weight: normal;
+    }
 
-        .preu-iva {
-            color: #6d8041;
-            font-weight: 800;
-            width: 100%;
-            text-align: right;
-            margin: 0;
-        }
+    h5 {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-md);
+    }
 
-        /* AFEGEIX AQUEST BADGE */
-        .oferta-badge {
-            min-height: 25px;
-            /* Espai reservat sempre */
-            color: #6d8041;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
+    img {
+        width: 100%;
+        padding: var(--space-sm);
+        background-color: #bec2c42c;
+        margin-bottom: var(--space-lg);
+    }
 
-        .iva {
-            font-size: 0.825rem;
-            color: black;
-            font-weight: normal;
-        }
-
-        h5 {
-            font-size: 1.125rem;
-            margin-bottom: var(--space-md);
-        }
-
-        img {
-            width: 100%;
-            padding: var(--space-sm);
-            background-color: #bec2c42c;
-            margin-bottom: var(--space-lg);
-        }
-
-        /* AFEGEIX AQUEST BLOC */
-        .cont {
-            margin-top: auto;
-            width: 100%;
-        }
+    .cont {
+        margin-top: auto;
+        width: 100%;
     }
 }
