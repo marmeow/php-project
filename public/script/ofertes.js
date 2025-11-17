@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('./products/products.json')
+    fetch('./data/products.json')
         .then(response => {
             return response.json();
         })
@@ -95,6 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
-
-
 });

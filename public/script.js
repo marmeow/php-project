@@ -54,7 +54,7 @@ document.addEventListener('click', function (e) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('../products/products.json')
+  fetch('../data/products.json')
     .then(response => response.json())
     .then(datos => {
       // para agrupar els productes en categpories
@@ -91,33 +91,39 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(producte.imatge)
         let content = `
       <article class="product-card ${ofertaClass}" data-producte="${producte.nom}">
+        <div class="inner">
 
-      
         <img src="../resources/images/products/${imatgeUrl}" alt="${producte.nom}">
-        <h5>${producte.nom}</h5>
-        <p class="descripcio">${producte.descripció || producte.descripcio}</p>
-        <div class="preu-oferta-container">
-          <p class="preu-iva"><span class="preu">${producte.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
-          <div class="oferta-badge">
-            ${producte.oferta ? 'Oferta!' : ''}
+          <h5>${producte.nom}</h5>
+          <p class="descripcio">${producte.descripció || producte.descripcio}</p>
+          <div class="preu-oferta-container">
+            <p class="preu-iva"><span class="preu">${producte.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
+            <div class="oferta-badge">
+              ${producte.oferta ? 'Oferta!' : ''}
+            </div>
           </div>
-        </div>
-        <div class="cont">
-          <div class="crtdiv">
-            <button type="button" class="cart btn-cart">
-              Afegir a la cistella
-            </button>
-            <span class="qty">
-              <span class="dec">
-                <i class="fa fa-minus" aria-hidden="true"></i>
+          <div class="cont">
+            <div class="crtdiv">
+              <button type="button" class="cart btn-cart">
+                Afegir a la cistella
+              </button>
+              <span class="qty">
+                <span class="dec">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </span>
+                <span class="num">1</span>
+                <span class="inc">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
               </span>
-              <span class="num">1</span>
-              <span class="inc">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </span>
-            </span>
+            </div>
           </div>
+
         </div>
+
+
+        
+
       </article>
     `;
 

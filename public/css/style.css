@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --grey1: #545F66;
   --grey2: #829399;
@@ -375,6 +374,37 @@ footer a {
   color: var(--green2);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .gridFoot {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+
+      grid-template-areas:
+          "navFooter navFooter"
+          "adreca adreca"
+          "equip equip"
+          "copyright copyright"
+      ;
+  } */
+}
+#nav-footer {
+  grid-area: navFooter;
+}
+
+#adreca-footer {
+  grid-area: adreca;
+}
+
+#equip {
+  grid-area: equip;
+}
+
+#copyright {
+  grid-area: copyright;
+}
+
 #header-top {
   background-color: var(--grey1);
   color: white;
@@ -623,18 +653,27 @@ nav ul a {
 }
 
 .product-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  gap: var(--space-md);
 }
-.product-cards .product-card {
+
+#entrepans .product-card {
+  width: calc(30% - var(--space-md));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(30% - var(--space-md));
+          flex: 0 0 calc(30% - var(--space-md));
+}
+
+.product-card {
   border: 1px solid black;
   padding: var(--space-md);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,21 +687,20 @@ nav ul a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: var(--space-lg) var(--space-md) 0 0;
-  width: 20%;
-  /* AFEGEIX AQUEST CONTENIDOR */
-  /* AFEGEIX AQUEST BADGE */
-  /* AFEGEIX AQUEST BLOC */
+  width: calc(25% - var(--space-md));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - var(--space-md));
+          flex: 0 0 calc(25% - var(--space-md));
+  margin: 0;
 }
-.product-cards .product-card .descripcio {
+.product-card .descripcio {
   font-size: var(--font-md);
   margin-bottom: var(--space-md);
   text-align: justify;
 }
-.product-cards .product-card .preu-oferta-container {
+.product-card .preu-oferta-container {
   width: 100%;
   min-height: 50px;
-  /* Alçada mínima fixa */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,37 +710,36 @@ nav ul a {
           flex-direction: column;
   margin-bottom: var(--space-md);
 }
-.product-cards .product-card .preu-iva {
+.product-card .preu-iva {
   color: #6d8041;
   font-weight: 800;
   width: 100%;
   text-align: right;
   margin: 0;
 }
-.product-cards .product-card .oferta-badge {
+.product-card .oferta-badge {
   min-height: 25px;
-  /* Espai reservat sempre */
   color: #6d8041;
   font-weight: 600;
   font-size: 0.9rem;
   margin-top: 5px;
 }
-.product-cards .product-card .iva {
+.product-card .iva {
   font-size: 0.825rem;
   color: black;
   font-weight: normal;
 }
-.product-cards .product-card h5 {
+.product-card h5 {
   font-size: 1.125rem;
   margin-bottom: var(--space-md);
 }
-.product-cards .product-card img {
+.product-card img {
   width: 100%;
   padding: var(--space-sm);
   background-color: rgba(190, 194, 196, 0.1725490196);
   margin-bottom: var(--space-lg);
 }
-.product-cards .product-card .cont {
+.product-card .cont {
   margin-top: auto;
   width: 100%;
 }
@@ -716,7 +753,7 @@ nav ul a {
 .cart {
   border: none;
   background: #bec2c4;
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) 0.25rem;
   color: black;
   width: 100%;
   position: relative;
@@ -725,6 +762,9 @@ nav ul a {
   -webkit-transition: 0.5s width;
   transition: 0.5s width;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cart_clk {
@@ -738,7 +778,7 @@ nav ul a {
 }
 
 .fa {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .cart .fa {
