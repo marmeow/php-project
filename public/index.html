@@ -15,6 +15,7 @@
     <script src="script.js" defer></script>
     <script src="script/carousel.js" defer></script>
     <script src="script/ofertes.js" defer></script>
+    <script src="script/modalLogin.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -43,7 +44,7 @@
                     <li><a href="pages/administracio.html">Administració</a></li>
                     <li><a href="pages/contacte.html">Contacte</a></li>
                     <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                    <li><a href="#" id="user-icon"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                    <li><a href="#" id="user-icon"><i class="fa-solid fa-user fa-lg btnuser-icon"></i></a></li>
 
                 </ul>
             </nav>
@@ -62,10 +63,7 @@
                 <section id="ofertes">
                     <h2 id="titolOfertes">Ofertes especials de la setmana</h2>
                 </section>
-                <!-- <div class="controles">
-                    <button id="play">Play</button>
-                    <button id="stop" disabled>Stop</button>
-                </div> -->
+
             </section>
         </main>
 
@@ -109,6 +107,32 @@
             </div>
         </footer>
     </div>
+
+
+
+    <div class="myModal">
+        <div class="modal-content">
+            <span class="closeTask">&times;</span>
+            <form id="taskForm">
+                <input id="task" type="text" placeholder="Nueva tarea">
+                <select id="tag">
+                    <option value="personal">Personal</option>
+                    <option value="work">Trabajo</option>
+                </select>
+                <input id="appointment" type="time">
+                <input id="deadline" type="date">
+                <label class="deadlinelbl">
+                    <input type="checkbox" id="deadlineCheck"> Con fecha límite
+                </label>
+                <select id="reminder">
+                    <option value="none">Sin recordatorio</option>
+                    <option value="hour">1 hora antes</option>
+                </select>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
