@@ -2,17 +2,49 @@
 
 footer {
     background-color: var(--grey1);
+    color: var(--green2);
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: var(--space-xs);
+    box-sizing: content-box;
 
-    nav a {
-        color: white;
+    #header-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a,
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
     }
 
-    #copyright a {
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+
+        li {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+                color: var(--green2);
+            }
+        }
+    }
+
+    #adreca-footer,
+    #equip {
+        font-size: var(--font-xs);
+    }
+
+    #copyright,
+    a {
         text-decoration: none;
-        color: white;
+        color: var(--green2);
     }
 }
