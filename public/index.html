@@ -100,26 +100,18 @@
     <div class="myModal">
         <div class="modal-content">
             <span class="closeTask">&times;</span>
-            <form id="taskForm">
-                <input id="task" type="text" placeholder="Nueva tarea">
-                <select id="tag">
-                    <option value="personal">Personal</option>
-                    <option value="work">Trabajo</option>
-                </select>
-                <input id="appointment" type="time">
-                <input id="deadline" type="date">
-                <label class="deadlinelbl">
-                    <input type="checkbox" id="deadlineCheck"> Con fecha límite
-                </label>
-                <select id="reminder">
-                    <option value="none">Sin recordatorio</option>
-                    <option value="hour">1 hora antes</option>
-                </select>
-                <button type="submit">Guardar</button>
+            <h4 id="titleLog">Inicia sessió</h4>
+
+            <form id="taskForm" action="login.php" method="post">
+                <label class="credencial">Nom d'usuari: </label>
+                <input class="input userName" type="text" placeholder="Escriu el nom d'usuari aquí" required>
+                <label class="credencial">Contrasenya: </label>
+                <input class="input password" type="password" placeholder="Escriu la contrasenya aquí" required>
+                <!-- <button type="button" class="mostraOculta">Mostra/oculta</button> -->
+                <button type="submit" class="envia">Entrar</button>
             </form>
         </div>
     </div>
-
 </body>
 
 </html>
