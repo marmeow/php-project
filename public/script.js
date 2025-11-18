@@ -33,15 +33,18 @@ function guardarEstatCarret() {
   const carret = [];
 
   document.querySelectorAll('.product-card').forEach(card => {
-    const btnCart = card.querySelector('.btn-cart');
+    const numSpan = card.querySelector('.num');
 
-    if (btnCart && btnCart.classList.contains('cart_clk')) {
-      const nom = card.getAttribute('data-producte');
-      const preuText = card.querySelector('.preu').textContent;
-      const preu = parseFloat(preuText);
-      const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+    if (numSpan) {
+      const quantitat = parseInt(numSpan.textContent, 10);
 
       if (quantitat > 0) {
+        const nom = card.getAttribute('data-producte');
+        const preuText = card.querySelector('.preu').textContent;
+        const preu = parseFloat(preuText);
+        const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+
+
         carret.push({
           nom: nom,
           preu: preu,
@@ -65,14 +68,6 @@ document.addEventListener('click', function (e) {
     if (qty) {
       qty.classList.toggle('active');
     }
-
-    if (!button.classList.contains('cart_clk')) {
-      const numSpan = button.closest('.crtdiv').querySelector('.num');
-      if (numSpan) {
-        numSpan.textContent = '1';
-      }
-    }
-
     guardarEstatCarret();
   }
 
