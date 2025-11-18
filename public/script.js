@@ -88,8 +88,31 @@ function crearCard(item) {
         <img src="../resources/images/products/${imgUrl}" alt="${item.nom}">
         <h5>${item.nom}</h5>
         <p class="descripcio">${item.descripció || item.descripcio}</p>
-        <p class="preu">${item.preu.toFixed(2)} €</p>
-      </div>
+        <div class="preu-oferta-container">
+            <p class="preu-iva"><span class="preu">${item.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
+            <div class="oferta-badge">
+              ${item.oferta ? 'Oferta!' : ''}
+            </div>
+          </div>
+          <div class="cont">
+            <div class="crtdiv">
+              <button type="button" class="cart btn-cart">
+                Afegir a la cistella
+              </button>
+              <span class="qty">
+                <span class="dec">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </span>
+                <span class="num">1</span>
+                <span class="inc">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
     </article>
   `;
 }
@@ -130,7 +153,7 @@ function mostrarCategories(categories) {
 
 //https://www.w3schools.com/howto/howto_js_vertical_tabs.asp
 
-function openCity(evt, cityName) {
+function openBocata(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {

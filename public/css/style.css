@@ -2,7 +2,7 @@
   --grey1: #545F66;
   --grey2: #829399;
   --green1: #B1CC74;
-  --green2: #ebf6d1;
+  --green2: #E8FCC2;
   --blue1: #D0F4EA;
   --font-titles: "Rubik", sans-serif;
   --font-general: "Montserrat", sans-serif;
@@ -41,6 +41,8 @@ h6 {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -48,7 +50,8 @@ h6 {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* 2. Remove default margin */
@@ -123,8 +126,11 @@ h6 {
 /* @use "../abstracts/variables" as *; */
 #copyright-page .container {
   padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-inline: auto;
   max-width: 1200px;
   text-align: center;
@@ -152,7 +158,7 @@ h6 {
 }
 #copyright-page footer {
   position: fixed;
-  width: 100%;
+  width: 99.3%;
   bottom: 0;
 }
 
@@ -162,6 +168,8 @@ h6 {
 #main-page #carousel .carousel {
   max-width: 98%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -190,7 +198,7 @@ h6 {
   text-align: right;
   line-height: 8rem;
   margin-top: 10rem;
-  margin-right: 65px;
+  margin-right: var(--space-xxxl);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 #main-page #carousel .botonFlecha {
@@ -215,10 +223,75 @@ h6 {
   width: 50px;
   height: 50px;
 }
-#main-page footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+#main-page #carousel #ofertes {
+  margin: var(--space-xl);
+  max-width: 98%;
+  display: block;
+}
+#main-page #carousel #ofertes #titolOfertes {
+  font-size: var(--font-xxl);
+  border-bottom: 5px solid var(--green1);
+}
+#main-page #carousel #ofertes .seccioCategoria {
+  font-size: var(--font-xl);
+}
+#main-page #carousel #ofertes #begudes {
+  padding-top: 20px;
+}
+#main-page #carousel #ofertes #begudes #h3begudes {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3entrepans {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3brioixeria {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3snacks {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes #h3fruita {
+  border-bottom: 3px solid var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct {
+  display: inline-block;
+  border: 1px solid var(--grey1);
+  padding: var(--space-md);
+  width: 25rem;
+  height: 100%;
+  margin: var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+#main-page #carousel #ofertes .ofertProduct #nomProducte {
+  font-size: var(--font-xxl);
+  border-bottom: 2px solid var(--green1);
+  padding-bottom: var(--space-xs);
+}
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte,
+#main-page #carousel #ofertes .ofertProduct #preuAbans,
+#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+  font-size: var(--font-lg);
+}
+#main-page #carousel #ofertes .ofertProduct #descripcioProducte {
+  padding: var(--space-lg) 0;
+  height: 108px;
+}
+#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+  color: var(--green1);
+  font-weight: bold;
+}
+#main-page #carousel #ofertes .ofertProduct #preuDescompte:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
+#main-page #carousel #ofertes .ofertProduct #percent {
+  padding-top: var(--space-xxxl);
+  font-size: var(--font-xxl);
+  color: var(--grey1);
+}
+#main-page #carousel #ofertes .ofertProduct #percent:hover {
+  color: var(--green1);
+  font-weight: bold;
 }
 
 #product-page h1 {
@@ -237,6 +310,8 @@ h6 {
   font-size: var(--font-xxl);
   margin-bottom: var(--space-md);
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-weight: 600;
 }
@@ -246,17 +321,57 @@ h6 {
 
 footer {
   background-color: var(--grey1);
+  color: var(--green2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  position: sticky;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: var(--space-xs);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
-footer nav a {
-  color: white;
+footer #header-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
-footer #copyright a {
+footer #header-logo a,
+footer #header-logo h1 {
+  display: inline-block;
+  margin: 0;
+}
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+footer nav ul li {
+  display: inline-block;
+}
+footer nav ul li a {
+  display: inline-block;
+  color: var(--green2);
+}
+footer #adreca-footer,
+footer #equip {
+  font-size: var(--font-xs);
+}
+footer #copyright,
+footer a {
   text-decoration: none;
-  color: white;
+  color: var(--green2);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -305,7 +420,8 @@ footer #copyright a {
   top: 0;
   background-color: #fff;
   padding: var(--space-sm) var(--space-xxxxl);
-  box-shadow: 0px -1px 8px 0px var(--grey1);
+  -webkit-box-shadow: 0px -1px 8px 0px var(--grey1);
+          box-shadow: 0px -1px 8px 0px var(--grey1);
 }
 #header-bottom ul li {
   margin-right: var(--space-lg);
@@ -316,6 +432,7 @@ footer #copyright a {
   display: inline-block;
   color: black;
   border-bottom: 2px solid transparent;
+  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
 #header-bottom ul li a .fa-solid.fa-user.fa-lg {
@@ -333,7 +450,9 @@ footer #copyright a {
 
 #header-top,
 #header-bottom {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #info-tiquet {
@@ -344,14 +463,23 @@ footer #copyright a {
   margin: var(--space-xxs);
 }
 #info-tiquet #entra-carret {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   grid-area: 1/2/2/3;
   max-width: 600px;
 }
 #info-tiquet #entra-carret label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--space-xs);
   min-width: 80px;
 }
@@ -361,6 +489,7 @@ footer #copyright a {
   background-color: #f0f0f0;
   width: 100%;
   padding: 6px;
+  -webkit-transition: background-color 0.3s, outline 0.3s;
   transition: background-color 0.3s, outline 0.3s;
 }
 #info-tiquet #entra-carret label input:focus {
@@ -370,6 +499,8 @@ footer #copyright a {
   padding: 5px;
 }
 #info-tiquet #entra-carret .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: var(--space-xs);
 }
@@ -380,6 +511,7 @@ footer #copyright a {
   background-color: var(--grey2);
   color: white;
   cursor: pointer;
+  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
 #info-tiquet #entra-carret button:hover {
@@ -388,14 +520,23 @@ footer #copyright a {
 }
 
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 nav ul {
   list-style: none;
   gap: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 nav ul a {
   text-decoration: none;
@@ -446,8 +587,12 @@ nav ul a {
 }
 
 .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .search-bar .fa-magnifying-glass {
   margin: 0 var(--space-sm);
@@ -474,6 +619,7 @@ nav ul a {
   outline: none;
   text-align: left;
   cursor: pointer;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   font-size: var(--font-md);
 }
@@ -507,26 +653,44 @@ nav ul a {
 }
 
 .product-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   gap: var(--space-md);
 }
 
 #entrepans .product-card {
-  width: calc(30% - var(--space-md));
-  flex: 0 0 calc(30% - var(--space-md));
+  width: calc(25% - var(--space-md));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - var(--space-md));
+          flex: 0 0 calc(25% - var(--space-md));
 }
 
 .product-card {
   border: 1px solid black;
   padding: var(--space-md);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  width: calc(25% - var(--space-md));
-  flex: 0 0 calc(25% - var(--space-md));
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(20% - var(--space-md));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(20% - var(--space-md));
+          flex: 0 0 calc(20% - var(--space-md));
   margin: 0;
 }
 .product-card .descripcio {
@@ -537,8 +701,13 @@ nav ul a {
 .product-card .preu-oferta-container {
   width: 100%;
   min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: var(--space-md);
 }
 .product-card .preu-iva {
@@ -590,6 +759,7 @@ nav ul a {
   position: relative;
   z-index: 2;
   cursor: pointer;
+  -webkit-transition: 0.5s width;
   transition: 0.5s width;
   font-weight: 600;
   white-space: nowrap;
@@ -646,4 +816,4 @@ nav ul a {
   width: 22px;
   display: inline-block;
   text-align: Center;
-}
+}/*# sourceMappingURL=style.css.map */
