@@ -39,7 +39,7 @@
             text-align: right;
             line-height: 8rem;
             margin-top: 10rem;
-            margin-right: 65px;
+            margin-right: var(--space-xxxl);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
@@ -75,12 +75,97 @@
                 }
             }
         }
-    }
 
-    footer {
-        position: fixed;
-        width: 100%;
-        bottom: 0;
+        #ofertes {
+            margin: var(--space-xl);
+            max-width: 98%;
+            display: block;
+
+            #titolOfertes {
+                font-size: var(--font-xxl);
+                border-bottom: 5px solid var(--green1);
+
+            }
+
+            .seccioCategoria {
+                font-size: var(--font-xl);
+            }
+
+            #begudes {
+                padding-top: 20px;
+
+                #h3begudes {
+                    border-bottom: 3px solid var(--grey1);
+                }
+            }
+
+            #h3entrepans {
+                border-bottom: 3px solid var(--grey1);
+            }
+
+            #h3brioixeria {
+                border-bottom: 3px solid var(--grey1);
+            }
+
+            #h3snacks {
+                border-bottom: 3px solid var(--grey1);
+            }
+
+            #h3fruita {
+                border-bottom: 3px solid var(--grey1);
+            }
+
+            .ofertProduct {
+                display: inline-block;
+                border: 1px solid var(--grey1);
+                padding: var(--space-md);
+                width: 25rem;
+                height: 100%;
+                margin: var(--space-lg) var(--space-xl);
+                text-align: center;
+
+                #nomProducte {
+                    font-size: var(--font-xxl);
+                    border-bottom: 2px solid var(--green1);
+                    padding-bottom: var(--space-xs);
+                }
+
+                #descripcioProducte,
+                #preuAbans,
+                #preuDescompte {
+                    font-size: var(--font-lg);
+                }
+
+                #descripcioProducte {
+                    padding: var(--space-lg) 0;
+                    height: 108px;
+                }
+
+                #preuDescompte {
+                    color: var(--green1);
+                    font-weight: bold;
+
+                    &:hover {
+                        text-decoration: underline;
+                        font-weight: 900;
+                    }
+                }
+
+                #percent {
+                    padding-top: var(--space-xxxl);
+                    font-size: var(--font-xxl);
+                    color: var(--grey1);
+
+                    &:hover {
+                        color: var(--green1);
+                        font-weight: bold;
+                    }
+                }
+            }
+
+        }
+
+
     }
 
 }
