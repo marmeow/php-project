@@ -1,50 +1,42 @@
-@use "../abstracts/variables" as *;
-
 footer {
     background-color: var(--grey1);
     color: var(--green2);
     display: flex;
     position: sticky;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-xs);
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: var(--space-lg);
     box-sizing: content-box;
 
-    #header-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
 
-        a,
-        h1 {
-            display: inline-block;
-            margin: 0;
-        }
+    h4 {
+        color: white;
+        font-size: var(--font-lg);
+        margin-bottom: var(--space-sm);
     }
 
-    nav ul {
-        display: flex;
+    ul {
         list-style: none;
-        gap: 15px;
+        padding: 0;
 
         li {
-            display: inline-block;
-
-            a {
-                display: inline-block;
-                color: var(--green2);
-            }
+            margin-bottom: var(--space-xs);
         }
     }
 
-    #adreca-footer,
-    #equip {
-        font-size: var(--font-xs);
+    p,
+    a {
+        color: var(--green2);
+        text-decoration: none;
+        transition: 0.2s ease color;
+        margin-bottom: var(--space-xs);
+
     }
 
-    #copyright,
-    a {
-        text-decoration: none;
-        color: var(--green2);
+    a:hover {
+        color: var(--green1);
     }
+
+
+
 }

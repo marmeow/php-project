@@ -4,6 +4,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
+
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Enviant dades al servidor...");
@@ -12,6 +13,9 @@ window.addEventListener("DOMContentLoaded", function () {
         carretData.telefon = document.getElementById("usertel").value;
         enviaJSONAServer(carretData);
     });
+
+    creaProductesProva(); // TODO: Eliminar aquesta línia en producció
+    mostraTiquet();
 })
 
 /**
@@ -22,7 +26,6 @@ window.addEventListener("DOMContentLoaded", function () {
 function enviaJSONAServer(tiquet) {
     const xhr = new XMLHttpRequest();
 
-    // Handlers para ver qué pasa
     xhr.onload = function () {
         console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
         if (xhr.status === 200) {
@@ -37,8 +40,38 @@ function enviaJSONAServer(tiquet) {
         alert("Error de connexió amb el servidor");
     };
 
-    // Usa la ruta desde la raíz del proyecto en htdocs
     xhr.open("POST", "/php-project/php/confirm.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(tiquet));
+}
+
+function mostraTiquet() {
+    let carretData = JSON.parse(localStorage.getItem("productes"));
+    let tiquetDiv = document.getElementById("tiquet-final");
+
+    if (!carretData.productes || carretData.productes.length === 0) {
+        tiquetDiv.innerHTML = "<p>El carret està buit.</p>";
+        return;
+    }
+
+    let html = "<h2>Resum de la comanda</h2><ul>";
+    carretData.productes.forEach(item => {
+        html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
+    });
+    html += `</ul><p><strong>Total a pagar: ${carretData.total.toFixed(2)}€</strong></p>`;
+
+    tiquetDiv.innerHTML = html;
+}
+
+function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
+    let productesProva = {
+        productes: [
+            { nom: "Producte A", preu: 10, quantitat: 2 },
+            { nom: "Producte B", preu: 15, quantitat: 1 },
+            { nom: "Producte C", preu: 7.25, quantitat: 3 },
+            { nom: "Producte D", preu: 5.5, quantitat: 0 },
+        ],
+        total: 10 * 2 + 15 * 1 + 7.25 * 3
+    };
+    localStorage.setItem("productes", JSON.stringify(productesProva));
 }

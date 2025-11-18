@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('./products/products.json')
+    fetch('./data/products.json')
         .then(response => {
             return response.json();
         })
@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.classList.add('ofertProduct');
 
                 //Crear cada element dins de l'article
+                //TODO: revisar el src para que sea ruta relativa
+                const imatge = document.createElement('img');
+                imatge.src = '/public/resources/images/products/' + producte.imatge;
+                imatge.alt = producte.imatge;
+
                 const h4 = document.createElement('h4');
                 h4.id = 'nomProducte';
                 h4.textContent = producte.nom;
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 pDesc.textContent = "Gaudeix del 20% de descompte";
 
                 //Afegir tots els elements a l'article
+                articleOfertes.appendChild(imatge);
                 articleOfertes.appendChild(h4);
                 articleOfertes.appendChild(pDescripcio);
                 articleOfertes.appendChild(pPreuAbans);
