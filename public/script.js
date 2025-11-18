@@ -1,5 +1,60 @@
 
+
 // https://codepen.io/webstuff/pen/JKgwZY// 
+//https://www.freecodecamp.org/espanol/news/como-usar-localstorage-en-javascript/
+function carregarEstatCarret() {
+  const carretGuardat = localStorage.getItem("carretCompra");
+
+  if (carretGuardat) {
+    const carret = JSON.parse(carretGuardat);
+
+    carret.forEach(item => {
+      const productCard = document.querySelector(`[data-producte="${item.nom}"]`);
+      if (productCard) {
+        const btnCart = productCard.querySelector('.btn-cart');
+        const qty = productCard.querySelector('.qty');
+        const numSpan = productCard.querySelector('.num');
+
+        if (btnCart && qty && numSpan) {
+          btnCart.classList.add('cart_clk');
+          qty.classList.add('active');
+          numSpan.textContent = item.quantitat;
+        }
+      }
+    });
+
+    return true;
+  }
+
+  return false;
+}
+
+function guardarEstatCarret() {
+  const carret = [];
+
+  document.querySelectorAll('.product-card').forEach(card => {
+    const btnCart = card.querySelector('.btn-cart');
+
+    if (btnCart && btnCart.classList.contains('cart_clk')) {
+      const nom = card.getAttribute('data-producte');
+      const preuText = card.querySelector('.preu').textContent;
+      const preu = parseFloat(preuText);
+      const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+
+      if (quantitat > 0) {
+        carret.push({
+          nom: nom,
+          preu: preu,
+          quantitat: quantitat
+        });
+      }
+    }
+  });
+
+  localStorage.setItem("carretCompra", JSON.stringify(carret));
+}
+
+
 
 // Add to cart 
 document.addEventListener('click', function (e) {
@@ -10,11 +65,20 @@ document.addEventListener('click', function (e) {
     if (qty) {
       qty.classList.toggle('active');
     }
-  }
-});
 
-// Add num 
-document.addEventListener('click', function (e) {
+    if (!button.classList.contains('cart_clk')) {
+      const numSpan = button.closest('.crtdiv').querySelector('.num');
+      if (numSpan) {
+        numSpan.textContent = '1';
+      }
+    }
+
+    guardarEstatCarret();
+  }
+
+
+  // Add num 
+
   if (e.target.classList.contains('fa-plus-square') || e.target.closest('.inc')) {
     const inc = e.target.closest('.inc');
     const numSpan = inc.parentElement.querySelector('.num');
@@ -26,11 +90,12 @@ document.addEventListener('click', function (e) {
     if (cartIcon) {
       cartIcon.setAttribute('data-before', prnum);
     }
+    guardarEstatCarret();
   }
-});
 
-// Reduce num
-document.addEventListener('click', function (e) {
+
+  // Reduce num
+
   if (e.target.classList.contains('fa-minus-square') || e.target.closest('.dec')) {
     const dec = e.target.closest('.dec');
     const numSpan = dec.parentElement.querySelector('.num');
@@ -44,10 +109,11 @@ document.addEventListener('click', function (e) {
       if (cartIcon) {
         cartIcon.setAttribute('data-before', prnum);
       }
+      guardarEstatCarret();
     }
-
   }
 });
+
 
 
 
