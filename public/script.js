@@ -30,17 +30,20 @@ function carregarEstatCarret() {
 }
 
 function guardarProducte(card) {
-  let carret = JSON.parse(localStorage.getItem("carretCompra")) || []; // || [] -> si el resultat  anterior es null (pq no s'ha guardat), llavors s'utilitza un array buit com defecte (on s'introduiran els productes)
+  let carret = JSON.parse(localStorage.getItem("productes")) || { productes: [] }; // || [] -> si el resultat  anterior es null (pq no s'ha guardat res a localstorage), llavors s'utilitza un objecte amb un array buit com defecte (on s'introduiran els productes)
   const nom = card.getAttribute('data-producte');
   const preuText = card.querySelector('.preu').textContent;
   const preu = parseFloat(preuText);
   const quantitat = parseInt(card.querySelector('.num').textContent, 10);
-  const index = carret.findIndex(item => item.nom === nom);
+  const index = carret.productes.findIndex(item => item.nom === nom);
+
+
+
   if (quantitat > 0) {
     if (index >= 0) {
-      carret[index].quantitat = quantitat;
+      carret.productes[index].quantitat = quantitat;
     } else {
-      carret.push({
+      carret.productes.push({
         nom: nom,
         preu: preu,
         quantitat: quantitat
@@ -48,7 +51,7 @@ function guardarProducte(card) {
     }
   } else {
     if (index >= 0) {
-      carret.splice(index, 1)
+      carret.productes.splice(index, 1)
     }
 
   }
