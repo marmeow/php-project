@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
         enviaJSONAServer(carretData);
     });
 
+    //creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
@@ -46,12 +47,13 @@ function enviaJSONAServer(tiquet) {
 
 function mostraTiquet() {
     let carretData = JSON.parse(localStorage.getItem("productes"));
-    let tiquetDiv = document.getElementById("tiquet-final");
+    let tiquetDiv = document.body.querySelector(".tiquet-final");
 
     if (!carretData.productes || carretData.productes.length === 0) {
         tiquetDiv.innerHTML = "<p>El carret està buit.</p>";
         return;
     }
+
 
     let html = "<h2>Resum de la comanda</h2><ul>";
     carretData.productes.forEach(item => {
