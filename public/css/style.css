@@ -290,73 +290,6 @@ h6 {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page .myModal {
-  display: none;
-  position: absolute;
-  z-index: 1000;
-  padding: 50px 50px 0 50px;
-  left: 25%;
-  top: 25%;
-  width: 50%;
-  height: 55%;
-  overflow: auto;
-  background-color: var(--green1);
-}
-#main-page #titleLog {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-#main-page .credencial {
-  margin: 0 auto;
-  padding-right: 20px;
-  font-size: 22px;
-}
-#main-page .input {
-  display: inline-block;
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  outline: none;
-  -webkit-transition: border 0.15s, -webkit-box-shadow 0.15s;
-  transition: border 0.15s, -webkit-box-shadow 0.15s;
-  transition: border 0.15s, box-shadow 0.15s;
-  transition: border 0.15s, box-shadow 0.15s, -webkit-box-shadow 0.15s;
-}
-#main-page .envia {
-  width: 20%;
-  margin: 0 auto;
-  font-size: 22px;
-  margin-top: 25px;
-}
-#main-page form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 18px;
-}
-#main-page .closeTask {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--grey2);
-  cursor: pointer;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-#main-page .closeTask:hover,
-#main-page .closeTask:focus {
-  color: var(--grey1);
-}
 
 #product-page h1 {
   font-size: 4.125rem;
@@ -384,6 +317,50 @@ h6 {
 }
 #product-page #productes h2 {
   font-size: 2.75rem;
+}
+
+#login-page .modal-content {
+  margin: 80px auto;
+  border: 2px solid black;
+  background-color: var(--green1);
+  padding: 25px 0;
+  width: 70%;
+}
+#login-page #titleLog {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+#login-page .credencial {
+  margin: 0 auto;
+  padding-right: 20px;
+  font-size: 22px;
+}
+#login-page .input {
+  display: inline-block;
+  width: 70%;
+  margin: 0 auto;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+#login-page .envia {
+  width: 20%;
+  margin: 0 auto;
+  font-size: 22px;
+}
+#login-page form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
+}
+#login-page #header-bottom .active-link a {
+  width: 50%;
 }
 
 footer {
