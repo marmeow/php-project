@@ -29,35 +29,32 @@ function carregarEstatCarret() {
   return false;
 }
 
-function guardarEstatCarret() {
-  const carret = [];
-
-  document.querySelectorAll('.product-card').forEach(card => {
-    const numSpan = card.querySelector('.num');
-
-    if (numSpan) {
-      const quantitat = parseInt(numSpan.textContent, 10);
-
-      if (quantitat > 0) {
-        const nom = card.getAttribute('data-producte');
-        const preuText = card.querySelector('.preu').textContent;
-        const preu = parseFloat(preuText);
-        const quantitat = parseInt(card.querySelector('.num').textContent, 10);
-
-
-        carret.push({
-          nom: nom,
-          preu: preu,
-          quantitat: quantitat
-        });
-      }
+function guardarProducte(card) {
+  let carret = JSON.parse(localStorage.getItem("carretCompra")) || []; // || [] -> si el resultat  anterior es null (pq no s'ha guardat), llavors s'utilitza un array buit com defecte (on s'introduiran els productes)
+  const nom = card.getAttribute('data-producte');
+  const preuText = card.querySelector('.preu').textContent;
+  const preu = parseFloat(preuText);
+  const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+  const index = carret.findIndex(item => item.nom === nom);
+  if (quantitat > 0) {
+    if (index >= 0) {
+      carret[index].quantitat = quantitat;
+    } else {
+      carret.push({
+        nom: nom,
+        preu: preu,
+        quantitat: quantitat
+      });
     }
-  });
+  } else {
+    if (index >= 0) {
+      carret.splice(index, 1)
+    }
 
-  localStorage.setItem("carretCompra", JSON.stringify(carret));
+  }
+
+  localStorage.setItem("productes", JSON.stringify(carret));
 }
-
-
 
 // Add to cart 
 document.addEventListener('click', function (e) {
@@ -68,7 +65,8 @@ document.addEventListener('click', function (e) {
     if (qty) {
       qty.classList.toggle('active');
     }
-    guardarEstatCarret();
+    const card = button.closest('.product-card');
+    guardarProducte(card);
   }
 
 
@@ -85,7 +83,8 @@ document.addEventListener('click', function (e) {
     if (cartIcon) {
       cartIcon.setAttribute('data-before', prnum);
     }
-    guardarEstatCarret();
+    const card = inc.closest('.product-card');
+    guardarProducte(card);
   }
 
 
@@ -104,7 +103,8 @@ document.addEventListener('click', function (e) {
       if (cartIcon) {
         cartIcon.setAttribute('data-before', prnum);
       }
-      guardarEstatCarret();
+      const card = dec.closest('.product-card');
+      guardarProducte(card);
     }
   }
 });
