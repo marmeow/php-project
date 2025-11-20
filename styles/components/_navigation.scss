@@ -35,14 +35,26 @@
             }
         }
 
+        @media (max-width: 768px) {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            padding-top: 4.375rem;
+            transition: 0.5s;
+            overflow-y: scroll;
+            background-color: var(--white);
+        }
+
     }
 }
 
 #main-footer {
-
     nav {
         display: flex;
         flex-direction: column;
     }
-
 }
