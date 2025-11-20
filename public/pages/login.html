@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <title>Login page</title>
-    <!-- <script src="script/modalLogin.js" defer></script> -->
+    <script src="../script/login.js" defer></script>
+    <script src="../script/logout.js" defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
@@ -53,15 +54,15 @@
             <div class="modal-content">
                 <h1 id="titleLog">Inicia sessió</h1>
 
-                <form id="taskForm" action="../../php/login.php" method="post">
-                    <label class="credencial">Nom d'usuari: </label>
-                    <input name="userName" class="input userName" type="text" placeholder="Escriu el nom d'usuari aquí"
-                        required>
-                    <label class="credencial">Contrasenya: </label>
-                    <input name="password" class="input password" type="password"
+                <form id="loginForm" action="#" method="post">
+                    <label for="userName" class="credencial">Nom d'usuari: </label>
+                    <input name="userName" id="userName" class="input userName" type="text"
+                        placeholder="Escriu el nom d'usuari aquí" required>
+                    <label for="password" class="credencial">Contrasenya: </label>
+                    <input name="password" id="password" class="input password" type="password"
                         placeholder="Escriu la contrasenya aquí" required>
                     <!-- <button type="button" class="mostraOculta">Mostra/oculta</button> -->
-                    <button type="submit" class="envia">Entrar</button>
+                    <button type="submit" class="envia">Iniciar sessió</button>
                 </form>
             </div>
         </main>

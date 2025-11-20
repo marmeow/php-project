@@ -359,9 +359,6 @@ h6 {
           flex-direction: column;
   gap: 18px;
 }
-#login-page #header-bottom .active-link a {
-  width: 50%;
-}
 
 footer {
   background-color: var(--grey1);
@@ -464,9 +461,6 @@ footer a:hover {
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-#header-bottom ul li a .fa-solid.fa-user.fa-lg {
-  margin-left: 50px;
-}
 #header-bottom ul li a:hover {
   color: var(--green1);
   font-weight: 700;
@@ -475,6 +469,10 @@ footer a:hover {
   color: var(--green1);
   font-weight: 800;
   border-bottom: 2px solid var(--green1);
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 #header-top,

@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+// Recuperar la informació que s'està passant pel document login.js
+header('Content-Type: application/json');
+
+$json = file_get_contents('php://input');
+$data = json_decode($json, true);
+
 //Carregar els usuaris des del json
 $archivo = '../users/users.json';
 
@@ -9,6 +15,7 @@ $usuarios = json_decode($json, true);
 
 // Verificació de que la petició s'ha fet amb el mètode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $resposta=["correcte"=>false];
     // Recollir i sanejar les dades
     $nombre = trim($_POST['userName'] ?? '');
     $password = trim($_POST['password'] ?? '');
@@ -20,19 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../public/index.html");
         exit();
     } else{
-        echo "Usuario o contraseña incorrectos. <a href='../public/pages/login.html'>Volver</a>";
+        echo json_encode($resposta);
     }
 }
-?>
 
-<?php
-/*Això s'hauria de posar a la part de dalt de tot del document "administracio" i així si fa login
-un usuari que no es administrador no carregarà la pàgina
-*/
-
-/* session_start();
-if (empty($_SESSION['usuari'])) {
-    header('Location: ../index.html');
-    exit;
-} */
+//Hauré d'enviar 2 cookies, una per el nom i l'altre per l'admin
 ?>
