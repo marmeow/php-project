@@ -1,14 +1,10 @@
 {
-    "usuaris": [
-        {
-            "nomUsuari": "Mar",
-            "contrasenya": "Meow1234!",
-            "admin": true
-        },
-        {
-            "nomUsuari": "Marta",
-            "contrasenya": "Miau4321!",
-            "admin": false
-        }
-    ]
+    "Mar": {
+        "contrasenya": "Meow1234!",
+        "admin": true
+    },
+    "Marta": {
+        "contrasenya": "Miau4321!",
+        "admin": false
+    }
 }
