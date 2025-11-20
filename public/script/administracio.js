@@ -15,12 +15,12 @@ function comprovaAdmin(){
         if (xhr.status === 200) {
             let response = JSON.parse(xhr.responseText);
 
-            if (response.correcte == false) {
-                alert("No ets administrador");
-                window.location.replace("../index.html");
-            } else {
+            if (response.correcte) {
                 main.style.display = "block";
                 alert("Ets admin");
+            } else {
+                alert("No ets administrador");
+                window.location.replace("../index.html");
             }
         } else {
             alert("Error: " + xhr.status);
