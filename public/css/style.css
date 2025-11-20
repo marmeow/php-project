@@ -162,11 +162,6 @@ h6 {
   bottom: 0;
 }
 
-#main-page {
-  /* input[type="text"]::placeholder {
-      color: black;
-  } */
-}
 #main-page #carousel .carousel {
   margin: 0 auto;
   display: -webkit-box;
@@ -295,184 +290,6 @@ h6 {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page .myModal {
-  display: none;
-  position: absolute;
-  z-index: 1000;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-#main-page .modalContent {
-  position: absolute;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: var(--border);
-  border-radius: var(--btn-radius);
-  width: 100%;
-  max-width: 650px;
-}
-#main-page .modalContent h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-#main-page form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 24px;
-}
-#main-page .form-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-#main-page .modalContent label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-accent);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-#main-page .modalContent input[type=text],
-#main-page .modalContent select {
-  width: 100%;
-  padding: 14px 16px;
-  border: var(--border);
-  border-radius: var(--btn-radius);
-  font-size: 15px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  background-color: var(--color-bg-light);
-}
-#main-page .modalContent input[type=date] {
-  width: 80%;
-}
-#main-page .modalContent input[type=time] {
-  width: 20%;
-}
-#main-page .datereminder {
-  gap: 10px;
-}
-#main-page .modalContent input[type=date],
-#main-page .modalContent input[type=time] {
-  padding: 14px 16px;
-  border: var(--border);
-  border-radius: var(--btn-radius);
-  font-size: 15px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  background-color: var(--color-bg-light);
-}
-#main-page .modalContent input[type=date]:hover,
-#main-page .modalContent select:hover,
-#main-page .modalContent input[type=text]:hover,
-#main-page .modalContent input[type=time]:hover,
-#main-page .modalContent input[type=text]:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  background-color: white;
-  -webkit-box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-          box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-#main-page .deadline-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-#main-page .deadline-container label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  margin-bottom: 0;
-}
-#main-page #deadlineCheck {
-  accent-color: var(--color-primary);
-}
-#main-page fieldset {
-  border: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-#main-page .field-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-#main-page .modalContent button {
-  padding: 16px 32px;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  background-color: var(--color-primary);
-}
-#main-page .modalContent button:hover {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-}
-#main-page .modalContent button:active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-#main-page .closeTask {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #aaa;
-  cursor: pointer;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-#main-page .closeTask:hover,
-#main-page .closeTask:focus {
-  color: var(--color-secondary);
-}
-#main-page .modalContent {
-  position: relative;
-}
 
 #product-page h1 {
   font-size: 4.125rem;
@@ -500,6 +317,50 @@ h6 {
 }
 #product-page #productes h2 {
   font-size: 2.75rem;
+}
+
+#login-page .modal-content {
+  margin: 80px auto;
+  border: 2px solid black;
+  background-color: var(--green1);
+  padding: 25px 0;
+  width: 70%;
+}
+#login-page #titleLog {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+#login-page .credencial {
+  margin: 0 auto;
+  padding-right: 20px;
+  font-size: 22px;
+}
+#login-page .input {
+  display: inline-block;
+  width: 70%;
+  margin: 0 auto;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+#login-page .envia {
+  width: 20%;
+  margin: 0 auto;
+  font-size: 22px;
+}
+#login-page form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
+}
+#login-page #header-bottom .active-link a {
+  width: 50%;
 }
 
 footer {
