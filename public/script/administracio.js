@@ -3,6 +3,10 @@ window.onload = function () {
 
     main.style.display = "none";
 
+    comprovaAdmin();
+}
+
+function comprovaAdmin(){
     const xhr = new XMLHttpRequest();
 
     //Definim que vull que faci la constant xhr quan enviï les dades en el send()
