@@ -49,7 +49,7 @@ function mostraTiquet() {
     let carretData = JSON.parse(localStorage.getItem("productes"));
     let tiquetDiv = document.body.querySelector(".tiquet-final");
 
-    if (!carretData.productes || carretData.productes.length === 0) {
+    if (!carretData || !carretData.productes || carretData.productes.length === 0) {
         tiquetDiv.innerHTML = "<p>El carret està buit.</p>";
         return;
     }
