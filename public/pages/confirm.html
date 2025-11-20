@@ -37,7 +37,7 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="productes.html">Productes</a></li>
-                <li><a href="administrar.html">Administració</a></li>
+                <li><a href="administracio.html">Administració</a></li>
                 <li><a href="contacte.html">Contacte</a></li>
                 <li class="active-link"><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
@@ -53,15 +53,16 @@
                 <div id="user-info">
                     <label for="nom">
                         <span class="min-60">Nom:</span>
-                        <input type="text" name="nom" id="username" required>
+                        <input type="text" name="nom" id="username" placeholder="Entra el teu nom..." required>
                     </label>
                     <label for="email">
                         <span class="min-60">Email:</span>
-                        <input type="email" name="email" id="usermail">
+                        <input type="email" name="email" id="usermail" placeholder="Entra el teu email..." required>
                     </label>
                     <label for="telefon">
                         <span class="min-60">Telèfon:</span>
-                        <input type="tel" name="telefon" id="usertel" pattern="[0-9]{9}">
+                        <input type="tel" name="telefon" id="usertel" pattern="[0-9]{9}" placeholder="123456789"
+                            required>
                     </label>
                 </div>
                 <div class="button-group">
@@ -71,15 +72,43 @@
             </form>
         </fieldset>
     </main>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./product.html">Products</a></li>
-            </ul>
-        </nav>
+    <footer id="main-footer">
+        <div id="sitemap">
+            <h4>Site Map</h4>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="pages/productes.html">Productes</a></li>
+                    <li><a href="pages/administracio.html">Administració</a></li>
+                    <li><a href="pages/contacte.html">Contacte</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="direccio">
+            <h4>On trobar-nos</h4>
+            <p>El Gato Rumano</p>
+            <p>Riera de Cirera, 57 </p>
+            <p>08304 Mataró, Barcelona</p>
+        </div>
+        <div id="equip">
+            <h4>Equip El Gato Rumano</h4>
+            <p>Mar Fernandez Vidal</p>
+            <p>Hary Alexandru Potlog Potlog</p>
+            <p>Marta Llabrés Roldós</p>
+        </div>
         <div id="copyright">
-            <a href="./copyright.html">&copy; Copyright. All Rights Reserved</a>
+            <h4>Legal</h4>
+            <nav>
+                <ul>
+                    <li><a href="#">Avís legal</a></li>
+                    <li><a href="#">Política de privacitat</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Condicions de venta</a></li>
+
+                </ul>
+            </nav>
+
         </div>
     </footer>
 </body>

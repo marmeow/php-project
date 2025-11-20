@@ -1,5 +1,60 @@
 
+
 // https://codepen.io/webstuff/pen/JKgwZY// 
+//https://www.freecodecamp.org/espanol/news/como-usar-localstorage-en-javascript/
+function carregarEstatCarret() {
+  const carretGuardat = localStorage.getItem("carretCompra");
+
+  if (carretGuardat) {
+    const carret = JSON.parse(carretGuardat);
+
+    carret.forEach(item => {
+      const productCard = document.querySelector(`[data-producte="${item.nom}"]`);
+      if (productCard) {
+        const btnCart = productCard.querySelector('.btn-cart');
+        const qty = productCard.querySelector('.qty');
+        const numSpan = productCard.querySelector('.num');
+
+        if (btnCart && qty && numSpan) {
+          btnCart.classList.add('cart_clk');
+          qty.classList.add('active');
+          numSpan.textContent = item.quantitat;
+        }
+      }
+    });
+
+    return true;
+  }
+
+  return false;
+}
+
+function guardarEstatCarret() {
+  const carret = [];
+
+  document.querySelectorAll('.product-card').forEach(card => {
+    const btnCart = card.querySelector('.btn-cart');
+
+    if (btnCart && btnCart.classList.contains('cart_clk')) {
+      const nom = card.getAttribute('data-producte');
+      const preuText = card.querySelector('.preu').textContent;
+      const preu = parseFloat(preuText);
+      const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+
+      if (quantitat > 0) {
+        carret.push({
+          nom: nom,
+          preu: preu,
+          quantitat: quantitat
+        });
+      }
+    }
+  });
+
+  localStorage.setItem("carretCompra", JSON.stringify(carret));
+}
+
+
 
 // Add to cart 
 document.addEventListener('click', function (e) {
@@ -10,11 +65,20 @@ document.addEventListener('click', function (e) {
     if (qty) {
       qty.classList.toggle('active');
     }
-  }
-});
 
-// Add num 
-document.addEventListener('click', function (e) {
+    if (!button.classList.contains('cart_clk')) {
+      const numSpan = button.closest('.crtdiv').querySelector('.num');
+      if (numSpan) {
+        numSpan.textContent = '1';
+      }
+    }
+
+    guardarEstatCarret();
+  }
+
+
+  // Add num 
+
   if (e.target.classList.contains('fa-plus-square') || e.target.closest('.inc')) {
     const inc = e.target.closest('.inc');
     const numSpan = inc.parentElement.querySelector('.num');
@@ -26,11 +90,12 @@ document.addEventListener('click', function (e) {
     if (cartIcon) {
       cartIcon.setAttribute('data-before', prnum);
     }
+    guardarEstatCarret();
   }
-});
 
-// Reduce num
-document.addEventListener('click', function (e) {
+
+  // Reduce num
+
   if (e.target.classList.contains('fa-minus-square') || e.target.closest('.dec')) {
     const dec = e.target.closest('.dec');
     const numSpan = dec.parentElement.querySelector('.num');
@@ -44,8 +109,8 @@ document.addEventListener('click', function (e) {
       if (cartIcon) {
         cartIcon.setAttribute('data-before', prnum);
       }
+      guardarEstatCarret();
     }
-
   }
 });
 
@@ -56,50 +121,43 @@ document.addEventListener('click', function (e) {
 document.addEventListener("DOMContentLoaded", () => {
   fetch('../data/products.json')
     .then(response => response.json())
-    .then(datos => {
-      // para agrupar els productes en categpories
-      const productesPorCategoria = {
-        'entrepans-freds': [],
-        'entrepans-calents': [],
-        'brioixeria': [],
-        'snacks': [],
-        'begudes': [],
-        'fruita': []
-      };
+    .then(dades => {
+      const productesPerCategoria = agruparItems(dades.productes);
+      mostrarCategories(productesPerCategoria);
+    })
+    .catch(error => console.error("Error al carregar el JSON:", error));
+});
 
-      // classificar els productes 
-      datos.productes.forEach(producte => {
-        if (producte.categoria === 'entrepans') {
-          // Segons si s'inclou la praula fred o calent a la descripcio els entrepans van a fred o calent
-          if (producte.descripció && producte.descripció.toLowerCase().includes('fred')) {
-            productesPorCategoria['entrepans-freds'].push(producte);
-          } else {
-            productesPorCategoria['entrepans-calents'].push(producte);
-          }
-        } else {
-          productesPorCategoria[producte.categoria]?.push(producte);
-        }
-      });
+function agruparItems(productes) {
+  const cats = {};
+  productes.forEach(item => {
+    if (item.categoria === 'entrepans') {
+      const subcat = (item.descripció?.toLowerCase().includes('fred'))
+        ? 'entrepans-freds'
+        : 'entrepans-calents';
+      if (!cats[subcat]) cats[subcat] = [];
+      cats[subcat].push(item);
+    } else {
+      if (!cats[item.categoria]) cats[item.categoria] = [];
+      cats[item.categoria].push(item);
+    }
+  });
+  return cats;
+}
 
-
-
-      // FALTA HACER LO DEL DOM PURIFY!!!!!!!!!!!!! AÑADIR AL JIRA MAÑANA!!!!!!!!!!!!!!!!!!!!!!! 
-
-      function crearTarjetaProducte(producte) {
-        const ofertaClass = producte.oferta ? 'oferta' : '';
-        const imatgeUrl = producte.imatge || "placeholder.png";
-        console.log(producte.imatge)
-        let content = `
-      <article class="product-card ${ofertaClass}" data-producte="${producte.nom}">
-        <div class="inner">
-
-        <img src="../resources/images/products/${imatgeUrl}" alt="${producte.nom}">
-          <h5>${producte.nom}</h5>
-          <p class="descripcio">${producte.descripció || producte.descripcio}</p>
-          <div class="preu-oferta-container">
-            <p class="preu-iva"><span class="preu">${producte.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
+function crearCard(item) {
+  const ofertaClass = item.oferta ? 'oferta' : '';
+  const imgUrl = item.imatge || "placeholder.png";
+  return `
+    <article class="product-card ${ofertaClass}" data-producte="${item.nom}">
+      <div class="inner">
+        <img src="../resources/images/products/${imgUrl}" alt="${item.nom}">
+        <h5>${item.nom}</h5>
+        <p class="descripcio">${item.descripció || item.descripcio}</p>
+        <div class="preu-oferta-container">
+            <p class="preu-iva"><span class="preu">${item.preu.toFixed(2)}</span> € <span class="iva">IVA inclós</span></p>
             <div class="oferta-badge">
-              ${producte.oferta ? 'Oferta!' : ''}
+              ${item.oferta ? 'Oferta!' : ''}
             </div>
           </div>
           <div class="cont">
@@ -121,79 +179,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
         </div>
 
+    </article>
+  `;
+}
 
-        
+function mostrarCategories(categories) {
+  const productesDiv = document.getElementById("productes");
 
-      </article>
-    `;
+  Object.keys(categories).forEach(cat => {
+    const items = categories[cat];
+    if (items.length === 0) return;
 
-
-        return content;
+    if (cat === "entrepans-freds") {
+      const fredsCards = document.querySelector("#freds .product-cards");
+      if (fredsCards) {
+        fredsCards.innerHTML = items.map(crearCard).join("");
       }
-
-
-
-      // GENERAR!!!!!!!!!!!!!!! TODO ESTO LO METERÉ EN UNA FUNCION EN LUGAR DE DEJARLO SUELTO!!!!!!!!!!!!!!!!!! AÑADIRE TASCA AL JIRA MAÑANA!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-      const fredsContainer = document.querySelector('#freds .product-cards');
-      if (fredsContainer && productesPorCategoria['entrepans-freds'].length > 0) {
-        fredsContainer.innerHTML = productesPorCategoria['entrepans-freds']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
+    } else if (cat === "entrepans-calents") {
+      const calentsCards = document.querySelector("#calents .product-cards");
+      if (calentsCards) {
+        calentsCards.innerHTML = items.map(crearCard).join("");
       }
-
-
-      const calentsContainer = document.querySelector('#calents');
-      if (calentsContainer && productesPorCategoria['entrepans-calents'].length > 0) {
-        let calentsCards = calentsContainer.querySelector('.product-cards');
-        if (!calentsCards) {
-          calentsCards = document.createElement('div');
-          calentsCards.className = 'product-cards flex';
-          calentsContainer.appendChild(calentsCards);
-        }
-        calentsCards.innerHTML = productesPorCategoria['entrepans-calents']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
+    } else {
+      let sec = document.getElementById(cat);
+      if (!sec) {
+        sec = document.createElement("section");
+        sec.id = cat;
+        const titulo = cat.charAt(0).toUpperCase() + cat.slice(1);
+        sec.innerHTML = `<h3>${titulo}</h3><div class="product-cards flex"></div>`;
+        productesDiv.appendChild(sec);
       }
+      const cards = sec.querySelector(".product-cards");
+      cards.innerHTML = items.map(crearCard).join("");
+    }
+  });
+}
 
-      const brioixeriaContainer = document.querySelector('#brioixeria .product-cards');
-      if (brioixeriaContainer && productesPorCategoria['brioixeria'].length > 0) {
-        brioixeriaContainer.innerHTML = productesPorCategoria['brioixeria']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
-      }
-
-
-      const snacksContainer = document.querySelector('#snacks .product-cards');
-      if (snacksContainer && productesPorCategoria['snacks'].length > 0) {
-        snacksContainer.innerHTML = productesPorCategoria['snacks']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
-      }
-
-      const begudesContainer = document.querySelector('#begudes .product-cards');
-      if (begudesContainer && productesPorCategoria['begudes'].length > 0) {
-        begudesContainer.innerHTML = productesPorCategoria['begudes']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
-      }
-
-      const fruitaContainer = document.querySelector('#fruita .product-cards');
-      if (fruitaContainer && productesPorCategoria['fruita'].length > 0) {
-        fruitaContainer.innerHTML = productesPorCategoria['fruita']
-          .map(p => crearTarjetaProducte(p))
-          .join('');
-      }
-    })
-    .catch(error => console.error("Error al carregar el JSON:", error));
-});
 
 
 //https://www.w3schools.com/howto/howto_js_vertical_tabs.asp
 
-function openCity(evt, cityName) {
+function openBocata(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
