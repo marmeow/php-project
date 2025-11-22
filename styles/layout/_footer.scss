@@ -1,18 +1,42 @@
-@use "../abstracts/variables" as *;
-
 footer {
     background-color: var(--grey1);
+    color: var(--green2);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    position: sticky;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: var(--space-lg);
+    box-sizing: content-box;
 
-    nav a {
+
+    h4 {
         color: white;
+        font-size: var(--font-lg);
+        margin-bottom: var(--space-sm);
     }
 
-    #copyright a {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
+    }
+
+    p,
+    a {
+        color: var(--green2);
         text-decoration: none;
-        color: white;
+        transition: 0.2s ease color;
+        margin-bottom: var(--space-xs);
+
     }
+
+    a:hover {
+        color: var(--green1);
+    }
+
+
+
 }

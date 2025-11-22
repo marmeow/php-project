@@ -13,6 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <script src="script.js" defer></script>
+    <script src="script/carousel.js" defer></script>
+    <script src="script/ofertes.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -38,42 +40,90 @@
                 <ul>
                     <li class="active-link"><a href="#">Home</a></li>
                     <li><a href="pages/productes.html">Productes</a></li>
-                    <li><a href="pages/administrar.html">Administració</a></li>
+                    <li><a href="pages/administracio.html">Administració</a></li>
                     <li><a href="pages/contacte.html">Contacte</a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                    <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="pages/login.html" id="user-icon"><i
+                                class="fa-solid fa-user fa-lg btnuser-icon"></i></a></li>
+
                 </ul>
             </nav>
         </header>
+        <main>
+            <section id="carousel"><!--Seguir aqui-->
+                <div class="carousel">
+                    <button class="botonFlecha retroceder"><i class="fa fa-solid fa-angle-left fa-2xl"></i></button>
+                    <div id="imagen"></div>
+                    <div id="imageCover"></div>
+                    <h1 id="titulos">Benvinguts al Gato Rumano</h1>
+                    <button class="botonFlecha avanzar"><i class="fa fa-solid fa-angle-right fa-2xl"></i></button>
+                </div>
 
-        <section id="carousel"><!--Seguir aqui-->
-            <div class="carousel">
-                <button class="botonFlecha retroceder"><img src="resources/icons/left-arrow.png"
-                        alt="previous pic"></button>
-                <div id="imagen"></div>
-                <button class="botonFlecha avanzar"><img src="resources/icons/right-arrow(1).png"
-                        alt="next pic"></button>
-            </div>
-            <div class="controles">
-                <button id="play">Play</button>
-                <button id="stop" disabled>Stop</button>
-            </div>
-        </section>
+                <section id="ofertes">
+                    <h2 id="titolOfertes">Ofertes especials de la setmana</h2>
+                </section>
 
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="pages/productes.html">Productes</a></li>
-                    <li><a href="pages/administrar.html">Administració</a></li>
-                    <li><a href="pages/contacte.html">Contacte</a></li>
-                </ul>
-            </nav>
+            </section>
+        </main>
+
+        <footer id="main-footer">
+            <div id="sitemap">
+                <h4>Site Map</h4>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="pages/productes.html">Productes</a></li>
+                        <li><a href="pages/administracio.html">Administració</a></li>
+                        <li><a href="pages/contacte.html">Contacte</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="direccio">
+                <h4>On trobar-nos</h4>
+                <p>El Gato Rumano</p>
+                <p>Riera de Cirera, 57 </p>
+                <p>08304 Mataró, Barcelona</p>
+            </div>
+            <div id="equip">
+                <h4>Equip El Gato Rumano</h4>
+                <p>Mar Fernandez Vidal</p>
+                <p>Hary Alexandru Potlog Potlog</p>
+                <p>Marta Llabrés Roldós</p>
+            </div>
             <div id="copyright">
-                <a href="pages/copyright.html">&copy; Copyright. All Rights Reserved</a>
+                <h4>Legal</h4>
+                <nav>
+                    <ul>
+                        <li><a href="#">Avís legal</a></li>
+                        <li><a href="#">Política de privacitat</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Condicions de venta</a></li>
+
+                    </ul>
+                </nav>
+
             </div>
         </footer>
     </div>
+
+
+
+    <!--     <div class="myModal">
+        <div class="modal-content">
+            <span class="closeTask">&times;</span>
+            <h4 id="titleLog">Inicia sessió</h4>
+
+            <form id="taskForm" action="login.php" method="post">
+                <label class="credencial">Nom d'usuari: </label>
+                <input class="input userName" type="text" placeholder="Escriu el nom d'usuari aquí" required>
+                <label class="credencial">Contrasenya: </label>
+                <input class="input password" type="password" placeholder="Escriu la contrasenya aquí" required>
+                <button type="button" class="mostraOculta">Mostra/oculta</button>
+                <button type="submit" class="envia">Entrar</button>
+            </form>
+        </div>
+    </div> -->
 </body>
 
 </html>

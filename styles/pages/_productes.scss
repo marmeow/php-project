@@ -10,12 +10,16 @@
         margin: var(--space-xxxxl);
 
         section {
-            margin-top: var(--space-lg);
+            margin-top: var(--space-xxxxl);
+
+            &#entrepans {
+                margin-top: var(--space-xl);
+            }
 
             h3 {
                 font-size: var(--font-xxl);
                 margin-bottom: var(--space-md);
-                border-bottom: 5px solid var(--blue1);
+
                 display: block;
                 width: fit-content;
                 font-weight: 600;

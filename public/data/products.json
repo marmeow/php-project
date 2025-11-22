@@ -5,217 +5,200 @@
             "preu": 1.00,
             "descripció": "Ampolla aigua de 250ml",
             "categoria": "begudes",
-            "oferta": false
+            "oferta": false,
+            "imatge": "agua.png"
         },
         {
             "nom": "Cacaolat",
             "preu": 2.50,
             "descripció": "Ampolla cacacolat de 275ml",
             "categoria": "begudes",
-            "oferta": true
+            "oferta": true,
+            "imatge": "cacaolat.png"
         },
         {
             "nom": "Fanta",
             "preu": 1.50,
             "descripció": "Refresc de cola original llauna 33 cl",
             "categoria": "begudes",
-            "oferta": true
+            "oferta": true,
+            "imatge": "fanta.png"
         },
         {
             "nom": "Coca-Cola",
             "preu": 1.50,
             "descripció": "Refresc de cola original llauna 33 cl",
             "categoria": "begudes",
-            "oferta": true
+            "oferta": true,
+            "imatge": "cocacola.png"
         },
         {
             "nom": "Cafè",
             "preu": 0.70,
             "descripció": "Cafè expresso acabat de fer",
             "categoria": "begudes",
-            "oferta": false
+            "oferta": false,
+            "imatge": "cafe.png"
         },
         {
             "nom": "Tallat",
             "preu": 0.85,
             "descripció": "Cafè descafeïnat acabat de fer",
             "categoria": "begudes",
-            "oferta": false
+            "oferta": false,
+            "imatge": "tallat.png"
         },
         {
             "nom": "Cafè amb llet",
             "preu": 1.00,
             "descripció": "Cafè amb llet acabat de fer",
             "categoria": "begudes",
-            "oferta": true
+            "oferta": true,
+            "imatge": "cafe-llet.png"
         },
         {
             "nom": "Entrepà de llom",
             "preu": 3.50,
             "descripció": "Entrepà calent de llom amb tomàquet",
             "categoria": "entrepans",
-            "oferta": true
+            "oferta": true,
+            "imatge": "entrepa-llom.png"
         },
         {
             "nom": "Entrepà de truita",
             "preu": 3.00,
             "descripció": "Entrepà calent de truita amb tomàquet",
             "categoria": "entrepans",
-            "oferta": false
+            "oferta": false,
+            "imatge": "entrepa-truita.png"
         },
         {
             "nom": "Entrepà de bacó",
             "preu": 4.00,
             "descripció": "Entrepà calent de bacó amb tomàquet",
             "categoria": "entrepans",
-            "oferta": true
+            "oferta": true,
+            "imatge": "entrepa-baco.png"
         },
         {
             "nom": "Entrepà de pernil salat",
             "preu": 4.00,
             "descripció": "Entrepà fred de pernil salat amb tomàquet",
             "categoria": "entrepans",
-            "oferta": true
+            "oferta": true,
+            "imatge": "entrpa-pernil.png"
         },
         {
-            "nom": "Entrepà de pernil dolç",
+            "nom": "Entrepà de pernil dolç i formatge",
             "preu": 2.50,
-            "descripció": "Entrepà fred de pernil dolç amb tomàquet",
+            "descripció": "Entrepà fred de pernil dolç i formatge amb tomàquet",
             "categoria": "entrepans",
-            "oferta": false
+            "oferta": false,
+            "imatge": "entrpa-pernil-d.png"
         },
         {
-            "nom": "Entrapà de fuet",
+            "nom": "Entrapà de xoriço",
             "preu": 3.00,
-            "descripció": "Entrepà fred de fuet amb tomàquet",
+            "descripció": "Entrepà fred de xoriço amb tomàquet",
             "categoria": "entrepans",
-            "oferta": false
+            "oferta": false,
+            "imatge": "entrepa-chorizo.png"
         },
         {
             "nom": "Croissant",
             "preu": 0.75,
             "descripció": "Croissant tradicional de mantega",
             "categoria": "brioixeria",
-            "oferta": false
+            "oferta": false,
+            "imatge": "croissant.png"
         },
         {
             "nom": "Croissant de xocolata",
             "preu": 1.50,
             "descripció": "Croissant farcit de xocolata",
             "categoria": "brioixeria",
-            "oferta": true
+            "oferta": true,
+            "imatge": "croissant-choco.png"
         },
         {
             "nom": "Magdalena",
             "preu": 0.85,
             "descripció": "Magdalena casolana",
             "categoria": "brioixeria",
-            "oferta": false
+            "oferta": false,
+            "imatge": "magdalena.png"
         },
         {
             "nom": "Magdalena de xocolata",
             "preu": 1.40,
             "descripció": "Magdalena casolana amb trossets de xocolata",
             "categoria": "brioixeria",
-            "oferta": true
+            "oferta": true,
+            "imatge": "magdalena-choco.png"
         },
         {
             "nom": "Napolitana de crema",
             "preu": 1.10,
             "descripció": "Napolitana farcida de crema",
             "categoria": "brioixeria",
-            "oferta": false
+            "oferta": false,
+            "imatge": "napolitana.png"
         },
         {
             "nom": "Napolitana de xocolata",
             "preu": 1.10,
             "descripció": "Napolitana farcida de xocolata",
             "categoria": "brioixeria",
-            "oferta": true
+            "oferta": true,
+            "imatge": "napolitana-choco.png"
         },
         {
             "nom": "Kinder Bueno",
             "preu": 1.00,
             "descripció": "Barretes de xocolata Kinder",
             "categoria": "snacks",
-            "oferta": true
+            "oferta": true,
+            "imatge": "kinder-bueno.png"
         },
         {
             "nom": "Kit Kat",
             "preu": 1.00,
             "descripció": "Barretes de xocolata Kit Kat",
             "categoria": "snacks",
-            "oferta": true
+            "oferta": true,
+            "imatge": "kitkat.png"
         },
         {
             "nom": "Twix",
             "preu": 1.00,
             "descripció": "Barretes de xocolata Twix",
             "categoria": "snacks",
-            "oferta": true
+            "oferta": true,
+            "imatge": "twix.png"
         },
         {
             "nom": "Lays al punt de sal",
             "preu": 0.95,
             "descripció": "Bossa de patates fregides Lays al punt de sal 150g",
             "categoria": "snacks",
-            "oferta": false
+            "oferta": false,
+            "imatge": "lays.png"
         },
         {
             "nom": "Ruffles",
             "preu": 0.95,
             "descripció": "Bossa de patates fregides Ruffles 150g",
             "categoria": "snacks",
-            "oferta": false
+            "oferta": false,
+            "imatge": "ruffles.png"
         },
         {
             "nom": "Doritos",
             "preu": 0.95,
             "descripció": "Bossa de nachos Doritos 150g",
             "categoria": "snacks",
-            "oferta": false
-        },
-        {
-            "nom": "Poma",
-            "preu": 0.60,
-            "descripció": "Poma fresca de temporada",
-            "categoria": "fruita",
-            "oferta": false
-        },
-        {
-            "nom": "Pera",
-            "preu": 0.60,
-            "descripció": "Pera fresca de temporada",
-            "categoria": "fruita",
-            "oferta": false
-        },
-        {
-            "nom": "Plàtan",
-            "preu": 0.60,
-            "descripció": "Plàtan fresc de temporada",
-            "categoria": "fruita",
-            "oferta": false
-        },
-        {
-            "nom": "Taronja",
-            "preu": 0.70,
-            "descripció": "Taronja fresca de temporada",
-            "categoria": "fruita",
-            "oferta": true
-        },
-        {
-            "nom": "Mandarina",
-            "preu": 0.70,
-            "descripció": "Mandarina fresca de temporada",
-            "categoria": "fruita",
-            "oferta": true
-        },
-        {
-            "nom": "Caqui",
-            "preu": 0.80,
-            "descripció": "Caqui fresc de temporada",
-            "categoria": "fruita",
-            "oferta": true
+            "oferta": false,
+            "imatge": "doritos.png"
         }
     ]
 }
