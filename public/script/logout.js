@@ -4,43 +4,56 @@ window.addEventListener("DOMContentLoaded", function () {
 
 })
 
-// Function to retrieve the JWT token from localStorage
-function getToken() {
-    return localStorage.getItem("jwtToken");
-}
-
 // Funció que comprova si l'usuari esta logejat
-function isLoggedIn() {
-    const token = localStorage.getItem("jwtToken");
-    return !!token; // Return true if a token exists, false otherwise
+async function isLoggedIn() {
+    try {
+        const response = await fetch("/php/isLoggedIn.php", { method: "POST" });
+        const data = await response.json();
+        console.log("Respuesta del servidor:", data);
+        return data.correcte; // true o false
+    } catch (error) {
+        console.error("Error:", error);
+        return false;
+    }
 }
 
 // Funció que actualitza la UI basat en l'estat del login
-function updateUI(botoLogin) {
-    const botoLogin = document.body.querySelector("#loginForm");
+async function updateUI() {
+    const loggedIn = await isLoggedIn();
 
-    if (botoLogin) {
-        if (isLoggedIn()) {
-            // User is logged in, so show the logout button container
-            botoLogin.textContent = "Tanca la sessió"
-            botoLogin.onclick = logout;
-        } else {
-            sessionButton.textContent = "Iniciar sessió";
-            sessionButton.onclick = () => window.location.href = '../pages/login.html';
-        }
+    if (loggedIn) {
+        console.log("dins del loggedIn");
+        const loginForm = document.querySelector("#loginForm");
+
+        document.querySelector(".envia").style.display = "none";
+
+        const logoutBoto = document.createElement('button');
+        logoutBoto.type = 'submit';
+        logoutBoto.className = 'logout envia';
+        logoutBoto.id = 'logout';
+        logoutBoto.innerHTML = 'Tancar sessió';
+
+        logoutBoto.onclick = logout;
+
+        loginForm.insertAdjacentElement("beforeend", logoutBoto);
+        // User is logged in, so show the logout button container
+        /* botoLogin.textContent = "Tanca la sessió"*/
+
+    } else {
+        console.log("No es logged in");
     }
-
 }
 
-
 // Rest of your code, including the logout function
-function logout() {
-    // Remove the JWT token from local storage
-    localStorage.removeItem("jwtToken");
+async function logout() {
+    try {
+        const response = await fetch("/php/logout.php", { method: "POST" });
+        //const data = await response.json(); // aquí esperas la respuesta en JSON
+        window.location.reload();
+    } catch (error) {
+        console.error("Error:", error);
+        return false;
+    }
 
-    // Call the updateUI function when the page loads
-    updateUI();
 
-    // Redirect the user to the login page
-    window.location.href = '/Frontend/login.html';
 }

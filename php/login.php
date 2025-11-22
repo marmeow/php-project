@@ -46,5 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-//Hauré d'enviar 2 cookies, una per el nom i l'altre per l'admin
 ?>
