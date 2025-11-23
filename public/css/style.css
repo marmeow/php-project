@@ -46,6 +46,29 @@ h6 {
   display: flex;
 }
 
+h2 {
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: var(--font-xxl);
+}
+
+h4 {
+  font-size: var(--font-xl);
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: var(--font-xl);
+  }
+  h4 {
+    font-size: var(--font-lg);
+  }
+}
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -162,7 +185,12 @@ h6 {
   bottom: 0;
 }
 
-#main-page #carousel .carousel {
+#main-page {
+  /* input[type="text"]::placeholder {
+      color: black;
+  } */
+}
+#main-page #main .carousel {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,33 +203,43 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-#main-page #carousel #imagen,
-#main-page #carousel #imageCover {
+#main-page #main h3 {
+  border-bottom: 2px solid var(--green1);
+  margin-bottom: var(--space-xl);
+}
+#main-page #main #imagen,
+#main-page #main #imageCover {
   width: 100%;
   height: 600px;
 }
-#main-page #carousel #imagen {
+#main-page #main #imagen {
   background-size: cover;
   background-position: center;
 }
-#main-page #carousel #imageCover {
+#main-page #main #imageCover {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(41, 51, 40, 0.041);
 }
-#main-page #carousel #titulos {
+#main-page #main #titulos {
   position: absolute;
-  color: rgba(255, 255, 255, 0.937254902);
+  color: #edf1eb;
   font-family: var(--font-titles);
-  font-size: 9em;
+  font-size: 8rem;
   text-align: center;
   line-height: 8rem;
   margin: var(--space-xxl);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
 }
-#main-page #carousel .botonFlecha {
+@media (max-width: 768px) {
+  #main-page #main #titulos {
+    font-size: 4rem;
+    line-height: 3.4rem;
+  }
+}
+#main-page #main .botonFlecha {
   background-color: transparent;
   width: auto;
   height: 100%;
@@ -209,84 +247,96 @@ h6 {
   border: none;
   z-index: 99;
 }
-#main-page #carousel .botonFlecha.avanzar {
+#main-page #main .botonFlecha.avanzar {
   right: 0;
 }
-#main-page #carousel .botonFlecha.retroceder {
+#main-page #main .botonFlecha.retroceder {
   left: 0;
 }
-#main-page #carousel .botonFlecha .fa {
+#main-page #main .botonFlecha .fa {
   font-size: 5rem;
   color: rgba(255, 255, 255, 0.774);
   cursor: pointer;
 }
-#main-page #carousel #ofertes {
-  margin: var(--space-xl);
-  max-width: 98%;
-  display: block;
+@media (max-width: 480px) {
+  #main-page #main .botonFlecha .fa {
+    display: none;
+  }
 }
-#main-page #carousel #ofertes #titolOfertes {
-  font-size: var(--font-xxl);
-  border-bottom: 5px solid var(--green1);
+#main-page #main #ofertes {
+  margin: var(--space-xxxxl);
 }
-#main-page #carousel #ofertes .seccioCategoria {
+@media (max-width: 480px) {
+  #main-page #main #ofertes {
+    margin: var(--space-xl);
+  }
+}
+#main-page #main #ofertes .seccioCategoria {
   font-size: var(--font-xl);
+  margin-top: var(--space-xxl);
 }
-#main-page #carousel #ofertes #begudes {
-  padding-top: 20px;
+#main-page #main #ofertes .seccioCategoria .productes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--space-md);
 }
-#main-page #carousel #ofertes #begudes #h3begudes {
-  border-bottom: 3px solid var(--grey1);
+@media (max-width: 480px) {
+  #main-page #main #ofertes .seccioCategoria .productes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
-#main-page #carousel #ofertes #h3entrepans {
-  border-bottom: 3px solid var(--grey1);
-}
-#main-page #carousel #ofertes #h3brioixeria {
-  border-bottom: 3px solid var(--grey1);
-}
-#main-page #carousel #ofertes #h3snacks {
-  border-bottom: 3px solid var(--grey1);
-}
-#main-page #carousel #ofertes #h3fruita {
-  border-bottom: 3px solid var(--grey1);
-}
-#main-page #carousel #ofertes .ofertProduct {
-  display: inline-block;
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
   border: 1px solid var(--grey1);
   padding: var(--space-md);
-  width: 25rem;
-  height: 100%;
-  margin: var(--space-lg) var(--space-xl);
+  width: calc(25% - var(--space-md));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - var(--space-md));
+          flex: 0 0 calc(25% - var(--space-md));
+  margin: 0;
   text-align: center;
 }
-#main-page #carousel #ofertes .ofertProduct #nomProducte {
+@media (max-width: 480px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
+    width: 100%;
+  }
+}
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
   font-size: var(--font-xxl);
   border-bottom: 2px solid var(--green1);
   padding-bottom: var(--space-xs);
 }
-#main-page #carousel #ofertes .ofertProduct #descripcioProducte,
-#main-page #carousel #ofertes .ofertProduct #preuAbans,
-#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #descripcioProducte,
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuAbans,
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
   font-size: var(--font-lg);
 }
-#main-page #carousel #ofertes .ofertProduct #descripcioProducte {
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #descripcioProducte {
   padding: var(--space-lg) 0;
   height: 108px;
 }
-#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page #carousel #ofertes .ofertProduct #preuDescompte:hover {
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte:hover {
   text-decoration: underline;
   font-weight: 900;
 }
-#main-page #carousel #ofertes .ofertProduct #percent {
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
   padding-top: var(--space-xxxl);
   font-size: var(--font-xxl);
   color: var(--grey1);
 }
-#main-page #carousel #ofertes .ofertProduct #percent:hover {
+@media (max-width: 480px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
+    font-size: var(--font-lg);
+  }
+}
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent:hover {
   color: var(--green1);
   font-weight: bold;
 }
@@ -379,6 +429,22 @@ footer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+@media (max-width: 480px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 footer h4 {
   color: white;
   font-size: var(--font-lg);
@@ -452,6 +518,27 @@ footer a:hover {
   -webkit-box-shadow: 0px -1px 8px 0px var(--grey1);
           box-shadow: 0px -1px 8px 0px var(--grey1);
 }
+@media (max-width: 1024px) {
+  #header-bottom {
+    padding: var(--space-xs);
+  }
+}
+@media (max-width: 768px) {
+  #header-bottom {
+    padding: var(--space-xs);
+  }
+  #header-bottom #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+  }
+}
 #header-bottom ul li {
   margin-right: var(--space-lg);
 }
@@ -463,9 +550,6 @@ footer a:hover {
   border-bottom: 2px solid transparent;
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
-}
-#header-bottom ul li a .fa-solid.fa-user.fa-lg {
-  margin-left: 50px;
 }
 #header-bottom ul li a:hover {
   color: var(--green1);
@@ -482,6 +566,44 @@ footer a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+button {
+  border-radius: var(--radius-lg);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--grey-gradient)));
+  background: linear-gradient(var(--grey-gradient));
+  border: 0.0625rem solid var(--grey1);
+  padding: var(--space-xs) 1.25rem;
+  font-size: 0.85em;
+  color: var(--grey3);
+  text-align: right;
+  cursor: pointer;
+}
+button.burgerbtn {
+  display: none;
+  color: var(--grey3);
+  font-size: 1.75rem;
+  padding: var(--space-xs);
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+@media (max-width: 768px) {
+  button.burgerbtn {
+    display: block !important;
+  }
+}
+button.closebtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--grey3);
+  font-size: 1.75rem;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  background: none;
 }
 
 #info-tiquet {
@@ -594,6 +716,22 @@ footer a:hover {
   text-decoration: none;
   display: inline-block;
   color: black;
+}
+@media (max-width: 768px) {
+  #header-bottom nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    padding-top: 4.375rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    overflow-y: scroll;
+    background-color: var(--white);
+  }
 }
 
 #main-footer nav {

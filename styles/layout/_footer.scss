@@ -9,6 +9,14 @@ footer {
     box-sizing: content-box;
 
 
+    @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
     h4 {
         color: white;
         font-size: var(--font-lg);
