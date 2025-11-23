@@ -7,7 +7,17 @@ footer {
     align-items: flex-start;
     padding: var(--space-lg);
     box-sizing: content-box;
+    margin-top: var(--space-xxxxl);
+    flex-wrap: wrap;
 
+
+    @media (max-width: 7680px) {
+         justify-content: center;
+        div {
+            margin: var(--space-xs);
+            width: calc(50% - var(--space-xs));
+        }
+    }
 
     @media (max-width: 480px) {
         flex-direction: column;

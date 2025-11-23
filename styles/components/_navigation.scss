@@ -28,6 +28,11 @@
             display: flex;
             align-items: center;
 
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+
             a {
                 text-decoration: none;
                 display: inline-block;
@@ -46,7 +51,7 @@
             padding-top: 4.375rem;
             transition: 0.5s;
             overflow-y: scroll;
-            background-color: var(--white);
+            background-color: white;
         }
 
     }

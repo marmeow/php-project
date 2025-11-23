@@ -185,11 +185,6 @@ h6 {
   bottom: 0;
 }
 
-#main-page {
-  /* input[type="text"]::placeholder {
-      color: black;
-  } */
-}
 #main-page #main .carousel {
   margin: 0 auto;
   display: -webkit-box;
@@ -232,6 +227,12 @@ h6 {
   margin: var(--space-xxl);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
+}
+@media (max-width: 1080px) {
+  #main-page #main #titulos {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
 }
 @media (max-width: 768px) {
   #main-page #main #titulos {
@@ -280,6 +281,8 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   gap: var(--space-md);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media (max-width: 480px) {
   #main-page #main #ofertes .seccioCategoria .productes {
@@ -299,6 +302,20 @@ h6 {
   margin: 0;
   text-align: center;
 }
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct:hover #preuDescompte {
+  text-decoration: underline;
+}
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct:hover #percent {
+  color: var(--green1);
+}
+@media (max-width: 768px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
+    width: calc(50% - var(--space-md));
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - var(--space-md));
+            flex: 0 0 calc(50% - var(--space-md));
+  }
+}
 @media (max-width: 480px) {
   #main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
     width: 100%;
@@ -309,36 +326,39 @@ h6 {
   border-bottom: 2px solid var(--green1);
   padding-bottom: var(--space-xs);
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #descripcioProducte,
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuAbans,
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
-  font-size: var(--font-lg);
+@media (max-width: 1080px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
+    font-size: var(--font-lg);
+  }
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #descripcioProducte {
-  padding: var(--space-lg) 0;
-  height: 108px;
+#main-page #main #ofertes .seccioCategoria .productes .ofertProduct p {
+  font-size: var(--font-lg);
+  padding: var(--space-sm) 0;
+}
+@media (max-width: 1080px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct p {
+    font-size: var(--font-md);
+  }
 }
 #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte:hover {
-  text-decoration: underline;
-  font-weight: 900;
-}
 #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
-  padding-top: var(--space-xxxl);
-  font-size: var(--font-xxl);
-  color: var(--grey1);
+  padding-top: var(--space-xxl);
+  font-size: var(--font-xl);
+  color: var(--grey2);
+  font-weight: 500;
+}
+@media (max-width: 1080px) {
+  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
+    font-size: var(--font-lg);
+  }
 }
 @media (max-width: 480px) {
   #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
     font-size: var(--font-lg);
   }
-}
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent:hover {
-  color: var(--green1);
-  font-weight: bold;
 }
 
 #product-page h1 {
@@ -428,6 +448,20 @@ footer {
   padding: var(--space-lg);
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  margin-top: var(--space-xxxxl);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (max-width: 7680px) {
+  footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer div {
+    margin: var(--space-xs);
+    width: calc(50% - var(--space-xs));
+  }
 }
 @media (max-width: 480px) {
   footer {
@@ -569,7 +603,6 @@ footer a:hover {
 }
 
 button {
-  border-radius: var(--radius-lg);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--grey-gradient)));
   background: linear-gradient(var(--grey-gradient));
   border: 0.0625rem solid var(--grey1);
@@ -712,6 +745,14 @@ button.closebtn {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 768px) {
+  #header-bottom nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 #header-bottom nav ul a {
   text-decoration: none;
   display: inline-block;
@@ -730,7 +771,7 @@ button.closebtn {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     overflow-y: scroll;
-    background-color: var(--white);
+    background-color: white;
   }
 }
 
@@ -1017,4 +1058,4 @@ button.closebtn {
   width: 22px;
   display: inline-block;
   text-align: Center;
-}/*# sourceMappingURL=style.css.map */
+}

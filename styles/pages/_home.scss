@@ -46,6 +46,11 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-transform: uppercase;
 
+            @media (max-width: 1080px) {
+                font-size: 5rem;
+                line-height: 5rem;
+            }
+
             @media (max-width: 768px) {
                 font-size: 4rem;
                 line-height: 3.4rem;
@@ -97,6 +102,7 @@
                 .productes {
                     display: flex;
                     gap: var(--space-md);
+                    flex-wrap: wrap;
 
                     @media (max-width: 480px) {
                         flex-direction: column;
@@ -110,6 +116,24 @@
                         flex: 0 0 calc(25% - var(--space-md));
                         margin: 0;
                         text-align: center;
+           
+
+                        &:hover {
+                            #preuDescompte {
+                                text-decoration: underline;
+                            }
+
+                            #percent {
+                                color: var(--green1);
+                            }
+                        }
+
+
+                        @media (max-width: 768px) {
+                            width: calc(50% - var(--space-md));
+                            flex: 0 0 calc(50% - var(--space-md));
+
+                        }
 
                         @media (max-width: 480px) {
                             width: 100%;
@@ -121,42 +145,43 @@
                             font-size: var(--font-xxl);
                             border-bottom: 2px solid var(--green1);
                             padding-bottom: var(--space-xs);
+
+                            @media (max-width: 1080px) {
+                                font-size: var(--font-lg);
+                            }
+
                         }
 
-                        #descripcioProducte,
-                        #preuAbans,
-                        #preuDescompte {
+                        p {
                             font-size: var(--font-lg);
-                        }
+                            padding: var(--space-sm) 0;
 
-                        #descripcioProducte {
-                            padding: var(--space-lg) 0;
-                            height: 108px;
+                            @media (max-width: 1080px) {
+                                font-size: var(--font-md);
+                            }
+
                         }
 
                         #preuDescompte {
                             color: var(--green1);
                             font-weight: bold;
-
-                            &:hover {
-                                text-decoration: underline;
-                                font-weight: 900;
-                            }
                         }
 
                         #percent {
-                            padding-top: var(--space-xxxl);
-                            font-size: var(--font-xxl);
-                            color: var(--grey1);
+                            padding-top: var(--space-xxl);
+                            font-size: var(--font-xl);
+                            color: var(--grey2);
+                            font-weight: 500;
 
-                            @media (max-width: 480px) {
+
+
+                            @media (max-width: 1080px) {
                                 font-size: var(--font-lg);
                             }
 
 
-                            &:hover {
-                                color: var(--green1);
-                                font-weight: bold;
+                            @media (max-width: 480px) {
+                                font-size: var(--font-lg);
                             }
                         }
                     }
