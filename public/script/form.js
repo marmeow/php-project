@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
         enviaJSONAServer(carretData);
     });
 
-    //creaProductesProva(); // TODO: Eliminar aquesta línia en producció
+    creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
@@ -65,7 +65,7 @@ function mostraTiquet() {
 }
 
 function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
-    let productesProva = {
+    const productesProva = {
         productes: [
             { nom: "Producte A", preu: 10, quantitat: 2 },
             { nom: "Producte B", preu: 15, quantitat: 1 },
