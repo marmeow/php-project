@@ -7,11 +7,11 @@
 window.onload = function () {
     // Variables
     const imagenes = [
-        'resources/images/principal/cafeteBenvinguts.jpg',
-        'resources/images/principal/coffee.jpg',
-        'resources/images/principal/muffinOfertes.jpg',
-        'resources/images/principal/entrepans.jpg',
-        'resources/images/principal/coffeeU.jpg'
+        'resources/images/principal/coffee-shop.webp',
+        'resources/images/principal/coffee.webp',
+        'resources/images/principal/bocadillos.webp',
+        'resources/images/principal/zumo.webp',
+        'resources/images/principal/bocadillos2.webp'
     ];
 
     const titulos = [

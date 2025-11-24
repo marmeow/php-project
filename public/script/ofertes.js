@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
                 const imatgeUrl = producte.imatge || 'placeholder.png';
 
-                const ofertContenidor = document.querySelector('#' + idDesti);
+                const ofertContenidor = document.querySelector('#' + idDesti + ' .productes');
+
 
                 //Crear element article per cada producte amb oferta
                 const articleOfertes = document.createElement('article');
@@ -97,12 +98,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 sectionCategoria.id = categoria;
                 sectionCategoria.className = "seccioCategoria";
 
+                const divProductes = document.createElement('div');
+                divProductes.className = "productes";
+
                 const h3Section = document.createElement('h3');
                 h3Section.id = 'h3' + categoria;
                 h3Section.textContent = categoria[0].toUpperCase() + categoria.substring(1);
 
                 //Afegir tots els elements
                 sectionCategoria.appendChild(h3Section);
+                sectionCategoria.appendChild(divProductes);
                 ofert.appendChild(sectionCategoria);
             }
 
