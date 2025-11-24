@@ -8,9 +8,9 @@ window.addEventListener("DOMContentLoaded", function () {
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Enviant dades al servidor...");
-        carretData.nom = document.getElementById("username").value;
-        carretData.adreca = document.getElementById("usermail").value;
-        carretData.telefon = document.getElementById("usertel").value;
+        carretData.username = document.getElementById("username").value;
+        carretData.usermail = document.getElementById("usermail").value;
+        carretData.usertel = document.getElementById("usertel").value;
         enviaJSONAServer(carretData);
     });
 
@@ -30,6 +30,8 @@ function enviaJSONAServer(tiquet) {
         console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
         if (xhr.status === 200) {
             alert("Dades enviades correctament!");
+            localStorage.removeItem("productes");
+            window.location.replace("../index.html");
         } else {
             alert("Error: " + xhr.status);
         }

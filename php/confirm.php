@@ -9,21 +9,21 @@ if (!$data) {
     exit;
 }
 
-$nom = $data['nom'] ?? 'sense_nom';
+$nom = $data['username'] ?? 'sense_nom';
 $nom = filter_var($nom, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$data['nom'] = $nom;
+$data['username'] = $nom;
 
 if (isset($data['adreca'])) {
     $email = filter_var($data['adreca'], FILTER_SANITIZE_EMAIL);
-    $data['email'] = $email;
+    $data['adreca'] = $email;
 }
 
-$nomArxiu = "../tiquets/tiquet-" . $nom . ".txt";
+$nomArxiu = "../tiquets/tiquet-1.json";
 $aux = 0;
 
 while (file_exists($nomArxiu)) {
     $aux++;
-    $nomArxiu = "../tiquets/tiquet-" . $nom . "(" . $aux . ").txt";
+    $nomArxiu = "../tiquets/tiquet-" . $aux . ".json";
 }
 
 echo "Comprovant si el fitxer existeix: " . $nomArxiu . "\n";
