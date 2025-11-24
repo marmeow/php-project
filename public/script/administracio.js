@@ -48,7 +48,7 @@ function mostraTiquets() {
         if (xhr.status === 200) {
             let response = JSON.parse(xhr.responseText);
 
-            if (response.success) {
+            if (response.success && !response["tickets"] == "[]") {
                 let tiquets = response["tickets"];
                 // TODO: mostra tots els tiquets
                 let titol = document.createElement('h2');
@@ -74,6 +74,8 @@ function mostraTiquets() {
                 document.body.querySelector("main").innerHTML = '';
                 document.body.querySelector("main").appendChild(titol);
                 document.body.querySelector("main").appendChild(contenidor);
+            } else if (response["tickets"].length == 0) {
+                document.body.querySelector("main").innerHTML = `<h3>No s'ha trobat els tiquets</h3>`;
             } else {
                 alert("No ha funcionat.")
             }
