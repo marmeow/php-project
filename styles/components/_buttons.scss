@@ -1,10 +1,11 @@
 button {
+    // border-radius: var(--radius-lg);
     background: linear-gradient(var(--grey-gradient));
     border: 0.0625rem solid var(--grey1);
-    padding: var(--space-xs) 1.25rem;
+    //padding: var(--space-xs) 1.25rem;
     font-size: 0.85em;
     color: var(--grey3);
-    text-align: right;
+    //text-align: right;
     cursor: pointer;
 
     &.burgerbtn {

@@ -11,11 +11,15 @@ footer {
     flex-wrap: wrap;
 
 
-    @media (max-width: 7680px) {
-         justify-content: center;
+    @media (max-width: 768px) {
+        gap: 1.75rem;
+        text-align: center;
+
         div {
-            margin: var(--space-xs);
-            width: calc(50% - var(--space-xs));
+            display: flex;
+
+            flex-direction: column;
+            width: calc(50% - 1.75rem);
         }
     }
 
@@ -31,6 +35,10 @@ footer {
         color: white;
         font-size: var(--font-lg);
         margin-bottom: var(--space-sm);
+
+        @media (max-width: 768px) {
+            margin-bottom: var(--space-lg);
+        }
     }
 
     ul {
