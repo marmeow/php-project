@@ -31,12 +31,14 @@
         grid-template-columns: 1fr;
     }
 
+    .info-column,
+    .form-column {
+        border: 2px solid var(--grey1);
+        padding: var(--space-xl);
+    }
+
     .info-column {
         padding: var(--space-xl);
-        border: 2px solid var(--green2);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-
 
         .address-block {
             margin-bottom: var(--space-lg);
@@ -64,9 +66,4 @@
         }
     }
 
-    .form-column {
-        padding: var(--space-xl);
-        border: 2px solid var(--green2);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
 }
