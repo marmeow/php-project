@@ -1,60 +1,70 @@
+document.addEventListener("DOMContentLoaded", () => {
+  setupMenu();
+});
 
 
-// https://codepen.io/webstuff/pen/JKgwZY// 
-//https://www.freecodecamp.org/espanol/news/como-usar-localstorage-en-javascript/
-function carregarEstatCarret() {
-  const carretGuardat = localStorage.getItem("carretCompra");
 
-  if (carretGuardat) {
-    const carret = JSON.parse(carretGuardat);
+function setupMenu() {
+  const openBtn = document.querySelector(".burgerbtn");
+  const closeBtn = document.querySelector(".closebtn");
+  const sidebar = document.querySelector("#header-bottom nav");
+  const overlay = document.getElementById("overlay");
 
-    carret.forEach(item => {
-      const productCard = document.querySelector(`[data-producte="${item.nom}"]`);
-      if (productCard) {
-        const btnCart = productCard.querySelector('.btn-cart');
-        const qty = productCard.querySelector('.qty');
-        const numSpan = productCard.querySelector('.num');
-
-        if (btnCart && qty && numSpan) {
-          btnCart.classList.add('cart_clk');
-          qty.classList.add('active');
-          numSpan.textContent = item.quantitat;
-        }
-      }
-    });
-
-    return true;
-  }
-
-  return false;
-}
-
-function guardarEstatCarret() {
-  const carret = [];
-
-  document.querySelectorAll('.product-card').forEach(card => {
-    const btnCart = card.querySelector('.btn-cart');
-
-    if (btnCart && btnCart.classList.contains('cart_clk')) {
-      const nom = card.getAttribute('data-producte');
-      const preuText = card.querySelector('.preu').textContent;
-      const preu = parseFloat(preuText);
-      const quantitat = parseInt(card.querySelector('.num').textContent, 10);
-
-      if (quantitat > 0) {
-        carret.push({
-          nom: nom,
-          preu: preu,
-          quantitat: quantitat
-        });
-      }
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (window.innerWidth < 768) {
+      sidebar.style.width = "250px";
+      overlay.style.display = "block";
+      closeBtn.style.display = "block";
     }
   });
 
-  localStorage.setItem("carretCompra", JSON.stringify(carret));
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (window.innerWidth <= 768) {
+      sidebar.style.width = "0";
+      overlay.style.display = "none";
+      closeBtn.style.display = "none";
+    }
+  });
+
+  overlay.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      sidebar.style.width = "0";
+      overlay.style.display = "none";
+      closeBtn.style.display = "none";
+    }
+  });
 }
+function guardarProducte(card) {
+  let carret = JSON.parse(localStorage.getItem("productes")) || { productes: [] }; // || [] -> si el resultat  anterior es null (pq no s'ha guardat res a localstorage), llavors s'utilitza un objecte amb un array buit com defecte (on s'introduiran els productes)
+  const nom = card.getAttribute('data-producte');
+  const preuText = card.querySelector('.preu').textContent;
+  const preu = parseFloat(preuText);
+  const quantitat = parseInt(card.querySelector('.num').textContent, 10);
+  const index = carret.productes.findIndex(item => item.nom === nom);
 
 
+
+  if (quantitat > 0) {
+    if (index >= 0) {
+      carret.productes[index].quantitat = quantitat;
+    } else {
+      carret.productes.push({
+        nom: nom,
+        preu: preu,
+        quantitat: quantitat
+      });
+    }
+  } else {
+    if (index >= 0) {
+      carret.productes.splice(index, 1)
+    }
+
+  }
+
+  localStorage.setItem("productes", JSON.stringify(carret));
+}
 
 // Add to cart 
 document.addEventListener('click', function (e) {
@@ -65,15 +75,8 @@ document.addEventListener('click', function (e) {
     if (qty) {
       qty.classList.toggle('active');
     }
-
-    if (!button.classList.contains('cart_clk')) {
-      const numSpan = button.closest('.crtdiv').querySelector('.num');
-      if (numSpan) {
-        numSpan.textContent = '1';
-      }
-    }
-
-    guardarEstatCarret();
+    const card = button.closest('.product-card');
+    guardarProducte(card);
   }
 
 
@@ -90,7 +93,8 @@ document.addEventListener('click', function (e) {
     if (cartIcon) {
       cartIcon.setAttribute('data-before', prnum);
     }
-    guardarEstatCarret();
+    const card = inc.closest('.product-card');
+    guardarProducte(card);
   }
 
 
@@ -109,7 +113,8 @@ document.addEventListener('click', function (e) {
       if (cartIcon) {
         cartIcon.setAttribute('data-before', prnum);
       }
-      guardarEstatCarret();
+      const card = dec.closest('.product-card');
+      guardarProducte(card);
     }
   }
 });
