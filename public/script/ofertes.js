@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 imatge.src = 'resources/images/products/' + producte.imatge;
                 imatge.alt = producte.imatge;
 
+                producte.horario.forEach(element => {
+                    articleOfertes.classList.add(element);
+                });
+
                 const h4 = document.createElement('h4');
                 h4.id = 'nomProducte';
                 h4.textContent = producte.nom;
@@ -123,4 +127,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
+
+    const temps = rebTemps();
+    
+    
 });
+
+function rebTemps() {
+    const d = new Date();
+    const hora = d.getHours();
+    if (hora >= 9 && hora < 17){
+        return manana;
+    } else if (hora <= 17 && hora < 21){
+        return tarde;
+    } else {
+        return noche;
+    }
+}

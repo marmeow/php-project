@@ -48,7 +48,7 @@ function mostraTiquets() {
         if (xhr.status === 200) {
             let response = JSON.parse(xhr.responseText);
 
-            if (response.success && !response["tickets"] == "[]") {
+            if (response.success) {
                 let tiquets = response["tickets"];
                 // TODO: mostra tots els tiquets
                 let titol = document.createElement('h2');

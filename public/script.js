@@ -241,4 +241,24 @@ function openBocata(evt, cityName) {
 
 // productes LS
 
+function rebTemps(){
+  let xhr = new XMLHttpRequest();
 
+  xhr.onload = function () {
+    console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
+    if (xhr.status === 200) {
+      let response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        let temps = response.temps;
+        return temps;
+      } else {
+        alert("Error al obtenir el temps: " + response.error);
+      }
+    } else {
+      alert("Error: " + xhr.status);
+    }
+  };
+
+  xhr.open("GET", "/php/time.php", true);
+  xhr.send();
+}
