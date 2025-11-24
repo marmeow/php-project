@@ -1,12 +1,12 @@
 {
     "usuaris": [
         {
-            "nomUsuari": "Mar",
+            "nom": "Mar",
             "contrasenya": "Meow1234!",
             "admin": true
         },
         {
-            "nomUsuari": "Marta",
+            "nom": "Marta",
             "contrasenya": "Miau4321!",
             "admin": false
         }

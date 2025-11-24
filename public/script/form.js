@@ -8,13 +8,13 @@ window.addEventListener("DOMContentLoaded", function () {
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Enviant dades al servidor...");
-        carretData.nom = document.getElementById("username").value;
-        carretData.adreca = document.getElementById("usermail").value;
-        carretData.telefon = document.getElementById("usertel").value;
+        carretData.username = document.getElementById("username").value;
+        carretData.usermail = document.getElementById("usermail").value;
+        carretData.usertel = document.getElementById("usertel").value;
         enviaJSONAServer(carretData);
     });
 
-    //creaProductesProva(); // TODO: Eliminar aquesta línia en producció
+    creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
@@ -30,6 +30,8 @@ function enviaJSONAServer(tiquet) {
         console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
         if (xhr.status === 200) {
             alert("Dades enviades correctament!");
+            localStorage.removeItem("productes");
+            window.location.replace("../index.html");
         } else {
             alert("Error: " + xhr.status);
         }
@@ -49,7 +51,7 @@ function mostraTiquet() {
     let carretData = JSON.parse(localStorage.getItem("productes"));
     let tiquetDiv = document.body.querySelector(".tiquet-final");
 
-    if (!carretData.productes || carretData.productes.length === 0) {
+    if (!carretData || !carretData.productes || carretData.productes.length === 0) {
         tiquetDiv.innerHTML = "<p>El carret està buit.</p>";
         return;
     }
@@ -65,7 +67,7 @@ function mostraTiquet() {
 }
 
 function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
-    let productesProva = {
+    const productesProva = {
         productes: [
             { nom: "Producte A", preu: 10, quantitat: 2 },
             { nom: "Producte B", preu: 15, quantitat: 1 },

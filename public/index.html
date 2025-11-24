@@ -15,7 +15,6 @@
     <script src="script.js" defer></script>
     <script src="script/carousel.js" defer></script>
     <script src="script/ofertes.js" defer></script>
-    <script src="script/modalLogin.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -26,18 +25,15 @@
             <nav>
                 <ul>
                     <li><a href="contacte.html">Ubicació i contacte</a></li>
-                    <li><a href="#">Fes-te soci!</a></li>
-
                 </ul>
             </nav>
         </header>
         <header id="header-bottom" class="flex">
             <a class="logo" href="#"><img src="resources/images/logo.png" alt="Logo El Gato Rumano"></a>
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                <input type="text" name="cercar" id="cercar">
-            </div>
+            <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
+            <div id="overlay"></div>
             <nav>
+                <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
                 <ul>
                     <li class="active-link"><a href="#">Home</a></li>
                     <li><a href="pages/productes.html">Productes</a></li>
@@ -49,9 +45,8 @@
                 </ul>
             </nav>
         </header>
-
         <main>
-            <section id="carousel"><!--Seguir aqui-->
+            <section id="main">
                 <div class="carousel">
                     <button class="botonFlecha retroceder"><i class="fa fa-solid fa-angle-left fa-2xl"></i></button>
                     <div id="imagen"></div>
@@ -65,74 +60,47 @@
                 </section>
 
             </section>
-        </main>
 
-        <footer id="main-footer">
-            <div id="sitemap">
-                <h4>Site Map</h4>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="pages/productes.html">Productes</a></li>
-                        <li><a href="pages/administracio.html">Administració</a></li>
-                        <li><a href="pages/contacte.html">Contacte</a></li>
-                    </ul>
-                </nav>
-            </div>
 
-            <div id="direccio">
-                <h4>On trobar-nos</h4>
-                <p>El Gato Rumano</p>
-                <p>Riera de Cirera, 57 </p>
-                <p>08304 Mataró, Barcelona</p>
-            </div>
-            <div id="equip">
-                <h4>Equip El Gato Rumano</h4>
-                <p>Mar Fernandez Vidal</p>
-                <p>Hary Alexandru Potlog Potlog</p>
-                <p>Marta Llabrés Roldós</p>
-            </div>
-            <div id="copyright">
-                <h4>Legal</h4>
-                <nav>
-                    <ul>
-                        <li><a href="#">Avís legal</a></li>
-                        <li><a href="#">Política de privacitat</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Condicions de venta</a></li>
+            <footer id="main-footer">
+                <div id="sitemap">
+                    <h4>Site Map</h4>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="pages/productes.html">Productes</a></li>
+                            <li><a href="pages/administracio.html">Administració</a></li>
+                            <li><a href="pages/contacte.html">Contacte</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-                    </ul>
-                </nav>
+                <div id="direccio">
+                    <h4>On trobar-nos</h4>
+                    <p>El Gato Rumano</p>
+                    <p>Riera de Cirera, 57 </p>
+                    <p>08304 Mataró, Barcelona</p>
+                </div>
+                <div id="equip">
+                    <h4>Equip El Gato Rumano</h4>
+                    <p>Mar Fernandez Vidal</p>
+                    <p>Hary Alexandru Potlog Potlog</p>
+                    <p>Marta Llabrés Roldós</p>
+                </div>
+                <div id="copyright">
+                    <h4>Legal</h4>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Avís legal</a></li>
+                            <li><a href="#">Política de privacitat</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Condicions de venta</a></li>
+
+                        </ul>
+                    </nav>
 
             </div>
         </footer>
     </div>
-
-
-
-    <div class="myModal">
-        <div class="modal-content">
-            <span class="closeTask">&times;</span>
-            <form id="taskForm">
-                <input id="task" type="text" placeholder="Nueva tarea">
-                <select id="tag">
-                    <option value="personal">Personal</option>
-                    <option value="work">Trabajo</option>
-                </select>
-                <input id="appointment" type="time">
-                <input id="deadline" type="date">
-                <label class="deadlinelbl">
-                    <input type="checkbox" id="deadlineCheck"> Con fecha límite
-                </label>
-                <select id="reminder">
-                    <option value="none">Sin recordatorio</option>
-                    <option value="hour">1 hora antes</option>
-                </select>
-                <button type="submit">Guardar</button>
-            </form>
-        </div>
-    </div>
-
-</body>
 
 </html>

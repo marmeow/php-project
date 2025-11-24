@@ -1,3 +1,8 @@
+/**
+ * Funció que carrega els productes des d'un document JSON, filtra els que
+ * estan en oferta, els agrupa per categories i genera de dinàmicament seccions
+ * amb targetes de productes al DOM.
+ */
 document.addEventListener("DOMContentLoaded", () => {
     fetch('./data/products.json')
         .then(response => {
@@ -26,20 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log(productesCategories);
 
+            /**
+             * Funció que crea dinàmicament una targeta HTML amb la informació 
+             * d’un producte en oferta i la col·loca dins la secció indicada.
+             * @param {*} producte Producte que està en oferta.
+             * @param {*} idDesti Id de la secció on col·locarem cada targeta del producte en oferta.
+             */
             function crearTarjetaProducte(producte, idDesti) {
                 const ofertaClass = producte.oferta ? 'oferta' : '';
                 const imatgeUrl = producte.imatge || 'placeholder.png';
 
-                const ofertContenidor = document.querySelector('#' + idDesti);
+                const ofertContenidor = document.querySelector('#' + idDesti + ' .productes');
+
 
                 //Crear element article per cada producte amb oferta
                 const articleOfertes = document.createElement('article');
                 articleOfertes.classList.add('ofertProduct');
 
                 //Crear cada element dins de l'article
-                //TODO: revisar el src para que sea ruta relativa
+                //TODO: revisar el src para que sea ruta relativa (FET)
                 const imatge = document.createElement('img');
-                imatge.src = '/public/resources/images/products/' + producte.imatge;
+                imatge.src = 'resources/images/products/' + producte.imatge;
                 imatge.alt = producte.imatge;
 
                 const h4 = document.createElement('h4');
@@ -72,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 ofertContenidor.appendChild(articleOfertes);
             }
 
+            /**
+             * Funció que ens permet crear dinàmicament les diferents seccions per cada catergoria d'ofertes
+             * on introduirem cada targeta creada a la funció anterior.
+             * @param {*} categoria Les diferents categories que trobem al fitxer JSON.
+             */
             function crearSectionCategoria(categoria) {
                 console.log(categoria);
                 const ofert = document.querySelector('#ofertes');
@@ -81,15 +98,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 sectionCategoria.id = categoria;
                 sectionCategoria.className = "seccioCategoria";
 
+                const divProductes = document.createElement('div');
+                divProductes.className = "productes";
+
                 const h3Section = document.createElement('h3');
                 h3Section.id = 'h3' + categoria;
                 h3Section.textContent = categoria[0].toUpperCase() + categoria.substring(1);
 
                 //Afegir tots els elements
                 sectionCategoria.appendChild(h3Section);
+                sectionCategoria.appendChild(divProductes);
                 ofert.appendChild(sectionCategoria);
             }
 
+            // Bucle que crea una secció al DOM per a cada categoria de productes en oferta.
             for (const [categoria, value] of Object.entries(productesCategories['ofertCategoria'])) {
                 crearSectionCategoria(categoria);
             }
