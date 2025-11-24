@@ -87,12 +87,12 @@
         }
 
         #ofertes {
+            margin: var(--space-xxxxl);
 
             @media (max-width: 480px) {
                 margin: var(--space-xl);
             }
 
-            margin: var(--space-xxxxl);
 
 
             .seccioCategoria {
@@ -116,7 +116,7 @@
                         flex: 0 0 calc(25% - var(--space-md));
                         margin: 0;
                         text-align: center;
-           
+
 
                         &:hover {
                             #preuDescompte {

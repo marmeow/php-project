@@ -367,6 +367,19 @@ h6 {
   padding: var(--space-lg);
   text-align: right;
 }
+@media (max-width: 760px) {
+  #product-page h1 {
+    font-size: var(--font-xxxl);
+    padding: var(--space-sm);
+  }
+}
+@media (max-width: 480px) {
+  #product-page h1 {
+    font-size: var(--font-xxl);
+    line-height: 2rem;
+    text-align: center;
+  }
+}
 #product-page #productes {
   margin: var(--space-xxxxl);
 }
@@ -433,6 +446,67 @@ h6 {
   gap: 18px;
 }
 
+main .admin-titol {
+  padding: var(--space-xs);
+}
+
+.page-title {
+  text-align: center;
+  margin: var(--space-xxl);
+}
+.page-title h1 {
+  margin-bottom: var(--space-xs);
+}
+.page-title p {
+  font-size: var(--font-lg);
+  color: var(--grey2);
+}
+
+.contact-content {
+  padding: var(--space-xxl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+}
+.contact-content h2 {
+  font-family: var(--font-titles);
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-md);
+}
+@media (max-width: 1080px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-content .info-column,
+.contact-content .form-column {
+  border: 2px solid var(--grey1);
+  padding: var(--space-xl);
+}
+.contact-content .info-column {
+  padding: var(--space-xl);
+}
+.contact-content .info-column .address-block {
+  margin-bottom: var(--space-lg);
+}
+.contact-content .info-column .address-block p {
+  margin: var(--space-xs) 0;
+  font-size: var(--font-md);
+}
+.contact-content .info-column .address-block p i {
+  margin-right: var(--space-xs);
+  color: var(--grey1);
+}
+.contact-content .info-column .map-container {
+  width: 100%;
+  overflow: hidden;
+}
+.contact-content .info-column .map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
 footer {
   background-color: var(--grey1);
   color: var(--green2);
@@ -452,15 +526,20 @@ footer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media (max-width: 7680px) {
+@media (max-width: 768px) {
   footer {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    gap: 1.75rem;
+    text-align: center;
   }
   footer div {
-    margin: var(--space-xs);
-    width: calc(50% - var(--space-xs));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: calc(50% - 1.75rem);
   }
 }
 @media (max-width: 480px) {
@@ -483,6 +562,11 @@ footer h4 {
   color: white;
   font-size: var(--font-lg);
   margin-bottom: var(--space-sm);
+}
+@media (max-width: 768px) {
+  footer h4 {
+    margin-bottom: var(--space-lg);
+  }
 }
 footer ul {
   list-style: none;
@@ -606,14 +690,16 @@ footer a:hover {
           justify-content: space-between;
 }
 
+#contact-page button {
+  background-color: antiquewhite;
+}
+
 button {
   background: -webkit-gradient(linear, left top, left bottom, from(var(--grey-gradient)));
   background: linear-gradient(var(--grey-gradient));
   border: 0.0625rem solid var(--grey1);
-  padding: var(--space-xs) 1.25rem;
   font-size: 0.85em;
   color: var(--grey3);
-  text-align: right;
   cursor: pointer;
 }
 button.burgerbtn {
@@ -641,6 +727,28 @@ button.closebtn {
   cursor: pointer;
   padding: var(--space-xs);
   background: none;
+}
+
+.tiquet-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tiquet-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
 }
 
 #info-tiquet {
@@ -880,7 +988,7 @@ button.closebtn {
   padding: 0px 12px;
   width: 90%;
   border-left: none;
-  padding: 0 var(--space-xxl);
+  padding: 0 0 0 var(--space-xxl);
   margin: var(--space-lg) 0 var(--space-xxxxl) 0;
 }
 .tabcontent h4 {
@@ -911,10 +1019,26 @@ button.closebtn {
 }
 
 #entrepans .product-card {
-  width: calc(25% - var(--space-md));
+  width: calc(33.333% - var(--space-md));
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(25% - var(--space-md));
-          flex: 0 0 calc(25% - var(--space-md));
+      -ms-flex: 0 0 calc(33.333% - var(--space-md));
+          flex: 0 0 calc(33.333% - var(--space-md));
+}
+@media (max-width: 1080px) {
+  #entrepans .product-card {
+    width: calc(50% - var(--space-md));
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - var(--space-md));
+            flex: 0 0 calc(50% - var(--space-md));
+  }
+}
+@media (max-width: 760px) {
+  #entrepans .product-card {
+    width: calc(100% - var(--space-md));
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - var(--space-md));
+            flex: 0 0 calc(100% - var(--space-md));
+  }
 }
 
 .product-card {
@@ -938,6 +1062,22 @@ button.closebtn {
       -ms-flex: 0 0 calc(20% - var(--space-md));
           flex: 0 0 calc(20% - var(--space-md));
   margin: 0;
+}
+@media (max-width: 1080px) {
+  .product-card {
+    width: calc(33.333% - var(--space-md));
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.333% - var(--space-md));
+            flex: 0 0 calc(33.333% - var(--space-md));
+  }
+}
+@media (max-width: 760px) {
+  .product-card {
+    width: calc(100% - var(--space-md));
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - var(--space-md));
+            flex: 0 0 calc(100% - var(--space-md));
+  }
 }
 .product-card .descripcio {
   font-size: var(--font-md);
@@ -1063,3 +1203,40 @@ button.closebtn {
   display: inline-block;
   text-align: Center;
 }
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: var(--space-md);
+}
+form label {
+  font-weight: 600;
+  font-size: var(--font-sm);
+  color: var(--grey1);
+}
+form input,
+form select,
+form textarea {
+  padding: var(--space-sm);
+  background: white;
+  border: 2px solid var(--grey1);
+  font-size: var(--font-md);
+  -webkit-transition: 0.3s border;
+  transition: 0.3s border;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--green1);
+  -webkit-box-shadow: 0 0 0 3px rgba(177, 204, 116, 0.3);
+          box-shadow: 0 0 0 3px rgba(177, 204, 116, 0.3);
+}
+form textarea {
+  resize: none;
+}/*# sourceMappingURL=style.css.map */
