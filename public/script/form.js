@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", function () {
         enviaJSONAServer(carretData);
     });
 
-    creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
