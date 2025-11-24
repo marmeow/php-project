@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$ticketsDir = __DIR__ . '/tiquets/';
+$ticketsDir = __DIR__ . '/../tiquets/';
 
 $files = glob($ticketsDir . 'tiquet-*.json');
 $tickets = [];
