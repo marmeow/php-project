@@ -264,19 +264,23 @@ h6 {
     display: none;
   }
 }
-#main-page #main #ofertes {
+#main-page #main section#ofertes {
   margin: var(--space-xxxxl);
 }
+#main-page #main section#ofertes > section:first-child {
+  color: red;
+  background-color: aqua;
+}
 @media (max-width: 480px) {
-  #main-page #main #ofertes {
+  #main-page #main section#ofertes {
     margin: var(--space-xl);
   }
 }
-#main-page #main #ofertes .seccioCategoria {
+#main-page #main section#ofertes .seccioCategoria {
   font-size: var(--font-xl);
   margin-top: var(--space-xxxxl);
 }
-#main-page #main #ofertes .seccioCategoria .productes {
+#main-page #main section#ofertes .seccioCategoria .productes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,14 +289,14 @@ h6 {
       flex-wrap: wrap;
 }
 @media (max-width: 480px) {
-  #main-page #main #ofertes .seccioCategoria .productes {
+  #main-page #main section#ofertes .seccioCategoria .productes {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct {
   border: 1px solid var(--grey1);
   padding: var(--space-md);
   width: calc(25% - var(--space-md));
@@ -302,14 +306,14 @@ h6 {
   margin: 0;
   text-align: center;
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct:hover #preuDescompte {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct:hover #preuDescompte {
   text-decoration: underline;
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct:hover #percent {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct:hover #percent {
   color: var(--green1);
 }
 @media (max-width: 768px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct {
     width: calc(50% - var(--space-md));
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - var(--space-md));
@@ -317,46 +321,46 @@ h6 {
   }
 }
 @media (max-width: 480px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct {
     width: 100%;
   }
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
   font-size: var(--font-xxl);
   border-bottom: 2px solid var(--green1);
   padding-bottom: var(--space-xs);
 }
 @media (max-width: 1080px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #nomProducte {
     font-size: var(--font-lg);
   }
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct p {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct p {
   font-size: var(--font-lg);
   padding: var(--space-sm) 0;
 }
 @media (max-width: 1080px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct p {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct p {
     font-size: var(--font-md);
   }
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #preuDescompte {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
+#main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #percent {
   padding-top: var(--space-xxl);
   font-size: var(--font-xl);
   color: var(--grey2);
   font-weight: 500;
 }
 @media (max-width: 1080px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #percent {
     font-size: var(--font-lg);
   }
 }
 @media (max-width: 480px) {
-  #main-page #main #ofertes .seccioCategoria .productes .ofertProduct #percent {
+  #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct #percent {
     font-size: var(--font-lg);
   }
 }
@@ -703,20 +707,26 @@ footer a:hover {
 }
 
 #contact-page button {
-  background-color: antiquewhite;
+  background-color: var(--green1);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  padding: var(--space-xs);
+  -webkit-transition: ease all 0.2s;
+  transition: ease all 0.2s;
+  font-weight: 600;
+}
+#contact-page button:hover {
+  background-color: var(--grey2);
+  color: white;
 }
 
 button {
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--grey-gradient)));
-  background: linear-gradient(var(--grey-gradient));
-  border: 0.0625rem solid var(--grey1);
-  font-size: 0.85em;
-  color: var(--grey3);
   cursor: pointer;
 }
 button.burgerbtn {
   display: none;
-  color: var(--grey3);
   font-size: 1.75rem;
   padding: var(--space-xs);
   border: none;
@@ -733,7 +743,6 @@ button.closebtn {
   position: absolute;
   top: 0;
   right: 0;
-  color: var(--grey3);
   font-size: 1.75rem;
   border: none;
   cursor: pointer;

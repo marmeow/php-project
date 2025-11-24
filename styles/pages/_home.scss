@@ -86,18 +86,25 @@
             }
         }
 
-        #ofertes {
+        section#ofertes {
             margin: var(--space-xxxxl);
+
+            &>section:first-child {
+                color: red;
+                background-color: aqua;
+            }
+
+
 
             @media (max-width: 480px) {
                 margin: var(--space-xl);
             }
 
-
-
             .seccioCategoria {
                 font-size: var(--font-xl);
                 margin-top: var(--space-xxxxl);
+
+
 
                 .productes {
                     display: flex;
