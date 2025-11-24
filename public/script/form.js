@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", function () {
         enviaJSONAServer(carretData);
     });
 
-    creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
@@ -42,7 +41,7 @@ function enviaJSONAServer(tiquet) {
         alert("Error de connexió amb el servidor");
     };
 
-    xhr.open("POST", "/php-project/php/confirm.php", true);
+    xhr.open("POST", "/php/confirm.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(tiquet));
 }
@@ -61,7 +60,7 @@ function mostraTiquet() {
     carretData.productes.forEach(item => {
         html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
     });
-    html += `</ul><p><strong>Total a pagar: ${carretData.total.toFixed(2)}€</strong></p>`;
+    html += `</ul>`;
 
     tiquetDiv.innerHTML = html;
 }
@@ -74,7 +73,6 @@ function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
             { nom: "Producte C", preu: 7.25, quantitat: 3 },
             { nom: "Producte D", preu: 5.5, quantitat: 0 },
         ],
-        total: 10 * 2 + 15 * 1 + 7.25 * 3
     };
     localStorage.setItem("productes", JSON.stringify(productesProva));
 }
