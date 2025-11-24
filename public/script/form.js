@@ -42,7 +42,7 @@ function enviaJSONAServer(tiquet) {
         alert("Error de connexió amb el servidor");
     };
 
-    xhr.open("POST", "/php-project/php/confirm.php", true);
+    xhr.open("POST", "/php/confirm.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(tiquet));
 }
