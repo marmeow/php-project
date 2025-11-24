@@ -1,3 +1,8 @@
+/**
+ * Funció que intercepta el que s'envia des del formulari del login, recull l'usuari i 
+ * la contrasenya que s'ha introduit i els passa a una altra funció que serà l'encarregada
+ * d'enviar-les al sevidor.
+ */
 window.addEventListener("DOMContentLoaded", function () {
     // fer aixo amb el submit del formulari login 
     const enviarLogin = document.body.querySelector("#loginForm");
@@ -15,6 +20,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 })
 
+/**
+ * Funció que rep les dades que enviarà al servidor i, segons la resposta,
+ * redirigeix al window.location indicat o mostra un missatge d'error.
+ * @param {*} dadesLogin Les credencials rebudes de la funció anterior.
+ */
 function enviaJSONAServer(dadesLogin) {
     console.log(dadesLogin);
 

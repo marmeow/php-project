@@ -1,10 +1,15 @@
+/**
+ * Funció que espera a que tot l'HTML estigui carregat i
+ * prerarat per executar la funció que crida.
+ */
 window.addEventListener("DOMContentLoaded", function () {
-    // Call the updateUI function when the page loads
     updateUI();
-
 })
 
-// Funció que comprova si l'usuari esta logejat
+/**
+ * Funció que comprova si l'usuari està logejat o no.
+ * @returns retorna true o false depenent de si està logejat o no.
+ */
 async function isLoggedIn() {
     try {
         const response = await fetch("/php/isLoggedIn.php", { method: "POST" });
@@ -17,7 +22,10 @@ async function isLoggedIn() {
     }
 }
 
-// Funció que actualitza la UI basat en l'estat del login
+/**
+ * Funció que ens actualitza el botó d'iniciar/tancar sessió
+ * basat en l'estat del login
+ */
 async function updateUI() {
     const loggedIn = await isLoggedIn();
 
@@ -44,7 +52,12 @@ async function updateUI() {
     }
 }
 
-// Rest of your code, including the logout function
+/**
+ * Funció que envia al servidor la petició de logout i després recarrega 
+ * la pàgina per actualitzar l'estat de la sessió.
+ * 
+ * @returns Retorna 'void' (no res) si la petició té èxit o false si hi ha un error en la petició
+ */
 async function logout() {
     try {
         const response = await fetch("/php/logout.php", { method: "POST" });
@@ -54,6 +67,4 @@ async function logout() {
         console.error("Error:", error);
         return false;
     }
-
-
 }
