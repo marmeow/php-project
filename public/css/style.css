@@ -909,6 +909,7 @@ button.closebtn {
 
 .logo img {
   width: 11rem;
+  min-width: 5rem;
 }
 
 .min-60 {
