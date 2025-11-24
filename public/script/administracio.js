@@ -1,3 +1,7 @@
+/**
+ * Funció que, al carregar la pàgina, oculta el contingut principal i després crida a
+ * una altra funció per comprovar si l'usuari té permisos d'administrador.
+ */
 window.onload = function () {
     const main = document.body.querySelector("main");
     main.style.display = "none";
@@ -6,7 +10,10 @@ window.onload = function () {
     mostraTiquets();
 }
 
-
+/**
+ * Funció que envia una petició al servidor per comprovar si l'usuari és administrador i,
+ * segons la resposta, mostra el contingut de la pàgina o redirigeix fora.
+ */
 function comprovaAdmin() {
     const xhr = new XMLHttpRequest();
 
@@ -20,7 +27,8 @@ function comprovaAdmin() {
                 document.body.querySelector("main").style.display = "block";
                 alert("Ets admin");
             } else {
-                alert("No ets administrador");
+                let missatge = response.isLoggedIn ? "No ets administrador" : "No tens iniciada la sessió";
+                alert(missatge);
                 window.location.replace("../index.html");
             }
         } else {
