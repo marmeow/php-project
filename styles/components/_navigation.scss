@@ -3,24 +3,40 @@
     nav {
         display: flex;
         flex-direction: row;
+    }
 
-        ul {
-            list-style: none;
-            gap: 15px;
-            display: flex;
-            align-items: center;
+    ul {
+        list-style: none;
+        gap: 15px;
+        display: flex;
+        align-items: center;
 
-            a {
-                text-decoration: none;
-            }
+        a {
+            text-decoration: none;
         }
     }
 }
+
 
 #header-bottom {
     nav {
         display: flex;
         flex-direction: row;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        img {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: block;
+                width: 100%;
+                padding: var(--space-xl);
+            }
+        }
+
 
         ul {
             list-style: none;
@@ -31,6 +47,23 @@
 
             @media (max-width: 768px) {
                 flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                padding: var(--space-xl);
+                justify-content: center;
+
+                li {
+                    border-bottom: 2px solid var(--green1);
+                    width: 100%;
+                    margin-bottom: var(--space-sm);
+                }
+
+                .icons {
+                    li {
+
+                        border-bottom: none;
+                    }
+                }
             }
 
             a {

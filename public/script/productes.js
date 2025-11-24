@@ -1,41 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  setupMenu();
-});
 
-
-
-function setupMenu() {
-  const openBtn = document.querySelector(".burgerbtn");
-  const closeBtn = document.querySelector(".closebtn");
-  const sidebar = document.querySelector("#header-bottom nav");
-  const overlay = document.getElementById("overlay");
-
-  openBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (window.innerWidth < 768) {
-      sidebar.style.width = "250px";
-      overlay.style.display = "block";
-      closeBtn.style.display = "block";
-    }
-  });
-
-  closeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (window.innerWidth <= 768) {
-      sidebar.style.width = "0";
-      overlay.style.display = "none";
-      closeBtn.style.display = "none";
-    }
-  });
-
-  overlay.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
-      sidebar.style.width = "0";
-      overlay.style.display = "none";
-      closeBtn.style.display = "none";
-    }
-  });
-}
 function guardarProducte(card) {
   let carret = JSON.parse(localStorage.getItem("productes")) || { productes: [] }; // || [] -> si el resultat  anterior es null (pq no s'ha guardat res a localstorage), llavors s'utilitza un objecte amb un array buit com defecte (on s'introduiran els productes)
   const nom = card.getAttribute('data-producte');

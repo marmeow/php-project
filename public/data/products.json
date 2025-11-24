@@ -73,6 +73,14 @@
             "imatge": "entrepa-truita.png"
         },
         {
+            "nom": "Entrepà de truita",
+            "preu": 3.00,
+            "descripció": "Entrepà calent de truita amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false,
+            "imatge": "entrepa-truita.png"
+        },
+        {
             "nom": "Entrepà de bacó",
             "preu": 4.00,
             "descripció": "Entrepà calent de bacó amb tomàquet",
@@ -95,6 +103,14 @@
             "categoria": "entrepans",
             "oferta": false,
             "imatge": "entrpa-pernil-d.png"
+        },
+        {
+            "nom": "Entrapà de xoriço",
+            "preu": 3.00,
+            "descripció": "Entrepà fred de xoriço amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false,
+            "imatge": "entrepa-chorizo.png"
         },
         {
             "nom": "Entrapà de xoriço",
@@ -141,7 +157,7 @@
             "preu": 1.10,
             "descripció": "Napolitana farcida de crema",
             "categoria": "brioixeria",
-            "oferta": false,
+            "oferta": true,
             "imatge": "napolitana.png"
         },
         {
