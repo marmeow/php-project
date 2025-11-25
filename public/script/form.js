@@ -64,15 +64,3 @@ function mostraTiquet() {
 
     tiquetDiv.innerHTML = html;
 }
-
-function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
-    const productesProva = {
-        productes: [
-            { nom: "Producte A", preu: 10, quantitat: 2 },
-            { nom: "Producte B", preu: 15, quantitat: 1 },
-            { nom: "Producte C", preu: 7.25, quantitat: 3 },
-            { nom: "Producte D", preu: 5.5, quantitat: 0 },
-        ],
-    };
-    localStorage.setItem("productes", JSON.stringify(productesProva));
-}

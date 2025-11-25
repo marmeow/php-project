@@ -1,0 +1,27 @@
+{
+    "productes": [
+        {
+            "nom": "Croissant de xocolata",
+            "preu": 1.5,
+            "quantitat": 1
+        },
+        {
+            "nom": "Magdalena",
+            "preu": 0.85,
+            "quantitat": 1
+        },
+        {
+            "nom": "Napolitana de crema",
+            "preu": 1.1,
+            "quantitat": 1
+        },
+        {
+            "nom": "Tallat",
+            "preu": 0.85,
+            "quantitat": 2
+        }
+    ],
+    "username": "Alex",
+    "usermail": "alexpotloghary@gmail.com",
+    "usertel": "667996420"
+}
