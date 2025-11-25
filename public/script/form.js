@@ -4,17 +4,17 @@
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
+    afegirTotalAJSON(carretData);
 
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Enviant dades al servidor...");
-        carretData.nom = document.getElementById("username").value;
-        carretData.adreca = document.getElementById("usermail").value;
-        carretData.telefon = document.getElementById("usertel").value;
+        carretData.username = document.getElementById("username").value;
+        carretData.usermail = document.getElementById("usermail").value;
+        carretData.usertel = document.getElementById("usertel").value;
         enviaJSONAServer(carretData);
     });
 
-    //creaProductesProva(); // TODO: Eliminar aquesta línia en producció
     mostraTiquet();
 })
 
@@ -30,6 +30,8 @@ function enviaJSONAServer(tiquet) {
         console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
         if (xhr.status === 200) {
             alert("Dades enviades correctament!");
+            localStorage.removeItem("productes");
+            window.location.replace("../index.html");
         } else {
             alert("Error: " + xhr.status);
         }
@@ -40,7 +42,7 @@ function enviaJSONAServer(tiquet) {
         alert("Error de connexió amb el servidor");
     };
 
-    xhr.open("POST", "/php-project/php/confirm.php", true);
+    xhr.open("POST", "/php/confirm.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(tiquet));
 }
@@ -59,20 +61,21 @@ function mostraTiquet() {
     carretData.productes.forEach(item => {
         html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
     });
-    html += `</ul><p><strong>Total a pagar: ${carretData.total.toFixed(2)}€</strong></p>`;
+    html += `</ul>`;
+    html += `<h3>Total a pagar: ${carretData.total.toFixed(2)}€</h3>`;
 
     tiquetDiv.innerHTML = html;
 }
 
-function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
-    let productesProva = {
-        productes: [
-            { nom: "Producte A", preu: 10, quantitat: 2 },
-            { nom: "Producte B", preu: 15, quantitat: 1 },
-            { nom: "Producte C", preu: 7.25, quantitat: 3 },
-            { nom: "Producte D", preu: 5.5, quantitat: 0 },
-        ],
-        total: 10 * 2 + 15 * 1 + 7.25 * 3
-    };
-    localStorage.setItem("productes", JSON.stringify(productesProva));
+function afegirTotalAJSON(carretData) {
+    if (!carretData || !carretData.productes || carretData.productes.length === 0) {
+        return;
+    }
+    
+    let total = 0;
+    carretData.productes.forEach(item => {
+        total += item.preu * item.quantitat;
+    });
+    carretData.total = total;
+    localStorage.setItem("productes", JSON.stringify(carretData));
 }

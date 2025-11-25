@@ -1,160 +1,225 @@
 //web inspo del carrousel: https://andros.dev/blog/4e9c1536/javascript-carousel-sencillo-con-controles-y-autoreproduccion/
 
 #main-page {
-    #main-body {
-        background-color: var(--backgroud-color-body);
-        color: var(--color-text);
+    #main {
 
-        display: flex;
+        .carousel {
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
 
-        #carousel {
-            .carousel {
-                margin: 0 auto;
-                display: flex;
-                position: relative;
-                justify-content: center;
-                align-items: center;
+
+        h3 {
+            border-bottom: 2px solid var(--green1);
+            margin-bottom: var(--space-xl);
+        }
+
+        #imagen,
+        #imageCover {
+            width: 100%;
+            height: 600px;
+        }
+
+        #imagen {
+            background-size: cover;
+            background-position: center;
+        }
+
+        #imageCover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(41, 51, 40, 0.041);
+        }
+
+        #titulos {
+            position: absolute;
+            color: #edf1eb;
+            font-family: var(--font-titles);
+            font-size: 8rem;
+            text-align: center;
+            line-height: 8rem;
+            margin: var(--space-xxl);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-transform: uppercase;
+
+            @media (max-width: 1080px) {
+                font-size: 5rem;
+                line-height: 5rem;
             }
 
-            #imagen,
-            #imageCover {
-                width: 100%;
-                height: 600px;
+            @media (max-width: 768px) {
+                font-size: 4rem;
+                line-height: 3.4rem;
             }
+        }
 
-            #imagen {
-                background-size: cover;
-                background-position: center;
-            }
+        .botonFlecha {
+            background-color: transparent;
+            width: auto;
+            height: 100%;
+            position: absolute;
+            border: none;
+            z-index: 99;
 
-            #imageCover {
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: rgba(0, 0, 0, 0.4);
-            }
+            &.avanzar {
+                right: 0;
 
-            #titulos {
-                position: absolute;
-                color: #ffffffef;
-                font-family: var(--font-titles);
-                font-size: 9em;
-                text-align: center;
-                line-height: 8rem;
-                margin: var(--space-xxl);
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                text-transform: uppercase;
-            }
+                #carousel {
+                    .carousel {
+                        margin: 0 auto;
+                        display: flex;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                    }
 
-            .botonFlecha {
-                background-color: transparent;
-                width: auto;
-                height: 100%;
-                position: absolute;
-                border: none;
-                z-index: 99;
+                    #imagen,
+                    #imageCover {
+                        width: 100%;
+                        height: 600px;
+                    }
 
-                &.avanzar {
-                    right: 0;
+                    #imagen {
+                        background-size: cover;
+                        background-position: center;
+                    }
 
-                }
+                    #imageCover {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
 
-                &.retroceder {
-                    left: 0;
-                }
+                    .fa {
+                        font-size: 5rem;
+                        color: rgba(255, 255, 255, 0.774);
+                        cursor: pointer;
 
-                .fa {
-                    font-size: 5rem;
-                    color: rgba(255, 255, 255, 0.774);
-                    cursor: pointer;
-                }
-            }
 
-            #ofertes {
-                margin: var(--space-xl);
-                max-width: 98%;
-                display: block;
-
-                #titolOfertes {
-                    font-size: var(--font-xxl);
-                    border-bottom: 5px solid var(--green1);
-
-                }
-
-                .seccioCategoria {
-                    font-size: var(--font-xl);
-                }
-
-                #begudes {
-                    padding-top: 20px;
-
-                    #h3begudes {
-                        border-bottom: 3px solid var(--grey1);
+                        @media (max-width: 480px) {
+                            display: none;
+                        }
                     }
                 }
 
-                #h3entrepans {
-                    border-bottom: 3px solid var(--grey1);
-                }
+                section#ofertes {
+                    margin: var(--space-xxxxl);
 
-                #h3brioixeria {
-                    border-bottom: 3px solid var(--grey1);
-                }
-
-                #h3snacks {
-                    border-bottom: 3px solid var(--grey1);
-                }
-
-                #h3fruita {
-                    border-bottom: 3px solid var(--grey1);
-                }
-
-                .ofertProduct {
-                    display: inline-block;
-                    border: 1px solid var(--grey1);
-                    padding: var(--space-md);
-                    width: 25rem;
-                    height: 100%;
-                    margin: var(--space-lg) var(--space-xl);
-                    text-align: center;
-
-                    #nomProducte {
-                        font-size: var(--font-xxl);
-                        border-bottom: 2px solid var(--green1);
-                        padding-bottom: var(--space-xs);
+                    &>section:first-child {
+                        color: red;
+                        background-color: aqua;
                     }
 
-                    #descripcioProducte,
-                    #preuAbans,
-                    #preuDescompte {
-                        font-size: var(--font-lg);
+
+
+                    @media (max-width: 480px) {
+                        margin: var(--space-xl);
                     }
 
-                    #descripcioProducte {
-                        padding: var(--space-lg) 0;
-                        height: 108px;
-                    }
+                    .seccioCategoria {
+                        font-size: var(--font-xl);
+                        margin-top: var(--space-xxxxl);
 
-                    #preuDescompte {
-                        color: var(--green1);
-                        font-weight: bold;
 
-                        &:hover {
-                            text-decoration: underline;
-                            font-weight: 900;
+
+                        .productes {
+                            display: flex;
+                            gap: var(--space-md);
+                            flex-wrap: wrap;
+
+                            @media (max-width: 480px) {
+                                flex-direction: column;
+                            }
+
+
+                            .ofertProduct {
+                                border: 1px solid var(--grey1);
+                                padding: var(--space-md);
+                                width: calc(25% - var(--space-md));
+                                flex: 0 0 calc(25% - var(--space-md));
+                                margin: 0;
+                                text-align: center;
+
+
+                                &:hover {
+                                    #preuDescompte {
+                                        text-decoration: underline;
+                                    }
+
+                                    #percent {
+                                        color: var(--green1);
+                                    }
+                                }
+
+
+                                @media (max-width: 768px) {
+                                    width: calc(50% - var(--space-md));
+                                    flex: 0 0 calc(50% - var(--space-md));
+
+                                }
+
+                                @media (max-width: 480px) {
+                                    width: 100%;
+
+                                }
+
+
+                                #nomProducte {
+                                    font-size: var(--font-xxl);
+                                    border-bottom: 2px solid var(--green1);
+                                    padding-bottom: var(--space-xs);
+
+                                    @media (max-width: 1080px) {
+                                        font-size: var(--font-lg);
+                                    }
+
+                                }
+
+                                p {
+                                    font-size: var(--font-lg);
+                                    padding: var(--space-sm) 0;
+
+                                    @media (max-width: 1080px) {
+                                        font-size: var(--font-md);
+                                    }
+
+                                }
+
+                                #preuDescompte {
+                                    color: var(--green1);
+                                    font-weight: bold;
+                                }
+
+                                #percent {
+                                    padding-top: var(--space-xxl);
+                                    font-size: var(--font-xl);
+                                    color: var(--grey2);
+                                    font-weight: 500;
+
+
+
+                                    @media (max-width: 1080px) {
+                                        font-size: var(--font-lg);
+                                    }
+
+
+                                    @media (max-width: 480px) {
+                                        font-size: var(--font-lg);
+                                    }
+                                }
+                            }
+
+
+
                         }
                     }
 
-                    #percent {
-                        padding-top: var(--space-xxxl);
-                        font-size: var(--font-xxl);
-                        color: var(--grey1);
 
-                        &:hover {
-                            color: var(--green1);
-                            font-weight: bold;
-                        }
-                    }
                 }
             }
         }

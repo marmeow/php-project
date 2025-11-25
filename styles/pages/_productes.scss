@@ -4,6 +4,17 @@
         text-shadow: 2px 2px 2px var(--grey1);
         padding: var(--space-lg);
         text-align: right;
+
+        @media (max-width: 760px) {
+            font-size: var(--font-xxxl);
+            padding: var(--space-sm);
+        }
+
+        @media (max-width: 480px) {
+            font-size: var(--font-xxl);
+            line-height: 2rem;
+            text-align: center;
+        }
     }
 
     #productes {
@@ -19,7 +30,6 @@
             h3 {
                 font-size: var(--font-xxl);
                 margin-bottom: var(--space-md);
-
                 display: block;
                 width: fit-content;
                 font-weight: 600;
