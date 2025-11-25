@@ -339,6 +339,13 @@ h6 {
   }
 }
 
+@media (max-width: 1024px) {
+  #info-tiquet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
 #product-page h1 {
   font-size: 4.125rem;
   text-shadow: 2px 2px 2px var(--grey1);
@@ -746,6 +753,14 @@ button.closebtn {
   color: #000000;
 }
 
+@media (max-width: 1024px) {
+  #info-tiquet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
 #header-top nav {
   display: flex;
   flex-direction: row;

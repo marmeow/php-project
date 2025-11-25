@@ -57,3 +57,12 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    #info-tiquet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
