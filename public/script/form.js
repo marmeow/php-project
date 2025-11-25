@@ -4,6 +4,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
+    afegirTotalAJSON(carretData);
 
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -61,6 +62,20 @@ function mostraTiquet() {
         html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
     });
     html += `</ul>`;
+    html += `<h3>Total a pagar: ${carretData.total.toFixed(2)}€</h3>`;
 
     tiquetDiv.innerHTML = html;
+}
+
+function afegirTotalAJSON(carretData) {
+    if (!carretData || !carretData.productes || carretData.productes.length === 0) {
+        return;
+    }
+    
+    let total = 0;
+    carretData.productes.forEach(item => {
+        total += item.preu * item.quantitat;
+    });
+    carretData.total = total;
+    localStorage.setItem("productes", JSON.stringify(carretData));
 }
