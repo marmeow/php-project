@@ -119,12 +119,8 @@ document.addEventListener('click', function (e) {
   }
 });
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('../data/products.json')
+  fetch('./data/products.json')
     .then(response => response.json())
     .then(dades => {
       const productesPerCategoria = agruparItems(dades.productes);

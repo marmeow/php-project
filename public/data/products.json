@@ -205,7 +205,7 @@
             "categoria": "snacks",
             "oferta": false,
             "imatge": "lays.png",
-            "horario": ["manana", "tarde", "noche"]
+            "horario": ["tarde", "noche"]
         },
         {
             "nom": "Ruffles",
