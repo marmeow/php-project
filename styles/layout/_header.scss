@@ -52,6 +52,12 @@
                 border-bottom: 2px solid transparent;
                 transition: 0.2s ease all;
 
+                @media (max-width: 768px) {
+                    font-weight: 600;
+                }
+
+                font-weight: 600;
+
                 &:hover {
                     color: var(--green1);
                     font-weight: 700;
@@ -65,6 +71,12 @@
                     border-bottom: 2px solid var(--green1);
                     display: block;
                     width: fit-content;
+
+                    @media (max-width: 768px) {
+                        color: var(--green1);
+                        border: none;
+
+                    }
                 }
             }
         }
