@@ -82,6 +82,14 @@
             "horario": ["manana", "tarde"]
         },
         {
+            "nom": "Entrepà de truita",
+            "preu": 3.00,
+            "descripció": "Entrepà calent de truita amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false,
+            "imatge": "entrepa-truita.png"
+        },
+        {
             "nom": "Entrepà de bacó",
             "preu": 4.00,
             "descripció": "Entrepà calent de bacó amb tomàquet",
@@ -116,6 +124,14 @@
             "oferta": false,
             "imatge": "entrepa-chorizo.png",
             "horario": ["manana", "tarde", "noche"]
+        },
+        {
+            "nom": "Entrapà de xoriço",
+            "preu": 3.00,
+            "descripció": "Entrepà fred de xoriço amb tomàquet",
+            "categoria": "entrepans",
+            "oferta": false,
+            "imatge": "entrepa-chorizo.png"
         },
         {
             "nom": "Croissant",
@@ -158,9 +174,8 @@
             "preu": 1.10,
             "descripció": "Napolitana farcida de crema",
             "categoria": "brioixeria",
-            "oferta": false,
-            "imatge": "napolitana.png",
-            "horario": ["manana", "tarde"]
+            "oferta": true,
+            "imatge": "napolitana.png"
         },
         {
             "nom": "Napolitana de xocolata",
