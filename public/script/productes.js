@@ -202,6 +202,30 @@ function openBocata(evt, cityName) {
 }
 
 
-// productes LS
+function tinyOpenBocata() {
+  if (window.innerWidth <= 768) {
+    const tabcontents = document.querySelectorAll('.tabcontent');
+
+    tabcontents.forEach(content => {
+      const h4 = content.querySelector('h4');
+
+      if (h4) {
+        const newH4 = h4.cloneNode(true);
+        h4.parentNode.replaceChild(newH4, h4);
+
+        newH4.addEventListener('click', function () {
+          content.classList.toggle('active-mobile');
+        });
+      }
+    });
+
+    if (tabcontents.length > 0) {
+      tabcontents[0].classList.add('active-mobile');
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', tinyOpenBocata);
+window.addEventListener('resize', tinyOpenBocata);
 
 
