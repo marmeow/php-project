@@ -1,26 +1,22 @@
 {
     "productes": [
         {
-            "nom": "Producte A",
-            "preu": 10,
-            "quantitat": 2
-        },
-        {
-            "nom": "Producte B",
-            "preu": 15,
+            "nom": "Entrep\u00e0 de pernil dol\u00e7 i formatge",
+            "preu": 2.5,
             "quantitat": 1
         },
         {
-            "nom": "Producte C",
-            "preu": 7.25,
-            "quantitat": 3
+            "nom": "Fanta",
+            "preu": 1.5,
+            "quantitat": 2
         },
         {
-            "nom": "Producte D",
-            "preu": 5.5,
-            "quantitat": 0
+            "nom": "Magdalena",
+            "preu": 0.85,
+            "quantitat": 2
         }
     ],
+    "total": 7.2,
     "username": "Alex",
     "usermail": "alexpotloghary@gmail.com",
     "usertel": "667996420"

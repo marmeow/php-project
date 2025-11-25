@@ -4,6 +4,7 @@
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
+    afegirTotalAJSON(carretData);
 
     carret.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -61,18 +62,20 @@ function mostraTiquet() {
         html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
     });
     html += `</ul>`;
+    html += `<h3>Total a pagar: ${carretData.total.toFixed(2)}€</h3>`;
 
     tiquetDiv.innerHTML = html;
 }
 
-function creaProductesProva() { //TODO: Eliminar aquesta funció en producció
-    const productesProva = {
-        productes: [
-            { nom: "Producte A", preu: 10, quantitat: 2 },
-            { nom: "Producte B", preu: 15, quantitat: 1 },
-            { nom: "Producte C", preu: 7.25, quantitat: 3 },
-            { nom: "Producte D", preu: 5.5, quantitat: 0 },
-        ],
-    };
-    localStorage.setItem("productes", JSON.stringify(productesProva));
+function afegirTotalAJSON(carretData) {
+    if (!carretData || !carretData.productes || carretData.productes.length === 0) {
+        return;
+    }
+    
+    let total = 0;
+    carretData.productes.forEach(item => {
+        total += item.preu * item.quantitat;
+    });
+    carretData.total = total;
+    localStorage.setItem("productes", JSON.stringify(carretData));
 }

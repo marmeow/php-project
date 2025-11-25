@@ -48,7 +48,7 @@ function mostraTiquets() {
         if (xhr.status === 200) {
             let response = JSON.parse(xhr.responseText);
 
-            if (response.success && !response["tickets"] == "[]") {
+            if (response.success) {
                 let tiquets = response["tickets"];
                 // TODO: mostra tots els tiquets
                 let titol = document.createElement('h2');
@@ -67,6 +67,7 @@ function mostraTiquets() {
                     element.data.productes.forEach(item => {
                         product += `<p>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</p>`;
                     })
+                    product += `<h4>Total a pagar: ${element.data.total.toFixed(2)}€</h4>`;
                     tiquet.innerHTML = product;
                     contenidor.appendChild(tiquet);
                 });
