@@ -1,12 +1,9 @@
-/* Estilo general de los tabs (por defecto vertical en escritorio) */
 .tab {
     float: left;
     width: 20%;
-    /* ancho de la columna de tabs */
     background-color: var(--green2);
 }
 
-/* Botones dentro de los tabs */
 .tab button {
     display: block;
     background-color: inherit;
@@ -29,7 +26,6 @@
     background-color: var(--green1);
 }
 
-/* Contenido de cada tab */
 .tabcontent {
     float: left;
     width: 80%;
@@ -37,25 +33,23 @@
     display: none;
 }
 
-/* Mostrar el primero por defecto */
 #freds {
     display: block;
 }
 
-/* 🔑 Responsive: cuando la pantalla sea ≤768px, los tabs se ponen horizontales */
+
 @media (max-width: 768px) {
     .tab {
         display: flex;
         width: 100%;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid var(--green1);
         float: none;
     }
 
     .tab button {
         flex: 1;
-        /* que ocupen el mismo ancho */
         text-align: center;
-        background-color: #f1f1f1;
+        background-color: var(--green2);
         padding: 14px 16px;
         font-size: 16px;
     }
