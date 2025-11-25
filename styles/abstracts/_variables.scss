@@ -9,6 +9,8 @@ $breakpoint-large: 1240px;
     --green1: #B1CC74;
     --green2: #E8FCC2;
     --blue1: #D0F4EA;
+    --backgroud-color-body: white;
+    --color-text: black;
 
 
     // Fonts
@@ -42,4 +44,26 @@ $breakpoint-large: 1240px;
     --radius-sm: 0.25rem; // 4px
     --radius-md: 0.5rem; // 8px
     --radius-lg: 1rem; // 16px
+
+    //dark theme
+    &.darkmode {
+        --grey1: #9aa5ac;
+        --grey2: #67787e;
+        --green1: #708a33;
+        --green2: #2a3f03;
+        //--blue1: #0b2d24;
+        //--backgroud-color-body: #5a5f5c;
+        --backgroud-color-body: #212e2b;
+        --color-text: #e1e1ff;
+
+        // --primary-color: #9A97F3;
+        // --secondary-color: #818cab;
+        // --font-color: #e1e1ff;
+        // --font-secondary-color: #9A97F3;
+        // --bg-color: #070b1d;
+        // --bg-color-gradient: #2a2e40;
+        // --heading-color: #070b1d;
+        // --component-bg: #30385a;
+        // --secondary-text: #a4a5b8;
+    }
 }

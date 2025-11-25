@@ -4,6 +4,8 @@
   --green1: #B1CC74;
   --green2: #E8FCC2;
   --blue1: #D0F4EA;
+  --backgroud-color-body: white;
+  --color-text: black;
   --font-titles: "Rubik", sans-serif;
   --font-general: "Montserrat", sans-serif;
   --font-xs: 0.75rem;
@@ -25,6 +27,14 @@
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
+}
+:root.darkmode {
+  --grey1: #9aa5ac;
+  --grey2: #67787e;
+  --green1: #708a33;
+  --green2: #2a3f03;
+  --backgroud-color-body: #212e2b;
+  --color-text: #e1e1ff;
 }
 
 body {
@@ -162,7 +172,14 @@ h6 {
   bottom: 0;
 }
 
-#main-page #carousel .carousel {
+#main-page #main-body {
+  background-color: var(--backgroud-color-body);
+  color: var(--color-text);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#main-page #main-body #carousel .carousel {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,22 +192,22 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
-#main-page #carousel #imagen,
-#main-page #carousel #imageCover {
+#main-page #main-body #carousel #imagen,
+#main-page #main-body #carousel #imageCover {
   width: 100%;
   height: 600px;
 }
-#main-page #carousel #imagen {
+#main-page #main-body #carousel #imagen {
   background-size: cover;
   background-position: center;
 }
-#main-page #carousel #imageCover {
+#main-page #main-body #carousel #imageCover {
   position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
-#main-page #carousel #titulos {
+#main-page #main-body #carousel #titulos {
   position: absolute;
   color: rgba(255, 255, 255, 0.937254902);
   font-family: var(--font-titles);
@@ -201,7 +218,7 @@ h6 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
 }
-#main-page #carousel .botonFlecha {
+#main-page #main-body #carousel .botonFlecha {
   background-color: transparent;
   width: auto;
   height: 100%;
@@ -209,48 +226,48 @@ h6 {
   border: none;
   z-index: 99;
 }
-#main-page #carousel .botonFlecha.avanzar {
+#main-page #main-body #carousel .botonFlecha.avanzar {
   right: 0;
 }
-#main-page #carousel .botonFlecha.retroceder {
+#main-page #main-body #carousel .botonFlecha.retroceder {
   left: 0;
 }
-#main-page #carousel .botonFlecha .fa {
+#main-page #main-body #carousel .botonFlecha .fa {
   font-size: 5rem;
   color: rgba(255, 255, 255, 0.774);
   cursor: pointer;
 }
-#main-page #carousel #ofertes {
+#main-page #main-body #carousel #ofertes {
   margin: var(--space-xl);
   max-width: 98%;
   display: block;
 }
-#main-page #carousel #ofertes #titolOfertes {
+#main-page #main-body #carousel #ofertes #titolOfertes {
   font-size: var(--font-xxl);
   border-bottom: 5px solid var(--green1);
 }
-#main-page #carousel #ofertes .seccioCategoria {
+#main-page #main-body #carousel #ofertes .seccioCategoria {
   font-size: var(--font-xl);
 }
-#main-page #carousel #ofertes #begudes {
+#main-page #main-body #carousel #ofertes #begudes {
   padding-top: 20px;
 }
-#main-page #carousel #ofertes #begudes #h3begudes {
+#main-page #main-body #carousel #ofertes #begudes #h3begudes {
   border-bottom: 3px solid var(--grey1);
 }
-#main-page #carousel #ofertes #h3entrepans {
+#main-page #main-body #carousel #ofertes #h3entrepans {
   border-bottom: 3px solid var(--grey1);
 }
-#main-page #carousel #ofertes #h3brioixeria {
+#main-page #main-body #carousel #ofertes #h3brioixeria {
   border-bottom: 3px solid var(--grey1);
 }
-#main-page #carousel #ofertes #h3snacks {
+#main-page #main-body #carousel #ofertes #h3snacks {
   border-bottom: 3px solid var(--grey1);
 }
-#main-page #carousel #ofertes #h3fruita {
+#main-page #main-body #carousel #ofertes #h3fruita {
   border-bottom: 3px solid var(--grey1);
 }
-#main-page #carousel #ofertes .ofertProduct {
+#main-page #main-body #carousel #ofertes .ofertProduct {
   display: inline-block;
   border: 1px solid var(--grey1);
   padding: var(--space-md);
@@ -259,34 +276,34 @@ h6 {
   margin: var(--space-lg) var(--space-xl);
   text-align: center;
 }
-#main-page #carousel #ofertes .ofertProduct #nomProducte {
+#main-page #main-body #carousel #ofertes .ofertProduct #nomProducte {
   font-size: var(--font-xxl);
   border-bottom: 2px solid var(--green1);
   padding-bottom: var(--space-xs);
 }
-#main-page #carousel #ofertes .ofertProduct #descripcioProducte,
-#main-page #carousel #ofertes .ofertProduct #preuAbans,
-#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+#main-page #main-body #carousel #ofertes .ofertProduct #descripcioProducte,
+#main-page #main-body #carousel #ofertes .ofertProduct #preuAbans,
+#main-page #main-body #carousel #ofertes .ofertProduct #preuDescompte {
   font-size: var(--font-lg);
 }
-#main-page #carousel #ofertes .ofertProduct #descripcioProducte {
+#main-page #main-body #carousel #ofertes .ofertProduct #descripcioProducte {
   padding: var(--space-lg) 0;
   height: 108px;
 }
-#main-page #carousel #ofertes .ofertProduct #preuDescompte {
+#main-page #main-body #carousel #ofertes .ofertProduct #preuDescompte {
   color: var(--green1);
   font-weight: bold;
 }
-#main-page #carousel #ofertes .ofertProduct #preuDescompte:hover {
+#main-page #main-body #carousel #ofertes .ofertProduct #preuDescompte:hover {
   text-decoration: underline;
   font-weight: 900;
 }
-#main-page #carousel #ofertes .ofertProduct #percent {
+#main-page #main-body #carousel #ofertes .ofertProduct #percent {
   padding-top: var(--space-xxxl);
   font-size: var(--font-xxl);
   color: var(--grey1);
 }
-#main-page #carousel #ofertes .ofertProduct #percent:hover {
+#main-page #main-body #carousel #ofertes .ofertProduct #percent:hover {
   color: var(--green1);
   font-weight: bold;
 }
@@ -447,7 +464,7 @@ footer a:hover {
   z-index: 1000;
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: var(--backgroud-color-body);
   padding: var(--space-sm) var(--space-xxxxl);
   -webkit-box-shadow: 0px -1px 8px 0px var(--grey1);
           box-shadow: 0px -1px 8px 0px var(--grey1);
@@ -459,7 +476,7 @@ footer a:hover {
   font-size: 1.125rem;
   text-decoration: none;
   display: inline-block;
-  color: black;
+  color: var(--color-text);
   border-bottom: 2px solid transparent;
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
@@ -482,6 +499,46 @@ footer a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#darkLight {
+  position: absolute;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  top: 25%;
+  left: 50%;
+}
+#darkLight i {
+  font-size: var(--font-xxl);
+  margin: var(--space-xs) var(--space-xxs);
+}
+#darkLight:hover {
+  background-color: var(--green1);
+  border-color: var(--green1);
+}
+#darkLight .to_dark_mode {
+  display: block;
+  height: 32px;
+}
+#darkLight .to_light_mode {
+  display: none;
+  height: 32px;
+}
+
+.darkmode #darkLight .to_dark_mode {
+  display: none;
+}
+.darkmode #darkLight .to_light_mode {
+  display: block;
 }
 
 #info-tiquet {
@@ -593,7 +650,6 @@ footer a:hover {
 #header-bottom nav ul a {
   text-decoration: none;
   display: inline-block;
-  color: black;
 }
 
 #main-footer nav {

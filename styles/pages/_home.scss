@@ -1,163 +1,162 @@
 //web inspo del carrousel: https://andros.dev/blog/4e9c1536/javascript-carousel-sencillo-con-controles-y-autoreproduccion/
 
 #main-page {
-    #carousel {
+    #main-body {
+        background-color: var(--backgroud-color-body);
+        color: var(--color-text);
 
-        .carousel {
-            margin: 0 auto;
-            display: flex;
-            position: relative;
-            justify-content: center;
-            align-items: center;
-        }
+        display: flex;
 
-        #imagen,
-        #imageCover {
-            width: 100%;
-            height: 600px;
-        }
-
-        #imagen {
-            background-size: cover;
-            background-position: center;
-        }
-
-        #imageCover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        #titulos {
-            position: absolute;
-            color: #ffffffef;
-            font-family: var(--font-titles);
-            font-size: 9em;
-            text-align: center;
-            line-height: 8rem;
-            margin: var(--space-xxl);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            text-transform: uppercase;
-        }
-
-        .botonFlecha {
-            //background-color: white;
-            //background-color: var(--blue1);
-            //background-color: rgba(0, 0, 0, 0.2);
-            //background-color: var(--green1);
-            //background-color: RGBA(0, 255, 0, 0.5);
-            background-color: transparent;
-            width: auto;
-            height: 100%;
-            position: absolute;
-            //top: calc(50% - 50px);
-            border: none;
-            z-index: 99;
-
-            &.avanzar {
-                right: 0;
-
+        #carousel {
+            .carousel {
+                margin: 0 auto;
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
             }
 
-            &.retroceder {
+            #imagen,
+            #imageCover {
+                width: 100%;
+                height: 600px;
+            }
+
+            #imagen {
+                background-size: cover;
+                background-position: center;
+            }
+
+            #imageCover {
+                position: absolute;
+                top: 0;
                 left: 0;
+                background-color: rgba(0, 0, 0, 0.4);
             }
 
-            .fa {
-                font-size: 5rem;
-                color: rgba(255, 255, 255, 0.774);
-                cursor: pointer;
-            }
-        }
-
-        #ofertes {
-            margin: var(--space-xl);
-            max-width: 98%;
-            display: block;
-
-            #titolOfertes {
-                font-size: var(--font-xxl);
-                border-bottom: 5px solid var(--green1);
-
+            #titulos {
+                position: absolute;
+                color: #ffffffef;
+                font-family: var(--font-titles);
+                font-size: 9em;
+                text-align: center;
+                line-height: 8rem;
+                margin: var(--space-xxl);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                text-transform: uppercase;
             }
 
-            .seccioCategoria {
-                font-size: var(--font-xl);
+            .botonFlecha {
+                background-color: transparent;
+                width: auto;
+                height: 100%;
+                position: absolute;
+                border: none;
+                z-index: 99;
+
+                &.avanzar {
+                    right: 0;
+
+                }
+
+                &.retroceder {
+                    left: 0;
+                }
+
+                .fa {
+                    font-size: 5rem;
+                    color: rgba(255, 255, 255, 0.774);
+                    cursor: pointer;
+                }
             }
 
-            #begudes {
-                padding-top: 20px;
+            #ofertes {
+                margin: var(--space-xl);
+                max-width: 98%;
+                display: block;
 
-                #h3begudes {
+                #titolOfertes {
+                    font-size: var(--font-xxl);
+                    border-bottom: 5px solid var(--green1);
+
+                }
+
+                .seccioCategoria {
+                    font-size: var(--font-xl);
+                }
+
+                #begudes {
+                    padding-top: 20px;
+
+                    #h3begudes {
+                        border-bottom: 3px solid var(--grey1);
+                    }
+                }
+
+                #h3entrepans {
                     border-bottom: 3px solid var(--grey1);
                 }
-            }
 
-            #h3entrepans {
-                border-bottom: 3px solid var(--grey1);
-            }
-
-            #h3brioixeria {
-                border-bottom: 3px solid var(--grey1);
-            }
-
-            #h3snacks {
-                border-bottom: 3px solid var(--grey1);
-            }
-
-            #h3fruita {
-                border-bottom: 3px solid var(--grey1);
-            }
-
-            .ofertProduct {
-                display: inline-block;
-                border: 1px solid var(--grey1);
-                padding: var(--space-md);
-                width: 25rem;
-                height: 100%;
-                margin: var(--space-lg) var(--space-xl);
-                text-align: center;
-
-                #nomProducte {
-                    font-size: var(--font-xxl);
-                    border-bottom: 2px solid var(--green1);
-                    padding-bottom: var(--space-xs);
+                #h3brioixeria {
+                    border-bottom: 3px solid var(--grey1);
                 }
 
-                #descripcioProducte,
-                #preuAbans,
-                #preuDescompte {
-                    font-size: var(--font-lg);
+                #h3snacks {
+                    border-bottom: 3px solid var(--grey1);
                 }
 
-                #descripcioProducte {
-                    padding: var(--space-lg) 0;
-                    height: 108px;
+                #h3fruita {
+                    border-bottom: 3px solid var(--grey1);
                 }
 
-                #preuDescompte {
-                    color: var(--green1);
-                    font-weight: bold;
+                .ofertProduct {
+                    display: inline-block;
+                    border: 1px solid var(--grey1);
+                    padding: var(--space-md);
+                    width: 25rem;
+                    height: 100%;
+                    margin: var(--space-lg) var(--space-xl);
+                    text-align: center;
 
-                    &:hover {
-                        text-decoration: underline;
-                        font-weight: 900;
+                    #nomProducte {
+                        font-size: var(--font-xxl);
+                        border-bottom: 2px solid var(--green1);
+                        padding-bottom: var(--space-xs);
                     }
-                }
 
-                #percent {
-                    padding-top: var(--space-xxxl);
-                    font-size: var(--font-xxl);
-                    color: var(--grey1);
+                    #descripcioProducte,
+                    #preuAbans,
+                    #preuDescompte {
+                        font-size: var(--font-lg);
+                    }
 
-                    &:hover {
+                    #descripcioProducte {
+                        padding: var(--space-lg) 0;
+                        height: 108px;
+                    }
+
+                    #preuDescompte {
                         color: var(--green1);
                         font-weight: bold;
+
+                        &:hover {
+                            text-decoration: underline;
+                            font-weight: 900;
+                        }
+                    }
+
+                    #percent {
+                        padding-top: var(--space-xxxl);
+                        font-size: var(--font-xxl);
+                        color: var(--grey1);
+
+                        &:hover {
+                            color: var(--green1);
+                            font-weight: bold;
+                        }
                     }
                 }
             }
-
         }
     }
 }

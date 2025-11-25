@@ -1,0 +1,42 @@
+#darkLight {
+    position: absolute;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    top: 25%;
+    left: 50%;
+
+    i {
+        font-size: var(--font-xxl);
+        margin: var(--space-xs) var(--space-xxs);
+    }
+
+    &:hover {
+        background-color: var(--green1);
+        border-color: var(--green1);
+    }
+
+    .to_dark_mode {
+        display: block;
+        height: 32px;
+    }
+
+    .to_light_mode {
+        display: none;
+        height: 32px;
+    }
+}
+
+.darkmode {
+    #darkLight .to_dark_mode {
+        display: none;
+    }
+
+    #darkLight .to_light_mode {
+        display: block;
+    }
+}
