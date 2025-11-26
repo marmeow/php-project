@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 let temps = rebTemps();
 
 /**
@@ -55,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.classList.add('ofertProduct');
 
                 //Crear cada element dins de l'article
-                //TODO: revisar el src para que sea ruta relativa (FET)
                 const imatge = document.createElement('img');
                 imatge.src = 'resources/images/products/' + producte.imatge;
                 imatge.alt = producte.imatge;

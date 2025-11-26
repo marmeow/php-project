@@ -40,6 +40,10 @@ function comprovaAdmin() {
     xhr.send();
 }
 
+/**
+ * Mostra tots els tiquets del servidor si ets admin.
+ */
+
 function mostraTiquets() {
     const xhr = new XMLHttpRequest();
 
