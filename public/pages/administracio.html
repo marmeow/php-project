@@ -53,6 +53,84 @@
                 <p>No ets logat</p>
             </div>
         </main>
+
+
+        <section id="banner" class="admin-banner">
+            <h1>Administració de<br><span>Productes</span></h1>
+        </section>
+
+
+        <section id="admin-panel">
+            <!-- Add Product Form -->
+            <div class="admin-card">
+                <h3>Afegir Nou Producte</h3>
+                <form id="add-product-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="nom">Nom del producte:</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="preu">Preu (€):</label>
+                            <input type="number" id="preu" name="preu" step="0.01" required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="descripcio">Descripció:</label>
+                        <textarea id="descripcio" name="descripció" required></textarea>
+                    </div>
+
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="categoria">Categoria:</label>
+                            <select id="categoria" name="categoria">
+                                <option value="entrepans">Entrepans</option>
+                                <option value="begudes">Begudes</option>
+                                <option value="brioixeria">Brioixeria</option>
+                                <option value="snacks">Snacks</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="imatge">Nom Imatge (ex: agua.png):</label>
+                            <input type="text" id="imatge" name="imatge" placeholder="nom-imatge.png">
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label for="oferta">En Oferta?</label>
+                            <input type="checkbox" id="oferta" name="oferta">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn-save">Guardar Producte</button>
+                </form>
+            </div>
+
+
+            <!-- Products Table -->
+            <div class="admin-card">
+                <h3>Llistat de Productes</h3>
+                <div class="table-responsive">
+                    <table id="products-table">
+                        <thead>
+                            <tr>
+                                <th>Imatge</th>
+                                <th>Nom</th>
+                                <th>Preu</th>
+                                <th>Categoria</th>
+                                <th>Descripció</th>
+                                <th>Accions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
         <footer id="main-footer">
             <div id="sitemap">
                 <h4>Site Map</h4>

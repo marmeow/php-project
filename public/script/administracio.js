@@ -1,3 +1,4 @@
+/*
 /**
  * Funció que, al carregar la pàgina, oculta el contingut principal i després crida a
  * una altra funció per comprovar si l'usuari té permisos d'administrador.
