@@ -76,11 +76,11 @@ function mostraTiquets() {
                     contenidor.appendChild(tiquet);
                 });
                 contenidor.classList.add("tiquet-container");
-                document.body.querySelector("main").innerHTML = '';
-                document.body.querySelector("main").appendChild(titol);
-                document.body.querySelector("main").appendChild(contenidor);
+                document.body.querySelector(".login-adm").style.display = "none";
+                document.body.querySelector("#tiquet-contenidor").appendChild(titol);
+                document.body.querySelector("#tiquet-contenidor").appendChild(contenidor);
             } else if (response["tickets"].length == 0) {
-                document.body.querySelector("main").innerHTML = `<h3>No s'ha trobat els tiquets</h3>`;
+                document.body.querySelector("#tiquet-contenidor").innerHTML = `<h3>No s'ha trobat els tiquets</h3>`;
             } else {
                 alert("No ha funcionat.")
             }
