@@ -1,4 +1,5 @@
 <?php
+// La funció rep un json, valida nom e email pq telèfon ja està validat al html i envia o error o un success
 header('Content-Type: application/json');
 
 $json = file_get_contents('php://input');

@@ -1,5 +1,6 @@
 /**
  * Aquesta funció serveix per interceptar el form submit i en comptes de fer un submit normal, poder gestionar-lo i enviar dades alterades
+ * al servidor.
 */
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
@@ -19,8 +20,8 @@ window.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
- * Envia les dades del carret en format JSON al servidor
- * @param {*} productes L'array de productes a enviar en format JSON
+ * Envia les dades del carret en format JSON al servidor.
+ * @param {*} productes L'array de productes a enviar en format JSON.
  */
 
 function enviaJSONAServer(tiquet) {
@@ -47,6 +48,11 @@ function enviaJSONAServer(tiquet) {
     xhr.send(JSON.stringify(tiquet));
 }
 
+/**
+ * Mostra el tiquet guardat al localStorage.
+ * @returns Retorna valors void si és un error.
+ */
+
 function mostraTiquet() {
     let carretData = JSON.parse(localStorage.getItem("productes"));
     let tiquetDiv = document.body.querySelector(".tiquet-card");
@@ -55,7 +61,6 @@ function mostraTiquet() {
         tiquetDiv.innerHTML = "<p>El carret està buit.</p>";
         return;
     }
-
 
     let html = "<h2>Resum de la comanda</h2><ul>";
     carretData.productes.forEach(item => {
@@ -67,15 +72,20 @@ function mostraTiquet() {
     tiquetDiv.innerHTML = html;
 }
 
+/**
+ * Afegeix el valor total de tots els productes al JSON guardat al localStorage.
+ * @param {*} carretData 
+ */
+
 function afegirTotalAJSON(carretData) {
     if (!carretData || !carretData.productes || carretData.productes.length === 0) {
-        return;
+        carretData.total = 0;
+    } else {
+        let total = 0;
+        carretData.productes.forEach(item => {
+            total += item.preu * item.quantitat;
+        });
+        carretData.total = total;
     }
-    
-    let total = 0;
-    carretData.productes.forEach(item => {
-        total += item.preu * item.quantitat;
-    });
-    carretData.total = total;
     localStorage.setItem("productes", JSON.stringify(carretData));
 }

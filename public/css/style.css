@@ -268,17 +268,14 @@ h6 {
   font-size: var(--font-xl);
   margin-top: var(--space-xxxxl);
 }
-#main-page #main #ofertes .seccioCategoria .productes {
+#main-page #main section#ofertes .seccioCategoria .productes {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
 }
 @media (max-width: 480px) {
   #main-page #main section#ofertes .seccioCategoria .productes {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 #main-page #main section#ofertes .seccioCategoria .productes .ofertProduct {
@@ -346,13 +343,6 @@ h6 {
   }
 }
 
-@media (max-width: 1024px) {
-  #info-tiquet {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-}
 #product-page h1 {
   font-size: 4.125rem;
   text-shadow: 2px 2px 2px var(--grey1);
@@ -665,12 +655,10 @@ footer a:hover {
 
 #contact-page button {
   background-color: var(--green1);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: none;
   padding: var(--space-xs);
-  -webkit-transition: ease all 0.2s;
   transition: ease all 0.2s;
   font-weight: 600;
 }
@@ -714,6 +702,9 @@ button.closebtn {
   margin: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tiquet-card ul li {
+  list-style: none;
 }
 
 .tiquet-container {
@@ -827,18 +818,11 @@ button.closebtn {
 }
 @media (max-width: 768px) {
   #header-bottom nav ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     padding: var(--space-xl);
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   #header-bottom nav ul li {
     border-bottom: 2px solid var(--green1);
@@ -970,17 +954,13 @@ button.closebtn {
 
 @media (max-width: 768px) {
   .tab {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
     border-bottom: 2px solid var(--green1);
     float: none;
   }
   .tab button {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
     text-align: center;
     background-color: var(--green2);
     padding: 14px 16px;
@@ -1002,9 +982,7 @@ button.closebtn {
 
 #entrepans .product-card {
   width: calc(25% - var(--space-md));
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(25% - var(--space-md));
-          flex: 0 0 calc(25% - var(--space-md));
+  flex: 0 0 calc(25% - var(--space-md));
 }
 @media (max-width: 1080px) {
   #entrepans .product-card {
