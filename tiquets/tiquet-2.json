@@ -1,23 +1,13 @@
 {
     "productes": [
         {
-            "nom": "Entrep\u00e0 de pernil dol\u00e7 i formatge",
-            "preu": 2.5,
-            "quantitat": 1
-        },
-        {
-            "nom": "Entrap\u00e0 de xori\u00e7o",
-            "preu": 3,
-            "quantitat": 8
-        },
-        {
             "nom": "Entrep\u00e0 de pernil salat",
             "preu": 4,
-            "quantitat": 1
+            "quantitat": 2
         }
     ],
-    "total": 30.5,
-    "username": "mar",
-    "usermail": "mew@gmail.com",
-    "usertel": "123456789"
+    "total": 8,
+    "username": "Alexa",
+    "usermail": "alexpotloghary@gmail.com",
+    "usertel": "667996420"
 }

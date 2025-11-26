@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Rubik:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <script src="../script.js" defer></script>
 </head>
 
 <body id="copyright-page">
@@ -23,17 +24,21 @@
         </nav>
     </header>
     <header id="header-bottom" class="flex">
-        <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+        <a class="logo" href="../index.html"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
         <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
         <div id="overlay"></div>
         <nav>
+            <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
+            <img src="../resources/images/espresso.webp" alt="Espresso">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="productes.html">Productes</a></li>
                 <li><a href="administrar.html">Administració</a></li>
                 <li class="active-link"><a href="#">Contacte</a></li>
-                <li><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                <li><a href="login.html"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                <div class="icons flex">
+                    <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="login.html" id="user-icon"><i class="fa-solid fa-user fa-lg btnuser-icon"></i></a></li>
+                </div>
             </ul>
         </nav>
     </header>

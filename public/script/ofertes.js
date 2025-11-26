@@ -1,3 +1,5 @@
+let temps = rebTemps();
+
 /**
  * Funció que carrega els productes des d'un document JSON, filtra els que
  * estan en oferta, els agrupa per categories i genera de dinàmicament seccions
@@ -49,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 articleOfertes.classList.add('ofertProduct');
 
                 //Crear cada element dins de l'article
-                //TODO: revisar el src para que sea ruta relativa (FET)
                 const imatge = document.createElement('img');
                 imatge.src = 'resources/images/products/' + producte.imatge;
                 imatge.alt = producte.imatge;
@@ -57,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 producte.horario.forEach(element => {
                     articleOfertes.classList.add(element);
                 });
+
+                if (!articleOfertes.classList.contains(temps)){
+                    articleOfertes.classList.add('ocult');
+                }
 
                 const h4 = document.createElement('h4');
                 h4.id = 'nomProducte';
@@ -127,53 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error al carregar el JSON:", error));
-
-    const temps = rebTemps();
-    console.log(temps)
-    const ofertes = document.querySelectorAll(".ofertProduct");
-    console.log("Estas son las ofertas");
-    console.log(ofertes);
-
-    
-    switch (temps) {
-        case "manana":
-            for (const element of ofertes) {
-                console.log("Entro al mati")
-                element.classList.remove("ocult")
-                if (!element.classList.contains("manana")){
-                        element.classList.add("ocult")
-                    }
-            }
-            break;
-        case "tarde":
-            console.log("Entro al tarde")
-            /*for (const element of ofertes) {
-                            console.log("Itero")
-
-                element.classList.remove("ocult")
-                if (!element.classList.contains("tarde")){
-                        element.classList.add("ocult")
-                    }
-            }*/
-
-            ofertes.to.forEach(element => {
-                console.log(element)
-            });
-            break;
-        case "noche":
-            for (const element of ofertes) {
-                                console.log("Entro al noche")
-
-                element.classList.remove("ocult")
-                if (!element.classList.contains("noche")){
-                        element.classList.add("ocult")
-                    }
-            }
-            break;
-        default:
-            console.log("Error")
-            break;
-    }
 });
 
 function rebTemps() {
