@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 
 $prodsDir = __DIR__ . '/../data/products/';
 $prodsFile = $prodsDir . 'products.json';
-$productes = json_decode(file_get_contents($prodsFile), true);
+$productes = file_get_contents($prodsFile);
 
 if ($productes){
     echo json_encode([
