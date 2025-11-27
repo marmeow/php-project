@@ -74,7 +74,7 @@ function mostraTiquet() {
                 </div>`;
     });
     html += `</ul>`;
-    html += `<h3>Total a pagar: ${carretData.total.toFixed(2)}€</h3>`;
+    html += `<h4>Total a pagar: ${carretData.total.toFixed(2)}€</h4>`;
 
     tiquetDiv.innerHTML = html;
 }
