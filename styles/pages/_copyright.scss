@@ -1,5 +1,7 @@
 /* @use "../abstracts/variables" as *; */
 #copyright-page {
+    background-color: var(--backgroud-color-body);
+    color: var(--color-text);
 
     .container {
         // padding: var(--space-xl);
@@ -23,14 +25,14 @@
     }
 
     .h2Copy {
-        color: black;
+        color: var(--color-text);
         font-size: var(--font-lg);
         margin: var(--space-lg) 0 var(--space-md);
     }
 
     .pCopy {
         margin-bottom: var(--space-md);
-        color: black;
+        color: var(--color-text);
     }
 
     .addressCopy {

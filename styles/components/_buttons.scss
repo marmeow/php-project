@@ -3,12 +3,12 @@
     border-radius: 50% !important;
     height: 50px !important;
     width: 50px !important;
-    padding: 0;
-    display: flex;
-    align-items: center;
+    padding: 0 !important;
+    display: flex !important;
     cursor: pointer;
     top: 25%;
-    background-color: var(--grey2) !important;
+    background-color: #e9e9ed !important;
+    border: 1px solid black !important;
 
     i {
         font-size: var(--font-xxl);
@@ -16,8 +16,9 @@
     }
 
     &:hover {
-        background-color: var(--green1);
-        border-color: var(--green1);
+        background-color: var(--green1) !important;
+        border-color: var(--green1) !important;
+        color: black !important;
     }
 
     .to_dark_mode {

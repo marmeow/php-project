@@ -84,7 +84,9 @@
             padding-top: 4.375rem;
             transition: 0.5s;
             overflow-y: scroll;
-            background-color: white;
+            //background-color: white;
+            background-color: var(--backgroud-color-body);
+            color: var(--color-text);
         }
 
     }

@@ -16,7 +16,9 @@
     padding: var(--space-sm) var(--space-xxxxl);
     box-shadow: 0px -1px 8px 0px var(--grey1);
 
-
+    #darkLight {
+        margin: 0 15%;
+    }
 
     @media (max-width: 1024px) {
         padding: var(--space-xs);
