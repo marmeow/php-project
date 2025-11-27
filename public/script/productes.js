@@ -185,13 +185,10 @@ function recuperaProductesServidor() {
     console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
-      console.log("Resposta = " + response.productes)
 
       if (response.success) {
         const data = JSON.parse(response.productes);
-        console.log(data)
         const productes = data.productes;
-        console.log(productes);
         const cats = {};
         for (const item of productes) {
           if (item.categoria === 'entrepans') {
