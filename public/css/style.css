@@ -703,15 +703,22 @@ button.closebtn {
   margin: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 30%;
 }
 .tiquet-card .item-card {
   padding: 5px;
 }
 .tiquet-card h5 {
+  font-size: var(--font-md);
+}
+.tiquet-card h4 {
   font-size: var(--font-lg);
 }
 .tiquet-card ul li {
   list-style: none;
+}
+.tiquet-card span {
+  font-size: var(--font-sm);
 }
 
 .tiquet-container {
@@ -725,6 +732,16 @@ button.closebtn {
   display: none;
 }
 
+@media (max-width: 1024px) {
+  .tiquet-card {
+    width: 95%;
+  }
+  #tiquet-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #info-tiquet {
   display: grid;
   padding: var(--space-sm);
