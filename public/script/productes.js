@@ -86,32 +86,9 @@ document.addEventListener('click', function (e) {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch('../data/products.json')
-    .then(response => response.json())
-    .then(dades => {
-      const productesPerCategoria = agruparItems(dades.productes);
-      mostrarCategories(productesPerCategoria);
-    })
-    .catch(error => console.error("Error al carregar el JSON:", error));
+document.addEventListener("DOMContentLoaded", function () {
+  recuperaProductesServidor();
 });
-
-function agruparItems(productes) {
-  const cats = {};
-  productes.forEach(item => {
-    if (item.categoria === 'entrepans') {
-      const subcat = (item.descripció?.toLowerCase().includes('fred'))
-        ? 'entrepans-freds'
-        : 'entrepans-calents';
-      if (!cats[subcat]) cats[subcat] = [];
-      cats[subcat].push(item);
-    } else {
-      if (!cats[item.categoria]) cats[item.categoria] = [];
-      cats[item.categoria].push(item);
-    }
-  });
-  return cats;
-}
 
 function crearCard(item) {
   const ofertaClass = item.oferta ? 'oferta' : '';
