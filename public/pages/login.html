@@ -13,6 +13,7 @@
     <script src="../script/login.js" defer></script>
     <script src="../script/logout.js" defer></script>
     <script src="../script.js" defer></script>
+    <script src="../script/theme.js" defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
@@ -35,6 +36,14 @@
             <a class="logo" href="../index.html"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
             <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
             <div id="overlay"></div>
+
+            <div id="botoDarkLight">
+                <button id="darkLight">
+                    <i class="fa-solid fa-moon to_dark_mode"></i>
+                    <i class="fa-solid fa-sun to_light_mode"></i>
+                </button>
+            </div>
+
             <nav>
                 <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
                 <img src="../resources/images/espresso.webp" alt="Espresso">
@@ -43,7 +52,6 @@
                     <li><a href="productes.html">Productes</a></li>
                     <li><a href="administracio.html">Administració</a></li>
                     <li><a href="contacte.html">Contacte</a></li>
-                    <li><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                     <div class="icons flex">
                         <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                         <li><a href="#" id="user-icon"><i class="fa-solid fa-user fa-lg btnuser-icon"></i></a></li>
