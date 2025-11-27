@@ -201,5 +201,44 @@ function openBocata(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
+function recuperaProductesServidor() {
+  const xhr = new XMLHttpRequest();
 
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        const data = JSON.parse(response.productes);
+        const productes = data.productes;
+        const cats = {};
+        for (const item of productes) {
+          if (item.categoria === 'entrepans') {
+            const subcat = (item.descripció?.toLowerCase().includes('fred'))
+              ? 'entrepans-freds'
+              : 'entrepans-calents';
+            if (!cats[subcat]) cats[subcat] = [];
+            cats[subcat].push(item);
+          } else {
+            if (!cats[item.categoria]) cats[item.categoria] = [];
+            cats[item.categoria].push(item);
+          }
+        }
+        mostrarCategories(cats);
+      } else {
+        alert("Error: " + xhr.status);
+      }
+    } else {
+      alert("Error: " + xhr.status);
+    }
+  };
+
+  xhr.onerror = function () {
+    console.error("Error de xarxa");
+    alert("Error de connexió amb el servidor");
+  };
+
+  xhr.open("GET", "/php/enviaProductes.php", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send();
+}
 
