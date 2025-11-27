@@ -1,4 +1,3 @@
 
 /.vscode
-/public/css/*
-/public/css
+/public/css/*.map
