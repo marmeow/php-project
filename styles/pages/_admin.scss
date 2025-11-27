@@ -1,5 +1,10 @@
-main {
-    .admin-titol {
-        padding: var(--space-xs); 
+#admin-page {
+    background-color: var(--backgroud-color-body);
+    color: var(--color-text);
+
+    main {
+        .admin-titol {
+            padding: var(--space-xs);
+        }
     }
 }

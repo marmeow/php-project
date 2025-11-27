@@ -1,8 +1,10 @@
 //web inspo del carrousel: https://andros.dev/blog/4e9c1536/javascript-carousel-sencillo-con-controles-y-autoreproduccion/
 
 #main-page {
-    #main {
+    background-color: var(--backgroud-color-body);
+    color: var(--color-text);
 
+    #main {
         .carousel {
             margin: 0 auto;
             display: flex;
@@ -67,7 +69,6 @@
 
             &.avanzar {
                 right: 0;
-
             }
 
             &.retroceder {
@@ -79,32 +80,23 @@
                 color: rgba(255, 255, 255, 0.774);
                 cursor: pointer;
 
-
                 @media (max-width: 480px) {
                     display: none;
                 }
             }
         }
 
-        section#ofertes {
-            margin: var(--space-xxxxl);
-
-            &>section:first-child {
-                color: red;
-                background-color: aqua;
-            }
-
-
+        #ofertes {
 
             @media (max-width: 480px) {
                 margin: var(--space-xl);
             }
 
+            margin: var(--space-xxxxl);
+
             .seccioCategoria {
                 font-size: var(--font-xl);
-                margin-top: var(--space-xxxxl);
-
-
+                margin-top: var(--space-xxl);
 
                 .productes {
                     display: flex;
@@ -144,9 +136,7 @@
 
                         @media (max-width: 480px) {
                             width: 100%;
-
                         }
-
 
                         #nomProducte {
                             font-size: var(--font-xxl);
@@ -156,7 +146,6 @@
                             @media (max-width: 1080px) {
                                 font-size: var(--font-lg);
                             }
-
                         }
 
                         p {
@@ -166,7 +155,6 @@
                             @media (max-width: 1080px) {
                                 font-size: var(--font-md);
                             }
-
                         }
 
                         #preuDescompte {
@@ -180,12 +168,9 @@
                             color: var(--grey2);
                             font-weight: 500;
 
-
-
                             @media (max-width: 1080px) {
                                 font-size: var(--font-lg);
                             }
-
 
                             @media (max-width: 480px) {
                                 font-size: var(--font-lg);
@@ -193,12 +178,7 @@
                         }
                     }
                 }
-
-
-
             }
         }
-
-
     }
 }
