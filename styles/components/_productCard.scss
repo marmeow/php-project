@@ -14,7 +14,7 @@
         flex: 0 0 calc(50% - var(--space-md));
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         width: calc(100% - var(--space-md));
         flex: 0 0 calc(100% - var(--space-md));
     }
@@ -38,7 +38,7 @@
         flex: 0 0 calc(33.333% - var(--space-md));
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         width: calc(100% - var(--space-md));
         flex: 0 0 calc(100% - var(--space-md));
     }
