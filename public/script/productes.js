@@ -86,32 +86,9 @@ document.addEventListener('click', function (e) {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch('../data/products.json')
-    .then(response => response.json())
-    .then(dades => {
-      const productesPerCategoria = agruparItems(dades.productes);
-      mostrarCategories(productesPerCategoria);
-    })
-    .catch(error => console.error("Error al carregar el JSON:", error));
+document.addEventListener("DOMContentLoaded", function () {
+  recuperaProductesServidor();
 });
-
-function agruparItems(productes) {
-  const cats = {};
-  productes.forEach(item => {
-    if (item.categoria === 'entrepans') {
-      const subcat = (item.descripció?.toLowerCase().includes('fred'))
-        ? 'entrepans-freds'
-        : 'entrepans-calents';
-      if (!cats[subcat]) cats[subcat] = [];
-      cats[subcat].push(item);
-    } else {
-      if (!cats[item.categoria]) cats[item.categoria] = [];
-      cats[item.categoria].push(item);
-    }
-  });
-  return cats;
-}
 
 function crearCard(item) {
   const ofertaClass = item.oferta ? 'oferta' : '';
@@ -201,5 +178,49 @@ function openBocata(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
+function recuperaProductesServidor() {
+  const xhr = new XMLHttpRequest();
 
+  xhr.onload = function () {
+    console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      console.log("Resposta = " + response.productes)
+
+      if (response.success) {
+        const data = JSON.parse(response.productes);
+        console.log(data)
+        const productes = data.productes;
+        console.log(productes);
+        const cats = {};
+        for (const item of productes) {
+          if (item.categoria === 'entrepans') {
+            const subcat = (item.descripció?.toLowerCase().includes('fred'))
+              ? 'entrepans-freds'
+              : 'entrepans-calents';
+            if (!cats[subcat]) cats[subcat] = [];
+            cats[subcat].push(item);
+          } else {
+            if (!cats[item.categoria]) cats[item.categoria] = [];
+            cats[item.categoria].push(item);
+          }
+        };
+        mostrarCategories(cats);
+      } else {
+        alert("Error: " + xhr.status);
+      }
+    } else {
+      alert("Error: " + xhr.status);
+    }
+  };
+
+  xhr.onerror = function () {
+    console.error("Error de xarxa");
+    alert("Error de connexió amb el servidor");
+  };
+
+  xhr.open("GET", "/php/enviaProductes.php", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send();
+}
 
