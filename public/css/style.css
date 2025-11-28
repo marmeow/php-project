@@ -380,6 +380,10 @@ h6 {
   }
 }
 
+#confirm-page {
+  background-color: var(--backgroud-color-body);
+  color: var(--color-text);
+}
 #confirm-page main#final {
   padding: var(--space-xl);
 }
@@ -406,7 +410,7 @@ h6 {
   }
 }
 #info-tiquet .tiquet-card {
-  background: white;
+  background-color: var(--backgroud-color-body);
   border: 1px solid var(--grey1);
   padding: var(--space-lg);
   -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -445,7 +449,7 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: var(--space-md);
-  background: white;
+  background-color: var(--backgroud-color-body);
   border: 1px solid var(--grey1);
   padding: var(--space-lg);
 }
