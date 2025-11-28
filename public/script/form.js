@@ -5,6 +5,9 @@
 window.addEventListener("DOMContentLoaded", function () {
     const carret = document.body.querySelector("#entra-carret");
     let carretData = JSON.parse(this.localStorage.getItem("productes"));
+    if (!carretData) {
+        carretData = { productes: [] };
+    }
     afegirTotalAJSON(carretData);
 
     carret.addEventListener("submit", function (e) {
