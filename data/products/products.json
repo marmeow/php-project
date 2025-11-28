@@ -1,18 +1,6 @@
 {
     "productes": [
         {
-            "nom": "Gato",
-            "preu": 100000000,
-            "descripció": "MeowmeowMeow",
-            "categoria": "snacks",
-            "imatge": "1764347077_Awww_.jpeg",
-            "oferta": true,
-            "horario": [
-                "manana",
-                "noche"
-            ]
-        },
-        {
             "nom": "Aigua",
             "preu": 1,
             "descripció": "Ampolla aigua de 250ml",
