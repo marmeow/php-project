@@ -64,10 +64,17 @@ function mostraTiquet() {
 
     let html = "<h2>Resum de la comanda</h2><ul>";
     carretData.productes.forEach(item => {
-        html += `<li>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</li>`;
+        html += `<div class="item-card">
+                    <h5>${item.nom}</h5>
+                    <div class="item-details">
+                        <span>Quantitat: ${item.quantitat}</span><br>
+                        <span>Preu unitari: ${item.preu.toFixed(2)}€</span><br>
+                        <span>Total: ${(item.preu * item.quantitat).toFixed(2)}€</span><br>
+                    </div>
+                </div>`;
     });
     html += `</ul>`;
-    html += `<h3>Total a pagar: ${carretData.total.toFixed(2)}€</h3>`;
+    html += `<h4>Total a pagar: ${carretData.total.toFixed(2)}€</h4>`;
 
     tiquetDiv.innerHTML = html;
 }

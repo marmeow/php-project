@@ -70,7 +70,14 @@ function mostraTiquets() {
                     product += `<p>Adreça: ${element.data.usermail}</p>`;
                     product += `<p>Telèfon: ${element.data.usertel}</p>`;
                     element.data.productes.forEach(item => {
-                        product += `<p>${item.nom} - Quantitat: ${item.quantitat} - Preu unitari: ${item.preu.toFixed(2)}€ - Total: ${(item.preu * item.quantitat).toFixed(2)}€</p>`;
+                        product += `<div class="item-card">
+                                        <h5>${item.nom}</h5>
+                                        <div class="item-details">
+                                            <span>Quantitat: ${item.quantitat}</span><br>
+                                            <span>Preu unitari: ${item.preu.toFixed(2)}€</span><br>
+                                            <span>Total: ${(item.preu * item.quantitat).toFixed(2)}€</span><br>
+                                        </div>
+                                    </div>`;
                     })
                     product += `<h4>Total a pagar: ${element.data.total.toFixed(2)}€</h4>`;
                     tiquet.innerHTML = product;

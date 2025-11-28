@@ -1,4 +1,5 @@
 <?php
+// Recull els tiquets del servidor en un arxiu i els envia al client.
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 

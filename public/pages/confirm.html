@@ -15,22 +15,31 @@
     <script src="../script/form.js" defer></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
     <script src="../script.js" defer></script>
+    <script src="../script/theme.js" defer></script>
 </head>
 
-<body>
+<body id="confirm-page">
     <header id="header-top" class="flex">
         <p>Purr-fect food for a purr-fect time. </p>
         <nav>
             <ul>
                 <li><a href="contacte.html">Ubicació i contacte</a></li>
-
             </ul>
         </nav>
     </header>
     <header id="header-bottom" class="flex">
         <a class="logo" href="../index.html"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+
+        <div id="botoDarkLight">
+            <button id="darkLight">
+                <i class="fa-solid fa-moon to_dark_mode"></i>
+                <i class="fa-solid fa-sun to_light_mode"></i>
+            </button>
+        </div>
+
         <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
         <div id="overlay"></div>
+
         <nav>
             <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
             <img src="../resources/images/espresso.webp" alt="Espresso">
@@ -103,7 +112,7 @@
             <h4>Legal</h4>
             <nav>
                 <ul>
-                    <li><a href="#">Avís legal</a></li>
+                    <li><a href="copyright.html">Avís legal</a></li>
                     <li><a href="#">Política de privacitat</a></li>
                     <li><a href="#">Cookies</a></li>
                     <li><a href="#">Condicions de venta</a></li>
