@@ -8,12 +8,19 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-width: 30%;
 
+
+    h3 {
+        font-size: var(--font-lg);
+    }
+
+
     .item-card {
         padding: 5px;
     }
 
     h5 {
         font-size: var(--font-md);
+        font-style: italic;
     }
 
     h4 {
@@ -39,8 +46,7 @@
 .tiquet-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-between;
 }
 
 .ocult {

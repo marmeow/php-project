@@ -98,3 +98,39 @@
         flex-direction: column;
     }
 }
+
+
+#darkLight {
+    cursor: pointer;
+
+    i {
+        color: var(--color-text);
+        transition: color 0.2s ease;
+    }
+
+    &:hover i {
+        color: var(--green1);
+    }
+
+    // Por defecto muestra la luna (modo light)
+    .to_dark_mode {
+        display: inline-block;
+    }
+
+    .to_light_mode {
+        display: none;
+    }
+}
+
+// Cuando está en modo oscuro
+body.darkmode {
+    #darkLight {
+        .to_dark_mode {
+            display: none;
+        }
+
+        .to_light_mode {
+            display: inline-block;
+        }
+    }
+}
