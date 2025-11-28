@@ -1611,6 +1611,13 @@ body.darkmode #darkLight .to_light_mode {
   padding: var(--space-md);
   display: none;
 }
+.tabcontent h4 {
+  margin-top: 1rem;
+}
+.tabcontent p,
+.tabcontent h4 {
+  margin-bottom: 1rem;
+}
 
 #freds {
   display: block;
@@ -1651,6 +1658,13 @@ body.darkmode #darkLight .to_light_mode {
       -ms-flex-align: stretch;
           align-items: stretch;
   gap: var(--space-md);
+}
+@media (max-width: 768px) {
+  .product-cards {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 #entrepans .product-card {
@@ -1787,9 +1801,19 @@ body.darkmode #darkLight .to_light_mode {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media (max-width: 1200px) {
+  .cart {
+    font-size: 0.75rem;
+  }
+}
 
 .cart_clk {
   width: 65%;
+}
+@media (max-width: 1400px) and (min-width: 678px) {
+  .cart_clk {
+    width: 55%;
+  }
 }
 
 .crtdiv {

@@ -19,10 +19,18 @@
 	  	overflow: hidden;
 	  	text-overflow: ellipsis;
 
+	  	@media (max-width: 1200px) {
+	  		font-size: 0.75rem;
+	  	}
+
 	  }
 
 	  .cart_clk {
 	  	width: calc(100% - 35%);
+
+	  	@media (max-width: 1400px) and (min-width: 678px) {
+	  		width: calc(100% - 45%);
+	  	}
 	  }
 
 	  .crtdiv {

@@ -31,6 +31,15 @@
     width: 80%;
     padding: var(--space-md);
     display: none;
+
+    h4 {
+        margin-top: 1rem;
+    }
+
+    p,
+    h4 {
+        margin-bottom: 1rem;
+    }
 }
 
 #freds {

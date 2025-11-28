@@ -3,6 +3,11 @@
     flex-wrap: wrap;
     align-items: stretch;
     gap: var(--space-md);
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+
 }
 
 #entrepans .product-card {
