@@ -1,31 +1,6 @@
 {
     "productes": [
         {
-            "nom": "MEOW",
-            "preu": 10,
-            "descripció": "MEOW",
-            "categoria": "entrepans",
-            "imatge": "1764362324_cat.jpeg",
-            "oferta": false,
-            "horario": [
-                "manana",
-                "tarde",
-                "noche"
-            ]
-        },
-        {
-            "nom": "Gato",
-            "preu": 100000000,
-            "descripció": "MeowmeowMeow",
-            "categoria": "snacks",
-            "imatge": "1764347077_Awww_.jpeg",
-            "oferta": true,
-            "horario": [
-                "manana",
-                "noche"
-            ]
-        },
-        {
             "nom": "Aigua",
             "preu": 1,
             "descripció": "Ampolla aigua de 250ml",
