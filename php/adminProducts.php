@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$json_file = '../public/data/products.json';
+$json_file = '../data/products/products.json';
 $img_dir = '../public/resources/images/products/';
 
 // crear carpetes si no existeixen

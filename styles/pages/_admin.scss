@@ -1,26 +1,31 @@
 #admin-page {
+    background-color: var(--backgroud-color-body);
+    color: var(--color-text);
 
     main {
-        margin: var(--space-xxxxl);
+        margin: var(--space-xxl) var(--space-xxxxl);
+
 
         h1 {
             font-size: 2.75rem;
+            text-align: center;
         }
 
         h2 {
             font-size: var(--font-xxl);
         }
 
+
         #admin-panel {
-            padding: var(--space-xl) var(--space-md);
-            max-width: 1200px;
-            margin: 0 auto;
+
+            margin: var(--space-xxl) 0;
+
+
 
             .admin-card {
-                background: white;
                 border-radius: var(--radius-md);
                 padding: var(--space-xl);
-                margin-bottom: var(--space-xl);
+                margin: var(--space-xl) 0;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
                 h3 {
@@ -28,7 +33,6 @@
                     color: var(--grey1);
                     font-size: var(--font-xl);
                     font-family: var(--font-titles);
-                    text-align: center;
                 }
             }
         }
@@ -93,7 +97,6 @@
                 cursor: pointer;
             }
 
-
             .moments-dia {
                 display: flex;
                 gap: var(--space-lg);
@@ -111,20 +114,18 @@
 
             .btn-save,
             #btn-cancel-edit {
-                font-size: 2.75rem;
                 padding: 0.8rem var(--space-lg);
                 border: none;
                 border-radius: var(--radius-sm);
                 font-size: var(--font-md);
                 font-weight: 600;
                 cursor: pointer;
-                transition: all 0.3s;
+                transition: all ease 0.3s;
                 margin-right: var(--space-md);
                 font-family: var(--font-general);
 
 
                 &:hover {
-                    transform: translateY(-2px);
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 }
             }
@@ -151,16 +152,17 @@
         }
 
         .table-responsive {
+            overflow-x: auto;
             margin-top: var(--space-md);
-            overflow-x: hidden;
 
             table {
                 width: 100%;
                 border-collapse: collapse;
-                table-layout: fixed;
+                table-layout: auto;
+                min-width: 750px;
 
                 thead {
-                    background-color: var(--blue1);
+                    background-color: var(--green2);
 
                     th {
                         padding: var(--space-md);
@@ -185,33 +187,7 @@
                         td {
                             padding: var(--space-md);
                             vertical-align: middle;
-                            word-wrap: break-word;
                             font-size: var(--font-sm);
-
-
-                            &.col-img {
-                                width: 80px;
-                            }
-
-                            &.col-name {
-                                width: 20%;
-                            }
-
-                            &.col-desc {
-                                width: 35%;
-                            }
-
-                            &.col-stock,
-                            &.col-price {
-                                width: 10%;
-                                text-align: center;
-                            }
-
-                            &.col-actions {
-                                width: 17%;
-                                white-space: nowrap;
-                            }
-
 
                             img {
                                 width: 50px;
@@ -220,23 +196,21 @@
                                 object-fit: cover;
                             }
 
-                            small {
-                                color: var(--grey2);
-                                font-size: var(--font-xs);
-                            }
-
-
                             .btn-edit,
                             .btn-delete {
-                                padding: var(--space-xs) var(--space-md);
+                                padding: var(--space-xs);
+                                width: 32px;
+                                height: 32px;
+                                display: inline-flex;
+                                justify-content: center;
+                                align-items: center;
                                 border: none;
                                 border-radius: var(--radius-sm);
-                                font-size: var(--font-xs);
-                                font-weight: 500;
+                                font-size: var(--font-md);
                                 cursor: pointer;
                                 transition: all 0.2s;
                                 margin-right: var(--space-xs);
-                                font-family: var(--font-general);
+                                box-sizing: border-box;
 
                                 &:hover {
                                     transform: translateY(-1px);
@@ -265,7 +239,6 @@
                         }
                     }
 
-
                     tr td[colspan] {
                         text-align: center;
                         padding: var(--space-xl);
@@ -276,7 +249,6 @@
             }
         }
 
-
         #image-preview {
             max-width: 150px;
             margin-top: var(--space-xs);
@@ -285,7 +257,6 @@
             border-radius: var(--radius-sm);
             display: block;
         }
-
 
         #info-imagen-edit {
             display: block;
@@ -296,12 +267,11 @@
         }
     }
 
-
-
     @media (max-width: 768px) {
         #admin-page {
             #admin-panel {
                 padding: var(--space-md);
+                max-width: none;
 
                 .admin-card {
                     padding: var(--space-md);
@@ -327,14 +297,14 @@
             }
 
             .table-responsive {
-
                 overflow-x: auto;
-
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: var(--space-lg);
 
                 table {
                     font-size: var(--font-sm);
+                    min-width: 750px;
                     table-layout: auto;
-                    min-width: 600px;
 
                     thead th,
                     tbody td {
@@ -343,23 +313,17 @@
 
                     tbody td {
 
-
-                        &.col-img,
-                        &.col-name,
-                        &.col-desc,
-                        &.col-stock,
-                        &.col-price,
-                        &.col-actions {
-                            width: auto;
-                        }
-
                         .btn-edit,
                         .btn-delete {
-                            padding: 0.4rem 0.8rem;
-                            font-size: 0.85rem;
-                            margin-bottom: var(--space-xxs);
-                            display: block;
-                            width: 100%;
+                            display: inline-flex;
+                            width: 32px;
+                            height: 32px;
+                            margin-right: var(--space-xs);
+                            margin-bottom: 0;
+                            float: none;
+                        }
+
+                        .btn-delete {
                             margin-right: 0;
                         }
                     }

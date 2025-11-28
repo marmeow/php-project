@@ -32,7 +32,6 @@ function enviarAjax(url, metode, data, callback) {
 
 // Cargar productes
 function loadProducts() {
-    console.log('Cargando productos...');
     enviarAjax(PHP_API + '?accion=listar', 'GET', null, function (data) {
         console.log('Productos recibidos:', data);
         if (data.success) {
@@ -51,7 +50,7 @@ function showProducts() {
     tbody.innerHTML = '';
 
     if (productes.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center;">No hay productos</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="8">No hi ha prouctes</td></tr>';
         return;
     }
 
@@ -66,7 +65,7 @@ function showProducts() {
         fila.insertCell().textContent = producte.preu.toFixed(2) + ' €';
         fila.insertCell().textContent = producte.categoria;
         fila.insertCell().textContent = producte.descripció || 'Sense descripció';
-        fila.insertCell().innerHTML = producte.oferta ? '<span style="color: green;">✓ Sí</span>' : '<span style="color: red;">✗ No</span>';
+        fila.insertCell().innerHTML = producte.oferta ? '<span style="color: green;">Sí</span>' : '<span style="color: red;">No</span>';
 
         // Horaris
         const horaris = producte.horario || [];
@@ -76,16 +75,14 @@ function showProducts() {
             if (h === 'noche') return 'Nit';
             return h;
         }).join(', ');
-        fila.insertCell().textContent = horariosTexto || 'No especificado';
+        fila.insertCell().textContent = horariosTexto || 'No especificat';
 
-        // Insertar imatge
-        fila.insertCell().innerHTML = `<small style="color: #666;">${producte.imatge}</small>`;
-
-        const celdaAcciones = fila.insertCell();
-        celdaAcciones.innerHTML = `
-            <button onclick="prepareEdit(${index})" class="btn-edit">Editar</button>
-            <button onclick="deleteProduct(${index})" class="btn-delete">Eliminar</button>
-        `;
+        const accions = fila.insertCell();
+        accions.innerHTML = `
+        <div class="flex">
+           <button onclick="prepareEdit(${index})" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button onclick="deleteProduct(${index})" class="btn-delete" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+        </div>`;
     });
 }
 

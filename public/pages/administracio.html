@@ -16,6 +16,7 @@
     <script src="../script/administracio.js"></script>
     <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
     <script src="../script/admin_products.js" defer></script>
+    <script src="../script/theme.js" defer></script>
 </head>
 
 <body id="admin-page">
@@ -31,20 +32,32 @@
 
         <header id="header-bottom" class="flex">
             <a class="logo" href="../index.html"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+
             <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
             <div id="overlay"></div>
+
             <nav>
-                <button class="closebtn"><i class="fa-solid fa-xmark x-icon"></i></button>
+                <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
                 <img src="../resources/images/espresso.webp" alt="Espresso">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="productes.html">Productes</a></li>
-                    <li class="active-link"><a href="#">Administració</a></li>
+                    <li class="active-link"><a href="administracio.html">Administració</a></li>
                     <li><a href="contacte.html">Contacte</a></li>
-                    <li><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                    <li><a href="login.html"><i class="fa-solid fa-user fa-lg"></i></a></li>
+                    <div class="icons flex">
+                        <li><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                        <li><a href="login.html" id="user-icon"><i class="fa-solid fa-user fa-lg btnuser-icon"></i></a>
+                        </li>
+                        <li>
+                            <a id="darkLight">
+                                <i class="fa-solid fa-moon fa-lg to_dark_mode"></i>
+                                <i class="fa-solid fa-sun fa-lg to_light_mode"></i>
+                            </a>
+                        </li>
+                    </div>
                 </ul>
             </nav>
+
         </header>
 
         <main>
@@ -60,8 +73,8 @@
 
 
             <section id="admin-panel">
+                <h2>Afegir Nou Producte</h2>
                 <div class="admin-card">
-                    <h3>Afegir Nou Producte</h3>
                     <form id="product-form">
                         <input type="hidden" name="index" id="editing-index" value="-1">
 
@@ -138,12 +151,11 @@
                                     <th>Descripció</th>
                                     <th>Oferta</th>
                                     <th>Horari</th>
-                                    <th>Arxiu</th>
                                     <th>Accions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Els productes es carregaran aquí -->
+
                             </tbody>
                         </table>
                     </div>
