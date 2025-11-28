@@ -7,10 +7,15 @@
     <title>Copyright | Cantina "Gato rumano"</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../resources/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Rubik:wght@400;500;600&display=swap"
         rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dcb488a0b2.js" crossorigin="anonymous"></script>
     <script src="../script.js" defer></script>
+    <script src="../script/theme.js" defer></script>
 </head>
 
 <body id="copyright-page">
@@ -19,24 +24,32 @@
         <nav>
             <ul>
                 <li><a href="contacte.html">Ubicació i contacte</a></li>
-
             </ul>
         </nav>
     </header>
     <header id="header-bottom" class="flex">
-        <a class="logo" href="../index.html"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+        <a class="logo" href="#"><img src="../resources/images/logo.png" alt="Logo El Gato Rumano"></a>
+
+        <div id="botoDarkLight">
+            <button id="darkLight">
+                <i class="fa-solid fa-moon to_dark_mode"></i>
+                <i class="fa-solid fa-sun to_light_mode"></i>
+            </button>
+        </div>
+
         <button class="burgerbtn icon"><i class="fa-solid fa-bars"></i></button>
         <div id="overlay"></div>
+
         <nav>
             <button class="closebtn"> <i class="fa-solid fa-xmark x-icon"></i></button>
             <img src="../resources/images/espresso.webp" alt="Espresso">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="productes.html">Productes</a></li>
-                <li><a href="administrar.html">Administració</a></li>
-                <li class="active-link"><a href="#">Contacte</a></li>
+                <li><a href="administracio.html">Administració</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
                 <div class="icons flex">
-                    <li><a href="pages/confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><a href="confirm.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                     <li><a href="login.html" id="user-icon"><i class="fa-solid fa-user fa-lg btnuser-icon"></i></a></li>
                 </div>
             </ul>
@@ -74,28 +87,41 @@
 
     <script src="../script.js"></script>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="productes.html">Productes</a></li>
-                <li><a href="administrar.html">Administració</a></li>
-                <li><a href="#">Contacte</a></li>
-            </ul>
-        </nav>
-        <div id="adreca-footer">
+    <footer id="main-footer">
+        <div id="sitemap">
+            <h4>Site Map</h4>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="productes.html">Productes</a></li>
+                    <li><a href="administracio.html">Administració</a></li>
+                    <li><a href="contacte.html">Contacte</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="direccio">
+            <h4>On trobar-nos</h4>
             <p>El Gato Rumano</p>
-            <p>Riera de Cirera, 57</p>
+            <p>Riera de Cirera, 57 </p>
             <p>08304 Mataró, Barcelona</p>
         </div>
         <div id="equip">
-            <p>Equip El Gato Rumano</p>
+            <h4>Equip El Gato Rumano</h4>
             <p>Mar Fernandez Vidal</p>
-            <p>Alex Potlog Potlog</p>
+            <p>Hary Alexandru Potlog Potlog</p>
             <p>Marta Llabrés Roldós</p>
         </div>
         <div id="copyright">
-            <a href="pages/copyright.html">&copy; Copyright. All Rights Reserved</a>
+            <h4>Legal</h4>
+            <nav>
+                <ul>
+                    <li><a href="pages/copyright.html">Avís legal</a></li>
+                    <li><a href="#">Política de privacitat</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Condicions de venta</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 </body>

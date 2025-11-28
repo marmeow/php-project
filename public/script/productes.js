@@ -182,10 +182,8 @@ function recuperaProductesServidor() {
   const xhr = new XMLHttpRequest();
 
   xhr.onload = function () {
-    console.log("Respuesta del servidor:", xhr.status, xhr.responseText);
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
-
       if (response.success) {
         const data = JSON.parse(response.productes);
         const productes = data.productes;
@@ -201,7 +199,7 @@ function recuperaProductesServidor() {
             if (!cats[item.categoria]) cats[item.categoria] = [];
             cats[item.categoria].push(item);
           }
-        };
+        }
         mostrarCategories(cats);
       } else {
         alert("Error: " + xhr.status);

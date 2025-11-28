@@ -118,15 +118,6 @@
             "horario": ["manana", "tarde", "noche"]
         },
         {
-            "nom": "Entrapà de xoriço",
-            "preu": 3.00,
-            "descripció": "Entrepà fred de xoriço amb tomàquet",
-            "categoria": "entrepans",
-            "oferta": false,
-            "imatge": "entrepa-chorizo.png",
-            "horario": ["manana", "tarde", "noche"]
-        },
-        {
             "nom": "Croissant",
             "preu": 0.75,
             "descripció": "Croissant tradicional de mantega",
