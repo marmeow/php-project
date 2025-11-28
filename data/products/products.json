@@ -1,6 +1,19 @@
 {
     "productes": [
         {
+            "nom": "MEOW",
+            "preu": 10,
+            "descripció": "MEOW",
+            "categoria": "entrepans",
+            "imatge": "1764362324_cat.jpeg",
+            "oferta": false,
+            "horario": [
+                "manana",
+                "tarde",
+                "noche"
+            ]
+        },
+        {
             "nom": "Gato",
             "preu": 100000000,
             "descripció": "MeowmeowMeow",
