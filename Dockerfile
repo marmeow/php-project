@@ -8,11 +8,15 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN a2enmod rewrite
 
 # Copiem els fitxers del projecte al directori d'Apache
-COPY ./la-cantina/public /var/www/html/
+COPY ./public /var/www/html/
+COPY ./php /var/www/html/php/
+COPY ./data /var/www/html/data/
+COPY ./users /var/www/html/users/
+COPY ./tiquets /var/www/html/tiquets/
 
 # Configurem els permisos adequats
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+    && chmod -R 777 /var/www/html
 
 # Exposem el port 80
 EXPOSE 80

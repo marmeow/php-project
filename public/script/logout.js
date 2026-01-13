@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
  */
 async function isLoggedIn() {
     try {
-        const response = await fetch("/php/isLoggedIn.php", { method: "POST" });
+        const response = await fetch("../php/isLoggedIn.php", { method: "POST" });
         const data = await response.json();
         console.log("Respuesta del servidor:", data);
         return data.correcte; // true o false
@@ -60,7 +60,7 @@ async function updateUI() {
  */
 async function logout() {
     try {
-        const response = await fetch("/php/logout.php", { method: "POST" });
+        const response = await fetch("../php/logout.php", { method: "POST" });
         //const data = await response.json(); // aquí esperas la respuesta en JSON
         window.location.reload();
     } catch (error) {

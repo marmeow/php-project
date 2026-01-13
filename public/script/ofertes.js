@@ -165,7 +165,7 @@ function creaOfertes() {
         alert("Error de connexió amb el servidor");
     };
 
-    xhr.open("POST", "/php/enviaProductes.php", true);
+    xhr.open("POST", "../php/enviaProductes.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
 }

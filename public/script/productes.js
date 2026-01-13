@@ -214,7 +214,7 @@ function recuperaProductesServidor() {
     alert("Error de connexió amb el servidor");
   };
 
-  xhr.open("GET", "/php/enviaProductes.php", true);
+  xhr.open("GET", "../php/enviaProductes.php", true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send();
 }
